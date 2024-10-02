@@ -34,7 +34,7 @@ const Header = () => {
                 ))}
             </div>
             <div className="relative z-10">
-                <div className='w-[389px] h-[200px] rounded-[50px] bg-foreground blur-2xl absolute top-5' />
+                <div className='w-[389px] h-[313px] rounded-[50px] bg-foreground blur-2xl absolute top-5' />
                     <HeroVideoDialog
                         className="block"
                         animationStyle="from-center"

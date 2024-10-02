@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   return (
     <div>
-      <div className="sticky top-0 w-full z-50 bg-background">
+      <div className="sticky top-0 w-full z-50">
         <StickyHeader />
         <NavBar />
       </div>
