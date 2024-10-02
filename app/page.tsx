@@ -4,8 +4,9 @@ import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
 import StickyHeader from "@/components/StickyHeader"
 import TitleContentPair from "@/components/TitleContentPair";
-import { benefitsData } from "@/data";
+import { benefitsData, essentialsData } from "@/data";
 import { cn } from "@/lib/utils";
+import EssentialsCard from "@/components/card/bentoGrid/EssentialsCard";
 
 export default function Home() {
   return (
@@ -22,18 +23,27 @@ export default function Home() {
         />
         <div className={cn("flex flex-col gap-4")}>
           {benefitsData.map((data, index) => (
-            <div key={index}>
-              <BenefitCard 
-                icon={data.icon}
-                title={data.title}
-                content={data.content}
-              />
-            </div>
+            <BenefitCard 
+              key={index}
+              icon={data.icon}
+              title={data.title}
+              content={data.content}
+            />
           ))}
         </div>
       </section>
-      <section className="p-4 text-center py-24 space-y-24">
+      <section className="p-4 text-center py-24 space-y-4">
         <ModesCard />
+        <div className={cn("grid grid-cols-2 gap-2")}>
+          {essentialsData.map((data, index) => (
+            <EssentialsCard
+              key={index}
+              icon={data.icon}
+              title={data.title}
+              index={index}
+            />
+          ))}
+        </div>
       </section>
     </div>
   );

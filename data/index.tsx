@@ -2,6 +2,12 @@ import { BiWorld } from "react-icons/bi";
 import { PiMoneyWavy } from "react-icons/pi";
 import { IoWaterOutline } from "react-icons/io5";
 import Auto from "@/public/images/auto.png";
+import { MdAutorenew } from "react-icons/md";
+import { IoManOutline, IoWomanOutline } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa6";
+import { BsWater } from "react-icons/bs";
+import { MdElectricBolt } from "react-icons/md";
+import { PiPlugsConnectedFill } from "react-icons/pi";
 
 export const statsData = [
     {
@@ -32,6 +38,37 @@ export const benefitsData = [
       content: "Faites un geste pour la planète en économisant 1500L d'eau chaque année et en réduisant votre consommation de papier. Moins de déforestation, plus de durabilité."
     }
   ]
+
+export const selectionModesData = [
+  {
+      title: "Auto", icon: MdAutorenew
+  },
+  {
+      title: "Masculin", icon: IoManOutline
+  },
+  {
+      title: "Féminin", icon: IoWomanOutline
+  }
+]
+
+export const essentialsData = [
+  {
+    icon: BsWater,
+    title: "Jets d’eau Précis",
+  },
+  {
+    icon: MdElectricBolt,
+    title: "Zéro éléctricité",
+  },
+  {
+    icon: FaCheck,
+    title: "Installation facile",
+  },
+  {
+    icon: PiPlugsConnectedFill,
+    title: "Comptabilité totale",
+  },
+]
 
 
   export const imageSelected = (selected: number) => {

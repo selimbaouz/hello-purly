@@ -2,11 +2,9 @@
 import SelectButton from "@/components/SelectButton";
 import TitleContentPair from "@/components/TitleContentPair";
 import { cn } from "@/lib/utils";
-import { MdAutorenew } from "react-icons/md";
-import { IoManOutline, IoWomanOutline } from "react-icons/io5";
 import { useState } from "react";
 import Image from "next/image";
-import { imageSelected } from "@/data";
+import { imageSelected, selectionModesData } from "@/data";
 
 
 /* interface ModesCardProps {
@@ -33,27 +31,14 @@ const ModesCard = () => {
                     content="Personnalisez votre expérience avec des modes conçus pour répondre à tous vos besoins."
                 />
                 <div className={cn("flex items-center justify-center gap-1 py-4")}>
-                    {[
-                        {
-                            title: "Auto", icon: MdAutorenew
-                        },
-                        {
-                            title: "Masculin", icon: IoManOutline
-                        },
-                        {
-                            title: "Féminin", icon: IoWomanOutline
-                        }
-                    ].map((data, index) => (
-                        <div 
+                    {selectionModesData.map((data, index) => (
+                        <SelectButton
                             key={index} 
                             onClick={() => setSelected(index)}
-                        >
-                            <SelectButton
-                                title={data.title}
-                                icon={data.icon}
-                                classname={`${selected === index ? "bg-gradient-to-b from-foreground/50 to-[#171923]/50 border border-foreground" : "bg-gradient-to-b from-[#2D3748] to-[#111219] border border-foreground/50"}`}
-                            />
-                        </div>
+                            title={data.title}
+                            icon={data.icon}
+                            classname={`${selected === index ? "bg-gradient-to-b from-foreground/50 to-[#171923]/50 border border-foreground" : "bg-gradient-to-b from-[#2D3748] to-[#111219] border border-foreground/50"}`}
+                        />
                     ))}
                 </div>
                 <div className="w-full flex items-center justify-center py-2">
