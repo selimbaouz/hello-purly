@@ -9,11 +9,11 @@ const Header = () => {
     return (
         <div className={cn('p-4 text-center py-24 space-y-10')}>
             <div className="relative p-0.5 bg-gradient-to-r from-white to-foreground rounded-full mx-auto w-max">
-                <div className="bg-background py-2 px-8 rounded-full text-sm font-bold">
+                <div className="bg-background py-2 px-6 rounded-full text-sm font-medium">
                 Pour une planète plus verte
                 </div>
             </div>
-            <h1 className={cn('uppercase font-bold text-5xl leading-tight', "md:text-6xl md:leading-[1.2]")}>
+            <h1 className={cn('uppercase font-bold text-4xl leading-tight', "md:text-6xl md:leading-[1.2]")}>
                 <span className='pointer-events-none whitespace-pre-wrap bg-gradient-to-r bg-clip-text text-center text-transparent from-white to-foreground'>
                     -1500L d’eau économisés
                 </span> {" "}
