@@ -2,20 +2,22 @@ import BenefitCard from "@/components/card/BenefitCard";
 import ModesCard from "@/components/card/bentoGrid/ModesCard";
 import Header from "@/components/Header";
 import NavBar from "@/components/navigation/NavBar";
-import StickyHeader from "@/components/StickyHeader"
+import StickyBar from "@/components/navigation/StickyBar"
 import TitleContentPair from "@/components/TitleContentPair";
-import { benefitsData, essentialsData } from "@/data";
+import { benefitsData, essentialsData, trustsData } from "@/data";
 import { cn } from "@/lib/utils";
 import EssentialsCard from "@/components/card/bentoGrid/EssentialsCard";
 import BottomBar from "@/components/navigation/BottomBar";
 import Bento from "@/components/card/bentoGrid/Bento";
 import { Reviews } from "@/components/Reviews";
+import CTACard from "@/components/card/CTACard";
+import TrustFeatures from "@/components/TrustFeatures";
 
 export default function Home() {
   return (
     <div>
       <div className="sticky top-0 w-full z-50">
-        <StickyHeader />
+        <StickyBar />
         <NavBar />
       </div>
       <Header />
@@ -62,6 +64,21 @@ export default function Home() {
             />
         </div>
           <Reviews />
+      </section>
+      <section className="p-4 text-center py-24 space-y-4">
+        <CTACard />
+      </section>
+      <section className="p-4 text-center pb-24 space-y-4">
+        <div className={cn("flex flex-col space-y-20 justify-center items-center text-center")}>
+          {trustsData.map((data, index) => (
+            <TrustFeatures
+              key={index}
+              icon={data.icon}
+              title={data.title}
+              content={data.content}
+            />
+          ))}
+        </div>
       </section>
       <BottomBar />
     </div>

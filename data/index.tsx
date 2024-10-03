@@ -8,6 +8,9 @@ import { FaCheck } from "react-icons/fa6";
 import { BsWater } from "react-icons/bs";
 import { MdElectricBolt } from "react-icons/md";
 import { PiPlugsConnectedFill } from "react-icons/pi";
+import { RiSecurePaymentLine } from "react-icons/ri";
+import { TbPlaneTilt } from "react-icons/tb";
+import { BiSupport } from "react-icons/bi";
 
 export const statsData = [
   {
@@ -36,6 +39,29 @@ export const benefitsData = [
     icon: BiWorld, 
     title: "Écologique", 
     content: "Faites un geste pour la planète en économisant 1500L d'eau chaque année et en réduisant votre consommation de papier. Moins de déforestation, plus de durabilité."
+  }
+]
+
+export const trustsData = [
+  {
+    icon: RiSecurePaymentLine, 
+    title: "Paiement Sécurisé", 
+    content: "Paiement 100% sécurisé CB, PayPal."
+  },
+  {
+    icon: FaCheck, 
+    title: "Satisfait ou remboursé", 
+    content: "Toute commande passé avant 14h est expédié le jour même."
+  },
+  {
+    icon: TbPlaneTilt, 
+    title: "Expédié en 24h", 
+    content: "Toute commande passé avant 14h est expédié le jour même."
+  },
+  {
+    icon: BiSupport, 
+    title: "Support client", 
+    content: "Un support client est là pour vous à chaque étape."
   }
 ]
 

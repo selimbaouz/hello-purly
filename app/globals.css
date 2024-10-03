@@ -169,11 +169,11 @@
   body {
     @apply bg-background text-white;
  }
+}
 
- .bg-gradient-combined {
-    background: radial-gradient(circle at top center, rgba(49, 151, 149, 0.2) 0%, rgba(0, 0, 0, 0.5) 70%),
-              linear-gradient(to bottom, #171923 50%, #11121A 100%);
-  }
+.bg-gradient-combined {
+  background: radial-gradient(circle at top center, rgba(49, 151, 149, 0.2) 0%, rgba(0, 0, 0, 0.5) 50%),
+            linear-gradient(to bottom, #171923 50%, #11121A 100%);
 }
 
 .bg-gradient-essential-first {

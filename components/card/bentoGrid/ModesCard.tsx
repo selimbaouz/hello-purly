@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Image from "next/image";
 import { imageSelected, selectionModesData } from "@/data";
+import ContainerCard from "../ContainerCard";
 
 
 /* interface ModesCardProps {
@@ -24,7 +25,7 @@ const ModesCard = () => {
     const [selected, setSelected] = useState(0);
 
     return (
-        <div className="relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-[#319795] to-[#2D3748]/50 rounded-3xl">
+        <ContainerCard>
             <div className={cn("w-full space-y-5 rounded-3xl px-4 py-14 bg-gradient-combined")}>
                 <TitleContentPair
                     title="3 Modes Disponibles"
@@ -54,7 +55,7 @@ const ModesCard = () => {
                     {imageSelected(selected).content}
                 </p>
             </div>
-        </div>
+        </ContainerCard>
     );
 };
 
