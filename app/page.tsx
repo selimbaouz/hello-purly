@@ -12,6 +12,7 @@ import Bento from "@/components/card/bentoGrid/Bento";
 import { Reviews } from "@/components/Reviews";
 import CTACard from "@/components/card/CTACard";
 import TrustFeatures from "@/components/TrustFeatures";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -80,6 +81,10 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+      <section className="relative pt-10">
+        <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
+        <Footer />
       </section>
       <BottomBar />
     </div>

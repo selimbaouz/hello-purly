@@ -7,7 +7,7 @@ import { statsData } from '@/data';
 
 const Header = () => {
     return (
-        <div className={cn('p-4 text-center py-24 space-y-10')}>
+        <header className={cn('p-4 text-center py-24 space-y-10')}>
             <div className="relative p-0.5 bg-gradient-to-r from-white to-foreground rounded-full mx-auto w-max">
                 <div className="bg-background py-2 px-6 rounded-full text-sm font-medium">
                 Pour une planète plus verte
@@ -43,7 +43,7 @@ const Header = () => {
                         thumbnailAlt="Hero Video"
                     />
                 </div>
-        </div>
+        </header>
     );
 };
 
