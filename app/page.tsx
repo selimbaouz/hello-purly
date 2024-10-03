@@ -73,6 +73,7 @@ export default function Home() {
           {trustsData.map((data, index) => (
             <TrustFeatures
               key={index}
+              index={index}
               icon={data.icon}
               title={data.title}
               content={data.content}

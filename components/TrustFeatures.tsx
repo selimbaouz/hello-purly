@@ -1,25 +1,33 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { IconType } from "react-icons";
+import GradientIcon from "./GradientIcon";
 
 interface TrustFeaturesProps {
     icon: IconType;
     title: string;
     content: string;
+    index: number;
 }
 
 const TrustFeatures: FC<TrustFeaturesProps> = ({
-    icon: Icon,
+    icon,
     title,
-    content
+    content,
+    index
 }) => {
     return (
         <div className="text-center w-full space-y-6 flex flex-col justify-center items-center">
-            <Icon className="text-[40px] text-foreground" />
-            <h6 className={cn("text-xl font-medium")}>
+           <GradientIcon 
+            icon={icon}
+            strokeWith={index === 2 ? 2 : 0}
+            isFill={index === 0 || index === 1 || index === 3}
+            isStroke={index === 2}
+           />
+            <h6 className={cn("text-2xl font-medium")}>
                 {title}
             </h6>
-            <p className={cn("font-extralight text-sm px-14")}>
+            <p className={cn("font-light text-white/70 text-base px-20")}>
                 {content}
             </p>
         </div>
