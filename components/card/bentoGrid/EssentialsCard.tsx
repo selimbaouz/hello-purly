@@ -14,7 +14,7 @@ const EssentialsCard: FC<EssentialsCardProps> = ({
     index
 }) => {
     return (
-        <div className={cn("relative shadow-md shadow-black p-[1px] rounded-3xl from-[#2D3748]/50 to-foreground",
+        <div className={cn("relative shadow-md shadow-black p-[1px] rounded-3xl from-[#2D3748]/50 via-background via-50% to-foreground",
             {
                 "bg-gradient-to-br": index === 0,
                 "bg-gradient-to-bl": index === 1,

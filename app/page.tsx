@@ -1,12 +1,15 @@
 import BenefitCard from "@/components/card/BenefitCard";
 import ModesCard from "@/components/card/bentoGrid/ModesCard";
 import Header from "@/components/Header";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navigation/NavBar";
 import StickyHeader from "@/components/StickyHeader"
 import TitleContentPair from "@/components/TitleContentPair";
 import { benefitsData, essentialsData } from "@/data";
 import { cn } from "@/lib/utils";
 import EssentialsCard from "@/components/card/bentoGrid/EssentialsCard";
+import BottomBar from "@/components/navigation/BottomBar";
+import Bento from "@/components/card/bentoGrid/Bento";
+import { Reviews } from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -16,10 +19,10 @@ export default function Home() {
         <NavBar />
       </div>
       <Header />
-      <section className="p-4 text-center py-24 space-y-24">
+      <section className="p-4 text-center space-y-24">
         <TitleContentPair 
-        title="La nouvelle révolution pour vos toilettes" 
-        content="Profitez du luxe d’un jet d’eau qui vous fera dire sayonara au papier."
+          title="La nouvelle révolution pour vos toilettes" 
+          content="Profitez du luxe d’un jet d’eau qui vous fera dire sayonara au papier."
         />
         <div className={cn("flex flex-col gap-4")}>
           {benefitsData.map((data, index) => (
@@ -44,7 +47,23 @@ export default function Home() {
             />
           ))}
         </div>
+        <Bento 
+          image=""
+          title="Précis, écolo, économique"
+          content={`Vous n’aurez plus qu’une question : ''Pourquoi je ne l’ai pas installé plus tôt ?''`}
+        />
       </section>
+      <section className="text-center pb-24 space-y-20">
+        <div className={cn("p-4")}>
+          <TitleContentPair 
+              title="ce que disent nos clients" 
+              content="Excellent, basé sur"
+              contentBold="319 avis"
+            />
+        </div>
+          <Reviews />
+      </section>
+      <BottomBar />
     </div>
   );
 }
