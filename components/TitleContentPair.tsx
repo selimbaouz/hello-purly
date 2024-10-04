@@ -9,11 +9,11 @@ interface TitleContentPairProps {
 
 const TitleContentPair: FC<TitleContentPairProps> = ({title, content, contentBold}) => {
     return (
-        <div className="space-y-8 text-center mx-auto w-full p-4">
+        <div className={cn("space-y-8 text-center w-full p-4 max-w-screen-xl mx-auto", "lg:max-w-[800px]")}>
           <h2 className={cn("uppercase font-extrabold text-3xl leading-tight", "md:text-5xl")}>
             {title}
           </h2>
-          <p className={cn("font-regular text-base", "md:text-2xl")}>
+          <p className={cn("font-regular text-base", "md:text-2xl", " lg:mx-auto lg:max-w-xl")}>
             {content}{" "}
             <span className="font-bold">{contentBold}</span>
           </p>

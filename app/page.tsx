@@ -22,12 +22,12 @@ export default function Home() {
         <NavBar />
       </div>
       <Header />
-      <section className="p-4 text-center space-y-24">
+      <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-0")}>
         <TitleContentPair 
           title="La nouvelle révolution pour vos toilettes" 
           content="Profitez du luxe d’un jet d’eau qui vous fera dire sayonara au papier."
         />
-        <div className={cn("flex flex-col gap-4")}>
+        <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:flex-row lg:items-center")}>
           {benefitsData.map((data, index) => (
             <BenefitCard 
               key={index}
@@ -38,7 +38,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="p-4 text-center py-24 space-y-4">
+      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:space-y-4 lg:py-32 lg:px-0")}>
         <ModesCard />
         <div className={cn("grid grid-cols-2 gap-2")}>
           {essentialsData.map((data, index) => (
@@ -66,11 +66,11 @@ export default function Home() {
         </div>
           <Reviews />
       </section>
-      <section className="p-4 text-center py-24 space-y-4">
+      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:px-0")}>
         <CTACard />
       </section>
-      <section className="p-4 text-center pb-24 space-y-4">
-        <div className={cn("flex flex-col space-y-20 justify-center items-center text-center")}>
+      <section className={cn("p-4 text-center pb-24 space-y-4 max-w-screen-xl mx-auto", "lg:px-0 lg:space-y-0")}>
+        <div className={cn("flex flex-col space-y-20 justify-center items-center text-center", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
           {trustsData.map((data, index) => (
             <TrustFeatures
               key={index}

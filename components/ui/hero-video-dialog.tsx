@@ -85,29 +85,27 @@ export default function HeroVideoDialog({
         onClick={() => setIsVideoOpen(true)}
       >
         <div className="relative p-0.5 bg-gradient-to-b from-foreground to-background rounded-3xl mx-auto">
-          <div className="bg-background p-[3px] rounded-3xl">
+          <div className={cn("bg-background p-[3px] rounded-3xl", "lg:h-[533px] lg:w-[861px] lg:mx-auto")}>
             <Image
               src={thumbnailSrc}
               alt={thumbnailAlt}
               width={1920}
               height={1080}
-              className="w-full h-[313px] bg-background transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-3xl shadow-lg"
+              className={cn("w-full h-[313px] bg-background transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-3xl shadow-lg", "lg:h-full")}
             />
           </div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center group-hover:scale-100 scale-[0.9] transition-all duration-200 ease-out rounded-2xl">
-          <div className="bg-transparent flex items-center justify-center rounded-full backdrop-blur-md size-28">
-            <div
-              className={`flex items-center justify-center bg-gradient-to-b from-foreground to-background border border-white shadow-md rounded-full size-20 transition-all ease-out duration-200 relative group-hover:scale-[1.2] scale-100`}
-            >
-              <Play
-                className="size-8 text-white fill-transparent group-hover:scale-105 scale-100 transition-transform duration-200 ease-out"
-                style={{
-                  filter:
-                    "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
-                }}
-              />
-            </div>
+          <div
+            className={`flex items-center justify-center bg-gradient-to-b from-foreground to-background border border-white shadow-md rounded-full size-20 transition-all ease-out duration-200 relative group-hover:scale-[1.2] scale-100`}
+          >
+            <Play
+              className="size-8 text-white fill-transparent group-hover:scale-105 scale-100 transition-transform duration-200 ease-out"
+              style={{
+                filter:
+                  "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+              }}
+            />
           </div>
         </div>
       </div>
