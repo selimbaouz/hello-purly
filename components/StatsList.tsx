@@ -12,7 +12,7 @@ const StatsList: FC<StatsListProps>= ({
 }) => {
     return (
         <div className={cn("space-y-5")}>
-            <h3 className={cn("font-bold text-4xl")}>
+            <h3 className={cn("font-bold text-4xl", "lg:text-3xl", "xl:text-4xl")}>
                 {title}
             </h3>
             <p className={cn("font-regular text-base")}>

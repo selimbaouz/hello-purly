@@ -6,8 +6,8 @@ import Link from "next/link";
 const Footer = () => {
     const classLink = "font-light text-base";
     return (
-        <footer className={cn('p-8 text-left py-10 space-y-20 bg-background z-10', "lg:px-0")}>
-            <div className={cn("max-w-screen-xl mx-auto space-y-14")}>
+        <footer className={cn('p-8 text-left py-10 space-y-20 bg-background z-10 h-full', "xl:px-0")}>
+            <div className={cn("max-w-screen-xl mx-auto space-y-14", "lg:p-6")}>
                 <Image src={Logo} alt="Logo of HelloPurly" width={250} height={36} />
                 <div className={cn("flex flex-col space-y-10", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
                     <div className={cn("space-y-4")}>
@@ -51,7 +51,9 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-            <Link href="https://sejiux.com" target="_blank" rel="noopener noreferrer" className={cn("text-sm text-white font-medium", "lg:flex lg:justify-start lg:items-center")}>Made by Sejiux</Link>
+                <div className={cn("py-4")}>
+                    <Link href="https://sejiux.com" target="_blank" rel="noopener noreferrer" className={cn("text-sm text-white/30 font-bold", "lg:flex lg:justify-start lg:items-center")}>Made by Sejiux</Link>
+                </div>
             </div>
         </footer>
     );

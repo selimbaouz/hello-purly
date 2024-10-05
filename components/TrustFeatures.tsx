@@ -27,7 +27,7 @@ const TrustFeatures: FC<TrustFeaturesProps> = ({
             <h6 className={cn("text-2xl font-medium")}>
                 {title}
             </h6>
-            <p className={cn("font-light text-white/70 text-base px-20")}>
+            <p className={cn("font-light text-white/70 text-base px-10", "md:px-6", "lg:px-20", "xl:px-10")}>
                 {content}
             </p>
         </div>

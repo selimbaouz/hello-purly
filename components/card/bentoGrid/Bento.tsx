@@ -21,13 +21,13 @@ const Bento: FC<BentoProps> = ({
                     alt="Image of Product"
                     width={337}
                     height={200}
-                    className={cn("rounded-t-3xl border w-full")}
+                    className={cn("rounded-t-3xl border w-full", "md:h-80")}
                 />
-                <div className={cn("p-6 space-y-2")}>
-                    <h6 className={cn("font-bold text-lg")}>
+                <div className={cn("p-6 space-y-2", "md:p-8 md:space-y-3")}>
+                    <h6 className={cn("font-bold text-lg", "md:text-2xl")}>
                         {title}
                     </h6>
-                    <p className={cn("text-sm font-light")}>
+                    <p className={cn("text-sm font-light whitespace-pre-line", "md:text-base")}>
                         {content}
                     </p>
                 </div>

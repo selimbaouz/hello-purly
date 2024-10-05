@@ -85,7 +85,7 @@ export default function HeroVideoDialog({
         onClick={() => setIsVideoOpen(true)}
       >
         <div className="relative p-0.5 bg-gradient-to-b from-foreground to-background rounded-3xl mx-auto">
-          <div className={cn("bg-background p-[3px] rounded-3xl", "lg:h-[533px] lg:w-[861px] lg:mx-auto")}>
+          <div className={cn("bg-background p-[3px] rounded-3xl", "md:h-[433px] md:w-[661px] md:mx-auto", "xl:h-[533px] xl:w-[961px]")}>
             <Image
               src={thumbnailSrc}
               alt={thumbnailAlt}

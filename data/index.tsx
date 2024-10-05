@@ -17,10 +17,10 @@ export const statsData = [
       title: "80%", content: "80% de papier en moins"
   },
   {
-      title: "+150€", content: "+150€ d’économies par an"
+      title: "150€", content: "+150€ d’économies par an"
   },
   {
-      title: "+319", content: "+319 d’utilisateurs actifs"
+      title: "319", content: "+319 d’utilisateurs actifs"
   },
 ]
 
@@ -67,7 +67,7 @@ export const trustsData = [
 
 export const selectionModesData = [
   {
-      title: "Auto", icon: MdAutorenew
+      title: "Automatique", icon: MdAutorenew
   },
   {
       title: "Masculin", icon: IoManOutline
@@ -102,22 +102,26 @@ export const imageSelected = (selected: number) => {
   case 0:
     return {
       image: Auto,
+      title: "Automatique",
       content: "Besoin d’un petit coup de frais express ? Ce mode fait tout le boulot pour vous. En un clin d’œil, vos fesses sont impeccables. Simple, rapide et terriblement efficace !"
     };
   case 1:
     return {
       image: Auto,
+      title: "Masculin",
       content: "Messieurs, offrez-vous un soin personnalisé. Ce mode conçu spécialement pour vous, avec la précision d'un rasoir de barbier, mais pour un nettoyage tout en douceur."
     };
   case 2:
     return {
       image: Auto,
+      title: "Féminin",
       content: "Pour vous, mesdames, on a pensé à tout. Une hygiène douce, délicate et adaptée à vos besoins. Ce mode prend soin de vous avec tendresse et précision, pour une sensation de propreté complète et apaisante."
     };
   case 0:
   default:
     return {
       image: Auto,
+      title: "Automatique",
       content: "Besoin d’un petit coup de frais express ? Ce mode fait tout le boulot pour vous. En un clin d’œil, vos fesses sont impeccables. Simple, rapide et terriblement efficace !"
     };
   }

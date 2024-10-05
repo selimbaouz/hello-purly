@@ -20,7 +20,7 @@ const CTACard = () => {
                 <div className={cn("pt-14")}>
                     <Separator className="text-[#262D3C]" />
                 </div>
-                <div className={cn("flex flex-col space-y-14 py-8", "lg:flex-row lg:space-y-0 lg:justify-center lg:items-start lg:gap-20")}>
+                <div className={cn("flex flex-col space-y-14 py-8", "md:flex-row md:space-y-0 md:justify-center md:items-start md:gap-10", "lg:gap-14", "xl:gap-20")}>
                 {statsData.map((data, index) => (
                     <div key={index}>
                         <StatsList 

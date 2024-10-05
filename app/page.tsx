@@ -22,12 +22,12 @@ export default function Home() {
         <NavBar />
       </div>
       <Header />
-      <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-0")}>
+      <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-6", "xl:px-0")}>
         <TitleContentPair 
           title="La nouvelle révolution pour vos toilettes" 
           content="Profitez du luxe d’un jet d’eau qui vous fera dire sayonara au papier."
         />
-        <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:flex-row lg:items-center")}>
+        <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:grid lg:grid-cols-3 lg:items-center lg:h-full")}>
           {benefitsData.map((data, index) => (
             <BenefitCard 
               key={index}
@@ -38,39 +38,39 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:space-y-4 lg:py-32 lg:px-0")}>
+      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:p-6", "xl:space-y-3 xl:py-32 xl:px-0")}>
         <ModesCard />
-        <div className={cn("grid grid-cols-2 gap-2")}>
-          {essentialsData.map((data, index) => (
-            <EssentialsCard
-              key={index}
-              icon={data.icon}
-              title={data.title}
-              index={index}
-            />
-          ))}
+        <div className={cn("flex flex-col gap-5", "md:gap-3", "lg:grid lg:grid-cols-2 lg:items-start lg:h-full")}>
+          <div className={cn("grid grid-cols-2 gap-2", "md:h-full md:gap-3")}>
+            {essentialsData.map((data, index) => (
+              <EssentialsCard
+                key={index}
+                icon={data.icon}
+                title={data.title}
+                index={index}
+              />
+            ))}
+          </div>
+          <Bento 
+            image=""
+            title="Précis, écolo, économique"
+            content={`Vous n’aurez plus qu’une question :\n''Pourquoi je ne l’ai pas installé plus tôt ?''`}
+          />
         </div>
-        <Bento 
-          image=""
-          title="Précis, écolo, économique"
-          content={`Vous n’aurez plus qu’une question : ''Pourquoi je ne l’ai pas installé plus tôt ?''`}
-        />
       </section>
-      <section className="text-center pb-24 space-y-20">
-        <div className={cn("p-4")}>
-          <TitleContentPair 
-              title="ce que disent nos clients" 
-              content="Excellent, basé sur"
-              contentBold="319 avis"
-            />
-        </div>
+      <section className={cn("text-center pb-24 space-y-24", "lg:py-20", "xl:pt-0 xl:pb-36 xl:space-y-28")}>
+        <TitleContentPair 
+            title="ce que disent nos clients" 
+            content="Excellent, basé sur"
+            contentBold="319 avis"
+          />
           <Reviews />
       </section>
-      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:px-0")}>
+      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:p-6", "xl:px-0")}>
         <CTACard />
       </section>
-      <section className={cn("p-4 text-center pb-24 space-y-4 max-w-screen-xl mx-auto", "lg:px-0 lg:space-y-0")}>
-        <div className={cn("flex flex-col space-y-20 justify-center items-center text-center", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0")}>
+      <section className={cn("p-4 text-center pb-24 space-y-4 max-w-screen-xl mx-auto", "lg:my-14 lg:space-y-0", "xl:px-0")}>
+        <div className={cn("flex flex-col space-y-20 justify-center items-center text-center", "md:grid md:grid-cols-2 md:items-start md:space-y-0 md:gap-y-14", "xl:grid-cols-4 xl:justify-between xl:gap-4")}>
           {trustsData.map((data, index) => (
             <TrustFeatures
               key={index}
