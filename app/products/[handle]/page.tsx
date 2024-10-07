@@ -1,6 +1,7 @@
 import Bento from '@/components/card/bentoGrid/Bento';
 import WhyCard from '@/components/card/bentoGrid/WhyCard';
 import CTACard from '@/components/card/CTACard';
+import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/navigation/NavBar';
 import StickyBar from '@/components/navigation/StickyBar';
@@ -8,14 +9,13 @@ import ProductImage from '@/components/ProductImage';
 import { Reviews } from '@/components/Reviews';
 import TitleContentPair from '@/components/TitleContentPair';
 import TrustFeatures from '@/components/TrustFeatures';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { faqData, trustsData } from '@/data';
+import { trustsData } from '@/data';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import React from 'react';
+import ImagesGallery from '@/components/ImagesGallery';
 
 const ProductPage = ({ params }: { params: { handle: string } }) => {
     console.log(params.handle)
+
     return (
         <div>
             <div className="sticky top-0 w-full z-50">
@@ -27,7 +27,7 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                 "lg:space-y-36 lg:py-14 lg:px-0", 
                 "xl:grid xl:grid-cols-2 xl:items-start xl:space-y-0 xl:justify-start xl:gap-10"
             )}>
-                <Image src='' alt='' className={cn('bg-white rounded-3xl h-80 mx-auto sticky top-0', 'xl:w-full h-auto')} width={387} height={355} />
+                <ImagesGallery />
                 <ProductImage />
             </section>
             <section className={cn(
@@ -81,24 +81,7 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                     title="FAQ" 
                     content="Foire aux questions"
                 />
-                <div className={cn(
-                    "p-4 text-left", 
-                    "lg:p-6", 
-                    "xl:px-10"
-                )}>
-                    <Accordion type="single" collapsible className="w-full">
-                        {faqData.map((data, index) => (
-                            <AccordionItem key={index} value={`item-${index}`} className={cn("border-white py-1")}>
-                                <AccordionTrigger className={cn("text-base", "xl:text-xl")}>
-                                    {data.title}
-                                </AccordionTrigger>
-                                <AccordionContent className={cn("text-sm pt-2", "xl:text-base xl:py-10")}>
-                                    {data.content}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
+                <FAQ />
             </section>
             <section className={cn(
                 "p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", 

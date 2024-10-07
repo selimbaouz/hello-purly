@@ -233,42 +233,22 @@ export const detailsProduct = [
 export const faqData = [
   {
       title: "Comment ça fonctionne ?",
-      content: "Avec le bidet Hello Curly, vos fesses vont découvrir une nouvelle ère de douceur et d’hygiène, tout en contribuant à un monde plus vert. Oubliez les tonnes de papier toilette et adoptez un nettoyage qui vous rendra accro !"
+      content: "Notre bidet utilise des jets d'eau ajustables pour nettoyer efficacement après chaque utilisation. Parfait pour vous assurer une propreté maximale et une sensation de fraîcheur à chacun de vos passages aux toilettes."
   },
   {
       title: "Est-ce facile à installer ?",
-      content: "Hello Curly s'installe en quelques minutes sans effort ni électricité. Ses modes de lavage s'adaptent à vos besoins pour une hygiène impeccable à tout moment, que ce soit en mode rapide, homme ou femme. Simple, efficace et doux pour vos fesses !"
+      content: "Oui, l'installation du bidet est rapide et facile. Elle peut être réalisée en moins de 10 minutes sans nécessiter de compétences ni de travaux complexes. Un vrai jeu d’enfant vous allez voir ! "
   },
   {
-      title: "Dois-je utiliser moins de papier toilette ?",
-      content: ""
-  },
-  {
-      title: "Est-ce que ça consomme beaucoup d’eau ?",
-      content: ""
+      title: "Nécessite-t-il une alimentation électrique ?",
+      content: "Non, il fonctionne sans électricité, ce qui permet des économies d'énergie et une installation plus simple et rapide. Votre porte monnaie va vous remercier ! "
   },
   {
       title: "Est-ce compatible avec tous les toilettes ?",
-      content: ""
+      content: "Oui, le bidet est conçu pour s'adapter à toutes les toilettes standards."
   },
   {
-      title: "Y a-t-il besoin d’électricité pour fonctionner ?",
-      content: ""
-  },
-  {
-      title: "Quels sont les avantages pour la santé ?",
-      content: ""
-  },
-  {
-      title: "Comment entretenir le bidet ?",
-      content: ""
-  },
-  {
-      title: "Puis-je utiliser le bidet si j’ai des enfants ?",
-      content: ""
-  },
-  {
-      title: "Quelle est la politique de retour ?",
-      content: ""
+      title: "Vais-je faire des économies ?",
+      content: "En utilisant des jets d'eau pour le nettoyage, notre bidet permet de réduire jusqu'à 80% votre consommation de papier toilette, ce qui représente des centaines d’économies chaque année. "
   },
 ]
