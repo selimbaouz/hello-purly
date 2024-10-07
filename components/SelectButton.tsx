@@ -6,7 +6,7 @@ interface SelectButtonProps {
     icon: IconType;
     title: string;
     classname: string;
-    onClick: MouseEventHandler<HTMLDivElement>
+    onClick: MouseEventHandler<HTMLDivElement>;
 }
 
 const SelectButton: FC<SelectButtonProps> = ({

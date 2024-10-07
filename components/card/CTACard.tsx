@@ -29,7 +29,7 @@ const CTACard = () => {
                         />   
                     </div>
                 ))}
-            </div>
+                </div>
             </div>
         </ContainerCard>
     );

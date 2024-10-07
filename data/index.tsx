@@ -77,6 +77,21 @@ export const selectionModesData = [
   }
 ]
 
+export const selectionWhyData = [
+  {
+      title: "Jets d'eau précis", icon: MdAutorenew
+  },
+  {
+      title: "Zéro éléctricité", icon: IoManOutline
+  },
+  {
+      title: "Installation facile", icon: IoWomanOutline
+  },
+  {
+      title: "100% compatible", icon: IoWomanOutline
+  }
+]
+
 export const essentialsData = [
   {
     icon: BsWater,
@@ -97,7 +112,7 @@ export const essentialsData = [
 ]
 
 
-export const imageSelected = (selected: number) => {
+export const modeSelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
@@ -123,6 +138,28 @@ export const imageSelected = (selected: number) => {
       image: Auto,
       title: "Automatique",
       content: "Besoin d’un petit coup de frais express ? Ce mode fait tout le boulot pour vous. En un clin d’œil, vos fesses sont impeccables. Simple, rapide et terriblement efficace !"
+    };
+  }
+};
+
+export const whySelected = (selected: number) => {
+  switch (selected) {
+  case 0:
+    return {
+      content: "Pour une propreté et une hygiène 2x fois plus efficace"
+    };
+  case 1:
+    return {
+      content: "Fonctionne sans électricité (pour toujours plus d’économies)"
+    };
+  case 2:
+    return {
+      content: "Installation facile en 10 minutes, sans travaux nécessaires."
+    };
+  case 0:
+  default:
+    return {
+      content: "Notre kit est compatible avec toutes les toilettes standards."
     };
   }
 };
@@ -159,3 +196,79 @@ export const reviewsData = [
     content: "Je ne m'attendais pas à une telle qualité pour ce prix. Le jet d'eau est parfait, la sensation de propreté est incomparable. Mes toilettes n’ont jamais été aussi chics !",
   },
 ];
+
+export const checkProduct = [
+  {
+      title: "Réduction massive de papier"
+  },
+  {
+      title: "Zéro électricité, 100 % écolo"
+  },
+  {
+      title: "Confort et propreté personnalisé"
+  },
+  {
+      title: "Installation facile en un clin d'œil"
+  },
+  {
+      title: "Économies garanties toute l’année"
+  },
+]
+
+export const detailsProduct = [
+  {
+      title: "Description",
+      content: "Avec le bidet Hello Curly, vos fesses vont découvrir une nouvelle ère de douceur et d’hygiène, tout en contribuant à un monde plus vert. Oubliez les tonnes de papier toilette et adoptez un nettoyage qui vous rendra accro !"
+  },
+  {
+      title: "Utilisation",
+      content: "Hello Curly s'installe en quelques minutes sans effort ni électricité. Ses modes de lavage s'adaptent à vos besoins pour une hygiène impeccable à tout moment, que ce soit en mode rapide, homme ou femme. Simple, efficace et doux pour vos fesses !"
+  },
+  {
+      title: "caractéristiques",
+      content: "Compact et adaptable, Hello Curly réduit l’usage de papier toilette et s’ajuste à toutes les toilettes. Avec une pression d’eau personnalisable, il vous offre confort, propreté, et un geste écolo en prime !"
+  },
+]
+
+export const faqData = [
+  {
+      title: "Comment ça fonctionne ?",
+      content: "Avec le bidet Hello Curly, vos fesses vont découvrir une nouvelle ère de douceur et d’hygiène, tout en contribuant à un monde plus vert. Oubliez les tonnes de papier toilette et adoptez un nettoyage qui vous rendra accro !"
+  },
+  {
+      title: "Est-ce facile à installer ?",
+      content: "Hello Curly s'installe en quelques minutes sans effort ni électricité. Ses modes de lavage s'adaptent à vos besoins pour une hygiène impeccable à tout moment, que ce soit en mode rapide, homme ou femme. Simple, efficace et doux pour vos fesses !"
+  },
+  {
+      title: "Dois-je utiliser moins de papier toilette ?",
+      content: ""
+  },
+  {
+      title: "Est-ce que ça consomme beaucoup d’eau ?",
+      content: ""
+  },
+  {
+      title: "Est-ce compatible avec tous les toilettes ?",
+      content: ""
+  },
+  {
+      title: "Y a-t-il besoin d’électricité pour fonctionner ?",
+      content: ""
+  },
+  {
+      title: "Quels sont les avantages pour la santé ?",
+      content: ""
+  },
+  {
+      title: "Comment entretenir le bidet ?",
+      content: ""
+  },
+  {
+      title: "Puis-je utiliser le bidet si j’ai des enfants ?",
+      content: ""
+  },
+  {
+      title: "Quelle est la politique de retour ?",
+      content: ""
+  },
+]

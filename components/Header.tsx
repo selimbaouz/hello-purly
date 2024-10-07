@@ -22,7 +22,9 @@ const Header = () => {
             <p className={cn("text-base font-regular")}>
                 Economisez jusqu{"'"}à 1500L par an tout en profitant d{"'"}une hygiène parfaite.
             </p>
-            <GradientButton />
+            <GradientButton
+                link="/products/bidet-wc"
+            />
             <div className={cn("flex flex-col space-y-14 py-14 pb-20", "md:flex-row md:space-y-0 md:justify-center md:items-start md:gap-10", "lg:gap-14", "xl:gap-20")}>
                 {statsData.map((data, index) => (
                     <div key={index}>

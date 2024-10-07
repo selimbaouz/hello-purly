@@ -4,7 +4,7 @@ import TitleContentPair from "@/components/TitleContentPair";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Image from "next/image";
-import { imageSelected, selectionModesData } from "@/data";
+import { modeSelected, selectionModesData } from "@/data";
 import ContainerCard from "../ContainerCard";
 
 
@@ -45,7 +45,7 @@ const ModesCard = () => {
                 <div className={cn("md:grid md:grid-cols-2 md:justify-between md:items-start md:gap-10 md:text-left")}>
                     <div className="w-full flex items-center justify-center py-2">
                         <Image
-                            src={imageSelected(selected).image}
+                            src={modeSelected(selected).image}
                             alt="Image of Product"
                             width={337}
                             height={283}
@@ -54,10 +54,10 @@ const ModesCard = () => {
                     </div>
                     <div className={cn("py-2 px-4", "md:space-y-4", "lg:space-y-8")}>
                         <h6 className={cn("hidden", "md:block md:text-3xl md:font-bold", "xl:text-4xl")}>
-                            {imageSelected(selected).title}
+                            {modeSelected(selected).title}
                         </h6>
                         <p className={cn("text-sm", "lg:text-base", "xl:text-lg")}>
-                            {imageSelected(selected).content}
+                            {modeSelected(selected).content}
                         </p>
                     </div>
                 </div>
