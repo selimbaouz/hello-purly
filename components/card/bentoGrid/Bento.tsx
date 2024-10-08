@@ -15,7 +15,7 @@ const Bento: FC<BentoProps> = ({
 }) => {
     return (
         <div className="relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-[#319795] to-[#2D3748]/50 rounded-3xl">
-            <div className={cn("w-auto rounded-3xl bg-gradient-combined flex flex-col justify-between text-left")}>
+            <div className={cn("w-auto h-full rounded-3xl bg-gradient-combined flex flex-col justify-between text-left")}>
                 <Image
                     src={image}
                     alt="Image of Product"

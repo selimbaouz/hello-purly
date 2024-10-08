@@ -4,13 +4,15 @@ import { IoWaterOutline } from "react-icons/io5";
 import Auto from "@/public/images/auto.png";
 import { MdAutorenew } from "react-icons/md";
 import { IoManOutline, IoWomanOutline } from "react-icons/io5";
-import { FaCheck } from "react-icons/fa6";
+import { FaCheck, FaTruck } from "react-icons/fa6";
 import { BsWater } from "react-icons/bs";
 import { MdElectricBolt } from "react-icons/md";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import { TbPlaneTilt } from "react-icons/tb";
+import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
+import { GiFrance } from "react-icons/gi";
+import { IoIosPeople } from "react-icons/io";
 
 export const statsData = [
   {
@@ -252,3 +254,22 @@ export const faqData = [
       content: "En utilisant des jets d'eau pour le nettoyage, notre bidet permet de réduire jusqu'à 80% votre consommation de papier toilette, ce qui représente des centaines d’économies chaque année. "
   },
 ]
+
+export const stacksData = [
+  {
+    icon: FaTruck,
+    title: "Livraison OFFERTE",
+  },
+  {
+    icon: IoIosPeople,
+    title: "+360 clients satisfaits",
+  },
+  {
+    icon: TbTruckReturn,
+    title: "Satisfait ou Remboursé",
+  },
+  {
+    icon: GiFrance,
+    title: "Support Français",
+  },
+];

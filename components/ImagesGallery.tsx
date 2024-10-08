@@ -11,40 +11,44 @@ import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 
 const ImagesGallery = () => {
-    const [bigImage, setBigImage] = useState<StaticImageData>();
-
+    const [bigImage, setBigImage] = useState<StaticImageData>(Image2);
+    
     const handleImageClick = (image: StaticImageData) => {
         setBigImage(image);
-      };
-
+    };
+    
     const images = [
         {
-            src: Image2
+            image: Image2,
         },
         {
-            src: Image1
+            image: Image1
         },
         {
-            src: Image3
+            image: Image3
         },
         {
-            src: Image4
+            image: Image4
         },
         {
-            src: Image5
+            image: Image5
         },
         {
-            src: Image6
+            image: Image6
         },
-      ];
+    ];
 
     return (
-        <div className={cn("flex flex-col gap-2", "xl:sticky xl:top-0")}>
-            <Image src={bigImage?.src ?? ""} alt='Main Images of Bidet-Wc' className={cn('bg-white rounded-3xl h-96 mx-auto', 'xl:w-full xl:h-auto')} width={387} height={355} />
-            <div className={cn("flex gap-2 items-center px-1")}>
+        <div className={cn("flex flex-col gap-3 w-full", "xl:sticky xl:top-0")}>
+            <Image src={bigImage?.src ?? ""} alt='Main Images of Bidet-Wc' className={cn('bg-white h-96 mx-auto w-full', 'xl:rounded-3xl xl:h-auto')} width={387} height={355} />
+            <div className={cn("flex gap-2 items-center px-4", "lg:px-0")}>
                 {images.map((data, index) => (
-                    <div key={index} className={cn('w-full rounded-3xl cursor-pointer')}  onClick={() => handleImageClick(data.src)}>
-                        <Image src={data.src} alt='Images of Bidet-Wc' className={cn('bg-white rounded-xl mx-auto w-auto', 'xl:w-full')} width={150} height={150} />
+                    <div key={index} className={cn('w-full rounded-xl cursor-pointer')}  onClick={() => handleImageClick(data.image)}>
+                        <Image src={data.image} alt='Images of Bidet-Wc' className={cn(
+                            'bg-white rounded-xl mx-auto w-auto', 
+                            'xl:w-full',
+                            bigImage.src === data.image.src ? "border-4 border-foreground" : ""
+                        )} width={150} height={150} />
                     </div>
                 ))}
             </div>

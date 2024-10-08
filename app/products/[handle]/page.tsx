@@ -23,12 +23,14 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                 <NavBar />
             </div>
             <section className={cn(
-                "p-4 w-full text-left space-y-10 mt-5 max-w-screen-xl mx-auto", 
-                "lg:space-y-36 lg:py-14 lg:px-0", 
+                "w-full text-left space-y-10 max-w-screen-xl mx-auto", 
+                "lg:space-y-36 lg:py-14", 
                 "xl:grid xl:grid-cols-2 xl:items-start xl:space-y-0 xl:justify-start xl:gap-10"
             )}>
                 <ImagesGallery />
-                <ProductImage />
+                <div className={cn("px-4", "lg:px-0")}>
+                    <ProductImage />
+                </div>
             </section>
             <section className={cn(
                 "p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", 
@@ -55,7 +57,7 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                     <Bento
                         image=""
                         title="Un confort écologique"
-                        content="Utiliser notre bidet est un geste écologique majeur : Jusqu'à 1500L d'eau économisés chaque année."
+                        content={`Notre bidet est un geste écologique majeur : Économisés 1500L d'eau chaque année.`}
                     />
                 </div>
             </section>
