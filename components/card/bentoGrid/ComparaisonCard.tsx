@@ -27,7 +27,7 @@ const ComparaisonCard: FC<ComparaisonCardProps> = ({
                         {comparaisonVariantSelected(variant).title}
                     </h6>
                 </div>
-                <ul className={cn("px-6 py-8 space-y-2", "md:px-8 md:py-10 md:space-y-3", "lg:py-14")}>
+                <ul className={cn("px-6 py-10 space-y-2", "md:px-8 md:py-12 md:space-y-3", "lg:py-14")}>
                     {comparaisonVariantSelected(variant).lists.map((data, index) => (
                         <li key={index} className={cn("flex gap-6 items-center")}>
                             <data.icon className={cn(

@@ -88,9 +88,9 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                 <Reviews />
             </section>
             <section className={cn(
-                "text-center pb-24 space-y-24 max-w-screen-lg mx-auto", 
+                "text-center pb-24 space-y-10 max-w-screen-lg mx-auto", 
                 "lg:py-20", 
-                "xl:pt-0 xl:pb-36 xl:space-y-28"
+                "xl:pt-0 xl:pb-36"
             )}>
                 <TitleContentPair 
                     title="FAQ" 

@@ -197,3 +197,7 @@
   background: radial-gradient(circle at top left, rgba(49, 151, 149, 0.2) 0%, rgba(0, 0, 0, 1) 100%),
   linear-gradient(to bottom, #171923 100%, #11121A 100%);
 }
+
+.custom-slider img {
+  @apply max-h-80 rounded-3xl border-4 border-foreground object-fill h-auto max-w-full xl:max-h-[600px];
+}
