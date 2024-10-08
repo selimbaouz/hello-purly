@@ -12,6 +12,8 @@ import TrustFeatures from '@/components/TrustFeatures';
 import { trustsData } from '@/data';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
+import VersusCard from '@/components/card/bentoGrid/VersusCard';
+import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 
 const ProductPage = ({ params }: { params: { handle: string } }) => {
     console.log(params.handle)
@@ -48,17 +50,28 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                     title="pour des fesses impeccable" 
                     content="Fini les résidus gênants et les irritations ! Doux, efficace, et ultra-hygiènique."
                 />
-                <div className={cn('flex flex-col gap-4', 'lg:flex-row')}>
-                    <Bento 
-                        image=""
-                        title="Moins de papier, plus d’argent"
-                        content={`Avec notre bidet, dites adieu aux piles de papier toilette et économisez jusqu’à 80%.`}
-                    />
-                    <Bento
-                        image=""
-                        title="Un confort écologique"
-                        content={`Notre bidet est un geste écologique majeur : Économisés 1500L d'eau chaque année.`}
-                    />
+                <div className={cn('flex flex-col gap-4')}>
+                    <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>
+                        <Bento 
+                            image=""
+                            title="Moins de papier, plus d’argent"
+                            content={`Avec notre bidet, dites adieu aux piles de papier toilette et économisez jusqu’à 80%.`}
+                        />
+                        <Bento
+                            image=""
+                            title="Un confort écologique"
+                            content={`Notre bidet est un geste écologique majeur : Économisés 1500L d'eau chaque année.`}
+                        />
+                    </div>
+                    <VersusCard />
+                    <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>
+                        <ComparaisonCard 
+                            variant='without'
+                        />
+                        <ComparaisonCard 
+                            variant='with'
+                        />
+                    </div>
                 </div>
             </section>
             {/* Comparatif Papier toilette vs Bidet WC */}

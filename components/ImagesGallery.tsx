@@ -40,7 +40,7 @@ const ImagesGallery = () => {
 
     return (
         <div className={cn("flex flex-col gap-3 w-full", "xl:sticky xl:top-0")}>
-            <Image src={bigImage?.src ?? ""} alt='Main Images of Bidet-Wc' className={cn('bg-white h-96 mx-auto w-full', 'xl:rounded-3xl xl:h-auto')} width={387} height={355} />
+            <Image src={bigImage?.src ?? ""} alt='Main Images of Bidet-Wc' className={cn('bg-white h-[26rem] mx-auto w-full', "lg:h-auto", 'xl:rounded-3xl')} width={387} height={355} />
             <div className={cn("flex gap-2 items-center px-4", "lg:px-0")}>
                 {images.map((data, index) => (
                     <div key={index} className={cn('w-full rounded-xl cursor-pointer')}  onClick={() => handleImageClick(data.image)}>

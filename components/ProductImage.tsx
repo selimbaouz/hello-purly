@@ -41,6 +41,7 @@ const ProductImage = () => {
                 <GradientButton
                     size="fullWidth"
                     title="Ajouter au panier"
+                    animate
                 />
                 <Accordion type="single" collapsible className="w-full">
                     {detailsProduct.map((data, index) => (

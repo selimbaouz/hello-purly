@@ -176,6 +176,11 @@
             linear-gradient(to bottom, #171923 50%, #11121A 100%);
 }
 
+.bg-gradient-comparaison-combined {
+  background: radial-gradient(circle at bottom left, rgba(49, 151, 149, 0.7) 0%, rgba(0, 0, 0, 0.5) 60%),
+            linear-gradient(to right, #171923 50%, #11121A 100%);
+}
+
 .bg-gradient-essential-first {
   background: radial-gradient(circle at bottom right, rgba(49, 151, 149, 0.2) 0%, rgba(0, 0, 0, 1) 100%),
   linear-gradient(to bottom, #171923 100%, #11121A 100%);

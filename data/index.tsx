@@ -1,6 +1,6 @@
 import { BiWorld } from "react-icons/bi";
 import { PiMoneyWavy } from "react-icons/pi";
-import { IoWaterOutline } from "react-icons/io5";
+import { IoCloseOutline, IoWaterOutline } from "react-icons/io5";
 import Auto from "@/public/images/auto.png";
 import { MdAutorenew } from "react-icons/md";
 import { IoManOutline, IoWomanOutline } from "react-icons/io5";
@@ -12,7 +12,7 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
-import { IoIosPeople } from "react-icons/io";
+import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
 
 export const statsData = [
   {
@@ -273,3 +273,74 @@ export const stacksData = [
     title: "Support Français",
   },
 ];
+
+export const comparaisonVariantSelected = (variant: string) => {
+  switch (variant) {
+  case "whitout":
+    return {
+      title: "Avec le papier toilette", 
+      lists: [
+        {
+          content: "Frottez, il en reste toujours",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Des rouleaux par milliers",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Du papier rêche",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Des arbres sacrifiés",
+          icon: IoCloseOutline,
+        }
+      ]
+    }
+  case "with":
+    return {
+      title: "Avec HelloPurly",
+      lists: [
+        {
+          content: "Hygiène impeccable",
+          icon: IoMdCheckmark, 
+        },
+        {
+          content: "80% de papier en moins",
+          icon: IoMdCheckmark, 
+        },
+        {
+          content: "Un jet doux et ajustable",
+          icon: IoMdCheckmark, 
+        },
+        {
+          content: "Moins de papier, plus de forêts",
+          icon: IoMdCheckmark, 
+        }
+      ]
+    }
+  default:
+    return {
+      title: "Avec le papier toilette", 
+      lists: [
+        {
+          content: "Frottez, il en reste toujours",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Des rouleaux par milliers",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Du papier rêche",
+          icon: IoCloseOutline,
+        },
+        {
+          content: "Des arbres sacrifiés",
+          icon: IoCloseOutline,
+        }
+      ]
+    }
+  }
+};
