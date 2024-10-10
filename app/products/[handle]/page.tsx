@@ -14,9 +14,15 @@ import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
 import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
+import { redirect } from 'next/navigation';
+import { getHandleOfProduct } from '@/data/shopify';
 
-const ProductPage = ({ params }: { params: { handle: string } }) => {
-    console.log(params.handle)
+export default async function ProductPage({ params }: { params: { handle: string } }) {
+    if(params.handle !== "le-bidet-wc") {
+        redirect('/')
+    }
+
+    const product = await getHandleOfProduct(params.handle);
 
     return (
         <div>
@@ -29,9 +35,11 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                 "lg:space-y-36 lg:py-14", 
                 "xl:grid xl:grid-cols-2 xl:items-start xl:space-y-0 xl:justify-start xl:gap-10"
             )}>
-                <ImagesGallery />
+                <ImagesGallery
+                    images={product?.images.edges ?? []}
+                />
                 <div className={cn("px-4", "lg:px-0")}>
-                    <ProductImage />
+                    <ProductImage product={product!} />
                 </div>
             </section>
             <section className={cn(
@@ -103,7 +111,7 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
                 "lg:p-6", 
                 "xl:px-0"
             )}>
-                <CTACard />
+                <CTACard title="Ajouter au panier" />
             </section>
             <section className={cn(
                 "p-4 text-center pb-24 space-y-4 max-w-screen-xl mx-auto", 
@@ -133,5 +141,3 @@ const ProductPage = ({ params }: { params: { handle: string } }) => {
         </div>
     );
 };
-
-export default ProductPage;

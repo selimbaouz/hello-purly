@@ -8,19 +8,6 @@ import { modeSelected, selectionModesData } from "@/data";
 import ContainerCard from "../ContainerCard";
 
 
-/* interface ModesCardProps {
-    title: string;
-    description: string;
-    content: string;
-    image: string;
-    tabs: {
-        isSelected: boolean;
-        selected: number;
-        icon?: IconType;
-        title: string;
-    }[];
-} */
-
 const ModesCard = () => {
     const [selected, setSelected] = useState(0);
 
@@ -45,7 +32,7 @@ const ModesCard = () => {
                 <div className={cn("md:grid md:grid-cols-2 md:justify-between md:items-start md:gap-10 md:text-left")}>
                     <div className="w-full flex items-center justify-center py-2">
                         <Image
-                            src={modeSelected(selected).image}
+                            src={modeSelected(selected).image ?? ""}
                             alt="Image of Product"
                             width={337}
                             height={283}

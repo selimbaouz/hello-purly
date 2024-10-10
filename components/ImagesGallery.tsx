@@ -1,18 +1,15 @@
 "use client"
 
+import { ImageProduct } from "@/types/types";
 import { cn } from "@/lib/utils";
-import Image1 from "@/public/images/bidet/1.webp";
-import Image2 from "@/public/images/bidet/2.png";
-import Image3 from "@/public/images/bidet/3.png";
-import Image4 from "@/public/images/bidet/4.png";
-import Image5 from "@/public/images/bidet/5.png";
-import Image6 from "@/public/images/bidet/6.png";
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
-const ImagesGallery = () => {
+interface ImagesGalleryProps {
+    images: ImageProduct[],
+}
+const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
     const [bigImageIndex, setBigImageIndex] = useState(0);
-    const images = [Image2, Image1, Image3, Image4, Image5, Image6];
     
     const handleImageClick = (index: number) => {
         setBigImageIndex(index);
@@ -56,7 +53,7 @@ const ImagesGallery = () => {
     return (
         <div className={cn("flex flex-col gap-3 w-full", "xl:sticky xl:top-0")}>
             <Image
-                src={images[bigImageIndex]} // Utilisez l'index pour obtenir l'image
+                src={images[bigImageIndex].node.originalSrc ?? ""} // Utilisez l'index pour obtenir l'image
                 alt='Main Images of Bidet-Wc'
                 className={cn('bg-white h-[26rem] mx-auto w-full', "lg:h-auto", 'xl:rounded-3xl')}
                 width={387}
@@ -67,15 +64,15 @@ const ImagesGallery = () => {
                 {images.map((image, index) => (
                     <div key={index} className={cn('w-full rounded-xl cursor-pointer')} onClick={() => handleImageClick(index)}>
                         <Image
-                            src={image}
+                            src={image.node.originalSrc ?? ""}
                             alt='Images of Bidet-Wc'
                             className={cn(
                                 'bg-white rounded-xl mx-auto w-auto',
                                 'xl:w-full',
-                                images[bigImageIndex].src === image.src ? "border-4 border-foreground" : ""
+                                images[bigImageIndex].node.originalSrc === image.node.originalSrc ? "border-4 border-foreground" : ""
                             )}
-                            width={150}
-                            height={150}
+                            width={image.node.width}
+                            height={image.node.height}
                         />
                     </div>
                 ))}

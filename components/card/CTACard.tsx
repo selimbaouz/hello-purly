@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/lib/utils";
 import GradientButton from "../GradientButton";
 import TitleContentPair from "../TitleContentPair";
@@ -5,8 +7,12 @@ import ContainerCard from "./ContainerCard";
 import { Separator } from "../ui/separator";
 import { statsData } from "@/data";
 import StatsList from "../StatsList";
+import { FC } from "react";
 
-const CTACard = () => {
+interface CTACardProps {
+    title?: string;
+}
+const CTACard: FC<CTACardProps> = ({title}) => {
     return (
         <ContainerCard>
             <div className={cn("w-full space-y-5 rounded-3xl py-14 bg-gradient-combined")}>
@@ -15,7 +21,10 @@ const CTACard = () => {
                         title="fini les traces sur les fesses"
                         content="Pourquoi continuer à frotter quand un jet d’eau fait tout le travail ?"
                     />
-                    <GradientButton />
+                    <GradientButton
+                        link="/products/le-bidet-wc"
+                        title={title}
+                    />
                 </div>
                 <div className={cn("pt-14")}>
                     <Separator className="text-[#262D3C]" />

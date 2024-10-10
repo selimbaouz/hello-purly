@@ -1,15 +1,23 @@
+"use client";
 import { checkProduct, detailsProduct } from "@/data";
 import GetRatings from "@/lib/getRating";
 import { cn } from "@/lib/utils";
 import { CheckIcon } from "lucide-react";
-import GradientButton from "./GradientButton";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
+import { Product } from "@/types/types";
+import { FC } from "react";
+import { AddToCart } from "./cart/add-to-cart";
 
-const ProductImage = () => {
+interface ProductImageProps {
+    product: Product;
+}
+
+const ProductImage: FC<ProductImageProps> = ({product}) => {
+
     return (
         <div className={cn("space-y-4")}>
             <h3 className={cn("text-left uppercase text-5xl font-bold pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-transparent from-white to-foreground")}>
-                Le bidet Wc
+                {product.title}
             </h3>
             <div className={cn("flex items-start gap-4")}>
                 <GetRatings value={5} className={cn("text-xl", "md:text-lg", "xl:text-base")} />
@@ -20,10 +28,10 @@ const ProductImage = () => {
             <div className={cn("space-y-14 py-4")}>
                 <div className={cn("flex items-end gap-6")}>
                     <p className={cn("font-bold text-4xl")}>
-                        59,99 €
+                        {product.priceRange.minVariantPrice.amount} €
                     </p>
                     <p className={cn("line-through text-base")}>
-                        79,99 €
+                        79.99 €
                     </p>
                 </div>
                 <ul className={cn("space-y-2")}>
@@ -38,11 +46,20 @@ const ProductImage = () => {
                         </li>
                     ))}
                 </ul>
-                <GradientButton
-                    size="fullWidth"
-                    title="Ajouter au panier"
-                    animate
-                />
+                {/* <form action={async() => {
+                    await formAction(product.id); 
+                }}>
+                    <GradientButton
+                        onClick={() => addCartItem(product)}
+                        size="fullWidth"
+                        title="Ajouter au panier"
+                        animate
+                    />
+                    <p aria-live="polite" className="sr-only" role="status">
+                        {message}
+                    </p>
+                </form> */}
+                <AddToCart product={product} />
                 <Accordion type="single" collapsible className="w-full">
                     {detailsProduct.map((data, index) => (
                         <AccordionItem key={index} value={`item-${index}`} className={cn("border-white py-1")}>

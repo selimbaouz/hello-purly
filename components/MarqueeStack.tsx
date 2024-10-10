@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 const MarqueeStack = () => {
     return (
-        <div className={cn("absolute z-50 flex h-full w-full flex-col items-center justify-center overflow-hidden md:shadow-xl")}>
+        <div className={cn("absolute z-50 flex h-full w-full flex-col items-center justify-center overflow-hidden")}>
           <Marquee pauseOnHover className="[--duration:20s]">
             <div className={cn("flex items-center gap-10 px-3", "xl:gap-20 xl:px-8")}>
               {
