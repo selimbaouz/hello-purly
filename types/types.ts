@@ -33,6 +33,13 @@ export type Money = {
     title: string;
     featuredImage: ImageProduct;
   };
+
+  export type VariantsProduct = {
+    node: {
+      id: string;
+      title: string;
+    }
+  }
   
   export type CartItem = {
     id: string | undefined;
@@ -43,10 +50,6 @@ export type Money = {
     merchandise: {
       id: string;
       title: string;
-      selectedOptions: {
-        name: string;
-        value: string;
-      }[];
       product: CartProduct;
     };
   };
@@ -70,6 +73,9 @@ export type Product = {
             currencyCode: string;
         };
     };
+    variants: {
+      edges: VariantsProduct[];
+    }
     images: {
         edges: ImageProduct[];
     };
@@ -122,6 +128,17 @@ export type ShopifyCartOperation = {
         merchandiseId: string;
         quantity: number;
       }[];
+    };
+  };
+
+  export type ShopifyChekoutUrl = {
+    data: {
+      cart: {
+        checkoutUrl: string;
+      };
+    };
+    variables: {
+      cartId: string;
     };
   };
   

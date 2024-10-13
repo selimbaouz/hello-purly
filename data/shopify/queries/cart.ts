@@ -8,3 +8,11 @@ export const getCartQuery = /* GraphQL */ `
   }
   ${cartFragment}
 `;
+
+
+export const getCheckoutUrl = `
+  query checkoutUrl($cartId: ID!) {
+    cart(id: $cartId) {
+      checkoutUrl
+    }
+  }`

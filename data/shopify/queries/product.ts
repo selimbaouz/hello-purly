@@ -23,6 +23,14 @@ export const getProductByHandle = /* GraphQL */ `
           currencyCode
         }
       }
+      variants(first: 1) {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
     }
   }
 `;

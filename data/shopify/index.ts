@@ -9,13 +9,14 @@ import {
   ShopifyAddToCartOperation, 
   ShopifyCart, 
   ShopifyCartOperation, 
+  ShopifyChekoutUrl, 
   ShopifyCreateCartOperation, 
   ShopifyProduct, 
   ShopifyRemoveFromCartOperation, 
   ShopifyUpdateCartOperation
 } from "../../types/types";
 import { addToCartMutation, createCartMutation, editCartItemsMutation, removeFromCartMutation } from "./mutations/cart";
-import { getCartQuery } from "./queries/cart";
+import { getCartQuery, getCheckoutUrl } from "./queries/cart";
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { revalidateTag } from "next/cache";
@@ -142,6 +143,17 @@ export async function shopifyFetch<T>({
       cache: 'no-store'
     });
     return reshapeCart(res.body.data.cartLinesAdd.cart);
+  }
+
+  export async function getCheckoutURL(cartId: string) {
+    const res = await shopifyFetch<ShopifyChekoutUrl>({
+      query: getCheckoutUrl,
+      variables: {
+        cartId,
+      },
+      cache: 'no-store'
+    })
+    return res.body.data.cart.checkoutUrl;
   }
   
   export async function removeFromCart(cartId: string, lineIds: string[]): Promise<Cart> {

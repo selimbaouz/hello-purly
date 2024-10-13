@@ -26,12 +26,14 @@ export function AddToCart({ product }: { product: Product }) {
   const { addCartItem } = useCartStore();
   const { setIsOpen } = useOpenCartStore();
   const [message, formAction] = useFormState(addItem, null);
+  const variantId = product.variants.edges[0].node.id;
+  const actionWithVariant = formAction.bind(null, variantId);
 
   return (
     <form
       action={async () => {
-        addCartItem(product);
-        await formAction(product.id);
+        addCartItem(product.variants.edges[0], product);
+        await actionWithVariant();
       }}
       onClick={() => setIsOpen(true)}
     >

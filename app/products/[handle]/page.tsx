@@ -16,6 +16,8 @@ import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 import { redirect } from 'next/navigation';
 import { getHandleOfProduct } from '@/data/shopify';
+import Image1 from "@/public/images/bidet/2.png";
+import Image2 from "@/public/images/bidet/3.png";
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -61,12 +63,12 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <div className={cn('flex flex-col gap-4')}>
                     <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>
                         <Bento 
-                            image=""
+                            image={Image1.src}
                             title="Moins de papier, plus d’argent"
                             content={`Avec notre bidet, dites adieu aux piles de papier toilette et économisez jusqu’à 80%.`}
                         />
                         <Bento
-                            image=""
+                            image={Image2.src}
                             title="Un confort écologique"
                             content={`Notre bidet est un geste écologique majeur : Économisés 1500L d'eau chaque année.`}
                         />

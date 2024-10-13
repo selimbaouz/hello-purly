@@ -1,17 +1,22 @@
-import { Cart, CartItem, Product } from '@/types/types';
+import { Cart, CartItem, Product, VariantsProduct } from '@/types/types';
 import { create } from 'zustand';
 
 type UpdateType = 'plus' | 'minus' | 'delete';
 
 interface CartState {
   cart: Cart;
-  addCartItem: (product: Product) => void;
+  addCartItem: (variant: VariantsProduct ,product: Product) => void;
   updateCartItem: (merchandiseId: string, updateType: UpdateType) => void;
 }
 
 interface OpenCartState {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+}
+
+interface CheckoutUrlState {
+  url: string;
+  setUrl: (url: string) => void;
 }
 
 function calculateItemCost(quantity: number, price: string): string {
@@ -42,6 +47,7 @@ function updateCartItem(item: CartItem, updateType: UpdateType): CartItem | null
 
 function createOrUpdateCartItem(
   existingItem: CartItem | undefined,
+  variant: VariantsProduct,
   product: Product
 ): CartItem {
   const quantity = existingItem ? existingItem.quantity + 1 : 1;
@@ -57,15 +63,14 @@ function createOrUpdateCartItem(
       }
     },
     merchandise: {
-      id: product.id,
-      title: product.title,
+      id: variant.node.id,
+      title: variant.node.title,
       product: {
         id: product.id,
         handle: product.handle,
         title: product.title,
-        featuredImage: product.images.edges[0]
+        featuredImage: product.images.edges[0],
       },
-      selectedOptions: []
     }
   };
 }
@@ -99,6 +104,11 @@ function createEmptyCart(): Cart {
   };
 }
 
+export const useCheckoutUrlStore = create<CheckoutUrlState>((set) => ({
+  url: "",
+  setUrl: (url) => set({ url }),
+}))
+
 export const useOpenCartStore = create<OpenCartState>((set) => ({
   isOpen: false,
   setIsOpen: (isOpen) => set({ isOpen }),
@@ -107,25 +117,27 @@ export const useOpenCartStore = create<OpenCartState>((set) => ({
 export const useCartStore = create<CartState>((set) => ({
   cart: createEmptyCart(),
 
-  addCartItem: (product) =>
+  addCartItem: (variant, product) =>
     set((state) => {
-      const existingItem = state.cart.lines.find(
-        (item) => item.merchandise.id === product.id
+      const currentCart = state.cart || createEmptyCart();
+      const existingItem = currentCart.lines.find(
+        (item) => item.merchandise.id === variant.node.id
       );
-      const updatedItem = createOrUpdateCartItem(existingItem, product);
+      const updatedItem = createOrUpdateCartItem(existingItem, variant, product);
 
       const updatedLines = existingItem
-        ? state.cart.lines.map((item) =>
-            item.merchandise.id === product.id ? updatedItem : item
+        ? currentCart.lines.map((item) =>
+            item.merchandise.id === variant.node.id ? updatedItem : item
           )
-        : [...state.cart.lines, updatedItem];
+        : [...currentCart.lines, updatedItem];
 
-      return { cart: { ...state.cart, ...updateCartTotals(updatedLines), lines: updatedLines } };
+      return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
     }),
 
   updateCartItem: (merchandiseId, updateType) =>
     set((state) => {
-      const updatedLines = state.cart.lines
+      const currentCart = state.cart || createEmptyCart();
+      const updatedLines = currentCart.lines
         .map((item) =>
           item.merchandise.id === merchandiseId ? updateCartItem(item, updateType) : item
         )
@@ -134,17 +146,17 @@ export const useCartStore = create<CartState>((set) => ({
       if (updatedLines.length === 0) {
         return {
           cart: {
-            ...state.cart,
+            ...currentCart,
             lines: [],
             totalQuantity: 0,
             cost: {
-              ...state.cart.cost,
-              totalAmount: { ...state.cart.cost.totalAmount, amount: '0' }
+              ...currentCart.cost,
+              totalAmount: { ...currentCart.cost.totalAmount, amount: '0' }
             }
           }
         };
       }
 
-      return { cart: { ...state.cart, ...updateCartTotals(updatedLines), lines: updatedLines } };
+      return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
     })
 }));

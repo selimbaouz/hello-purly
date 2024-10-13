@@ -1,21 +1,20 @@
 'use server';
 
-import { addToCart, createCart, getCart, removeFromCart, updateCart } from '@/data/shopify';
+import { addToCart, createCart, getCart, getCheckoutURL, removeFromCart, updateCart } from '@/data/shopify';
 import { TAGS } from '@/lib/constants';
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function addItem(prevState: any, productId: string | undefined) {
+export async function addItem(prevState: any, variantId: string | undefined) {
   const cartId = cookies().get('cartId')?.value;
 
-  if (!cartId || !productId) {
+  if (!cartId || !variantId) {
     return 'Error adding item to cart';
   }
 
   try {
-    await addToCart(cartId, [{ merchandiseId: productId, quantity: 1 }]);
+    await addToCart(cartId, [{ merchandiseId: variantId, quantity: 1 }]);
     revalidateTag(TAGS.cart);
   } catch (e) {
     console.error(e);
@@ -102,20 +101,29 @@ export async function updateItemQuantity(
   }
 }
 
-export async function redirectToCheckout() {
-  const cartId = cookies().get('cartId')?.value;
+export async function redirectToCheckoutUrl() {
+  const cookiesCartId = cookies().get('cartId')?.value;
+  const cart = await getCart(cookiesCartId);
+  /* getCheckoutUrl */
 
-  if (!cartId) {
+  if (!cookiesCartId) {
     return 'Missing cart ID';
   }
-
-  const cart = await getCart(cartId);
 
   if (!cart) {
     return 'Error fetching cart';
   }
 
-  redirect(cart.checkoutUrl);
+  const cartId = cookiesCartId ?? cart;
+
+  const checkoutUrl = await getCheckoutURL(cartId);
+
+  const url = checkoutUrl ?? cart.checkoutUrl;
+  if(url) {
+    return url;
+  } else {
+    return console.error("No Checkout URL Found");
+  }
 }
 
 export async function createCartAndSetCookie() {
