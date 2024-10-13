@@ -16,8 +16,8 @@ import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 import { redirect } from 'next/navigation';
 import { getHandleOfProduct } from '@/data/shopify';
-import Image1 from "@/public/images/bidet/2.png";
-import Image2 from "@/public/images/bidet/3.png";
+import Image1 from "@/public/images/bidet/money.png";
+import Image2 from "@/public/images/bidet/eco.png";
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: { params: { handle: string
 
     return (
         <div>
-            <div className="sticky top-0 w-full z-50">
+            <div className="sticky top-0 w-full z-40">
                 <StickyBar />
                 <NavBar />
             </div>

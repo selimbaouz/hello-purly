@@ -18,8 +18,10 @@ const NavBar = () => {
     return (
         <nav className="backdrop-blur-md -mt-0.1 bg-background/75">
             <div className={cn("p-4 flex justify-between items-center max-w-screen-xl mx-auto", "lg:hidden")}>
-                <IoMenuOutline className="text-3xl hover:text-foreground" />
-                <Link href="/">
+                <div className="z-50">
+                    <IoMenuOutline className="text-3xl hover:text-foreground" />
+                </div>
+                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
                     <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
                 </Link>
                 <div 
@@ -30,7 +32,7 @@ const NavBar = () => {
                         className={cn("text-3xl text-white group-hover:text-foreground transition-all ease-in-out hover:scale-110", "lg:text-2xl", "xl:text-3xl")}  
                     />
                     {cart.totalQuantity ? (
-                        <div className="absolute right-0 top-0 -mr-2 -mt-2 size-6 flex justify-center items-center rounded-full bg-foreground text-[11px] font-medium text-white">
+                        <div className="absolute right-0 top-0 -mr-1 -mt-1 size-5 flex justify-center items-center rounded-full bg-foreground text-[11px] font-medium text-white">
                             {cart.totalQuantity}
                         </div>
                     ) : null}
@@ -42,7 +44,7 @@ const NavBar = () => {
                 </Link>
                 <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
                     <li>
-                        <Link href="" className={cn(classLink)}>Bidet WC</Link>
+                        <Link href="/products/le-bidet-wc" className={cn(classLink)}>Bidet WC</Link>
                     </li>
                     <li>
                         <Link href="" className={cn(classLink)}>A propos</Link>

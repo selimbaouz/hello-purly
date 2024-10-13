@@ -52,7 +52,7 @@ export default function Home() {
             ))}
           </div>
           <Bento 
-            image="/images/auto.png"
+            image="/images/bidet/men-back.png"
             title="Précis, écolo, économique"
             content={`Vous n’aurez plus qu’une question :\n''Pourquoi je ne l’ai pas installé plus tôt ?''`}
           />

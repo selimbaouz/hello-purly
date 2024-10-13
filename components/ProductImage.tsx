@@ -46,23 +46,10 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                         </li>
                     ))}
                 </ul>
-                {/* <form action={async() => {
-                    await formAction(product.id); 
-                }}>
-                    <GradientButton
-                        onClick={() => addCartItem(product)}
-                        size="fullWidth"
-                        title="Ajouter au panier"
-                        animate
-                    />
-                    <p aria-live="polite" className="sr-only" role="status">
-                        {message}
-                    </p>
-                </form> */}
                 <AddToCart product={product} />
                 <Accordion type="single" collapsible className="w-full">
                     {detailsProduct.map((data, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className={cn("border-white py-1")}>
+                        <AccordionItem key={index} value={`item-${index}`} className={cn("border-white py-1 whitespace-pre-line")}>
                             <AccordionTrigger className={cn("text-lg")}>
                                 {data.title}
                             </AccordionTrigger>

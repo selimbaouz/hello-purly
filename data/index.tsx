@@ -1,7 +1,6 @@
 import { BiWorld } from "react-icons/bi";
 import { PiMoneyWavy } from "react-icons/pi";
 import { IoCloseOutline, IoWaterOutline } from "react-icons/io5";
-import Auto from "@/public/images/auto.png";
 import { MdAutorenew } from "react-icons/md";
 import { IoManOutline, IoWomanOutline } from "react-icons/io5";
 import { FaCheck, FaTruck } from "react-icons/fa6";
@@ -69,9 +68,6 @@ export const trustsData = [
 
 export const selectionModesData = [
   {
-      title: "Automatique", icon: MdAutorenew
-  },
-  {
       title: "Masculin", icon: IoManOutline
   },
   {
@@ -118,28 +114,15 @@ export const modeSelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      image: Auto,
-      title: "Automatique",
-      content: "Besoin d’un petit coup de frais express ? Ce mode fait tout le boulot pour vous. En un clin d’œil, vos fesses sont impeccables. Simple, rapide et terriblement efficace !"
+      content: " Offrez-vous un soin personnalisé, alliant la précision d'un rasoir de barbier à un nettoyage doux."
     };
   case 1:
     return {
-      image: Auto,
-      title: "Masculin",
-      content: "Messieurs, offrez-vous un soin personnalisé. Ce mode conçu spécialement pour vous, avec la précision d'un rasoir de barbier, mais pour un nettoyage tout en douceur."
+      content: "Une hygiène délicate et adaptée à vos besoins, pour une sensation de propreté apaisante."
     };
-  case 2:
-    return {
-      image: Auto,
-      title: "Féminin",
-      content: "Pour vous, mesdames, on a pensé à tout. Une hygiène douce, délicate et adaptée à vos besoins. Ce mode prend soin de vous avec tendresse et précision, pour une sensation de propreté complète et apaisante."
-    };
-  case 0:
   default:
     return {
-      image: Auto,
-      title: "Automatique",
-      content: "Besoin d’un petit coup de frais express ? Ce mode fait tout le boulot pour vous. En un clin d’œil, vos fesses sont impeccables. Simple, rapide et terriblement efficace !"
+      content: " Offrez-vous un soin personnalisé, alliant la précision d'un rasoir de barbier à un nettoyage doux."
     };
   }
 };
@@ -224,11 +207,11 @@ export const detailsProduct = [
   },
   {
       title: "Utilisation",
-      content: "Hello Curly s'installe en quelques minutes sans effort ni électricité. Ses modes de lavage s'adaptent à vos besoins pour une hygiène impeccable à tout moment, que ce soit en mode rapide, homme ou femme. Simple, efficace et doux pour vos fesses !"
+      content: "Fixez le bidet sur le siège des toilettes et raccordez-le au robinet. Installation rapide et facile en moins de 15 minutes. Ajustez le jet d'eau selon vos préférences. Choisissez parmi les modes auto-lavage, lavage masculin ou lavage féminin."
   },
   {
-      title: "caractéristiques",
-      content: "Compact et adaptable, Hello Curly réduit l’usage de papier toilette et s’ajuste à toutes les toilettes. Avec une pression d’eau personnalisable, il vous offre confort, propreté, et un geste écolo en prime !"
+      title: "Caractéristiques",
+      content: "Type : Bidet pression d'eau\n Installation : Sans besoin de compétences\n Compatibilité : Toilettes standards\n Entretien : Aucun frais\n Modes : 3 modes disponibles"
   },
 ]
 

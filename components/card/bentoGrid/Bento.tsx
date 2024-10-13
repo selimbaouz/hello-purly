@@ -19,9 +19,9 @@ const Bento: FC<BentoProps> = ({
                 <Image
                     src={image!}
                     alt="Image of Product"
-                    width={337}
-                    height={200}
-                    className={cn("rounded-t-3xl w-full", "md:h-96")}
+                    width={1080}
+                    height={1080}
+                    className={cn("rounded-t-3xl w-full", "md:h-[450px]")}
                 />
                 <div className={cn("p-6 space-y-2 border-t", "md:p-8 md:space-y-3")}>
                     <h6 className={cn("font-bold text-lg", "md:text-2xl")}>
