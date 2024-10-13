@@ -1,5 +1,6 @@
 import { Cart, CartItem, Product, VariantsProduct } from '@/types/types';
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 type UpdateType = 'plus' | 'minus' | 'delete';
 
@@ -114,49 +115,56 @@ export const useOpenCartStore = create<OpenCartState>((set) => ({
   setIsOpen: (isOpen) => set({ isOpen }),
 }))
 
-export const useCartStore = create<CartState>((set) => ({
-  cart: createEmptyCart(),
+export const useCartStore = create<CartState>()(
+  persist(
+    (set) => ({
+      cart: createEmptyCart(),
+      addCartItem: (variant, product) =>
+        set((state) => {
+          const currentCart = state.cart || createEmptyCart();
+          const existingItem = currentCart.lines.find(
+            (item) => item.merchandise.id === variant.node.id
+          );
+          const updatedItem = createOrUpdateCartItem(existingItem, variant, product);
 
-  addCartItem: (variant, product) =>
-    set((state) => {
-      const currentCart = state.cart || createEmptyCart();
-      const existingItem = currentCart.lines.find(
-        (item) => item.merchandise.id === variant.node.id
-      );
-      const updatedItem = createOrUpdateCartItem(existingItem, variant, product);
+          const updatedLines = existingItem
+            ? currentCart.lines.map((item) =>
+                item.merchandise.id === variant.node.id ? updatedItem : item
+              )
+            : [...currentCart.lines, updatedItem];
 
-      const updatedLines = existingItem
-        ? currentCart.lines.map((item) =>
-            item.merchandise.id === variant.node.id ? updatedItem : item
-          )
-        : [...currentCart.lines, updatedItem];
+          return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
+        }),
 
-      return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
-    }),
+      updateCartItem: (merchandiseId, updateType) =>
+        set((state) => {
+          const currentCart = state.cart || createEmptyCart();
+          const updatedLines = currentCart.lines
+            .map((item) =>
+              item.merchandise.id === merchandiseId ? updateCartItem(item, updateType) : item
+            )
+            .filter(Boolean) as CartItem[];
 
-  updateCartItem: (merchandiseId, updateType) =>
-    set((state) => {
-      const currentCart = state.cart || createEmptyCart();
-      const updatedLines = currentCart.lines
-        .map((item) =>
-          item.merchandise.id === merchandiseId ? updateCartItem(item, updateType) : item
-        )
-        .filter(Boolean) as CartItem[];
-
-      if (updatedLines.length === 0) {
-        return {
-          cart: {
-            ...currentCart,
-            lines: [],
-            totalQuantity: 0,
-            cost: {
-              ...currentCart.cost,
-              totalAmount: { ...currentCart.cost.totalAmount, amount: '0' }
-            }
+          if (updatedLines.length === 0) {
+            return {
+              cart: {
+                ...currentCart,
+                lines: [],
+                totalQuantity: 0,
+                cost: {
+                  ...currentCart.cost,
+                  totalAmount: { ...currentCart.cost.totalAmount, amount: '0' }
+                }
+              }
+            };
           }
-        };
-      }
 
-      return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
-    })
-}));
+          return { cart: { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines } };
+        })
+    }),
+    {
+      name: 'cart-storage',
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
