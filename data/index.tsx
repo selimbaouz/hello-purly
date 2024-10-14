@@ -229,7 +229,7 @@ export const checkProduct = [
       icon: GiFrance,
   },
   {
-      title: "Livraison domicile 48h",
+      title: "Expédition en 24h",
       icon: HiOutlineTruck,
   },
   {
