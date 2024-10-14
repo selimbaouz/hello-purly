@@ -19,6 +19,7 @@ import { getHandleOfProduct } from '@/data/shopify';
 import Image1 from "@/public/images/bidet/money.png";
 import Image2 from "@/public/images/bidet/eco.png";
 import BenefitCard from '@/components/card/BenefitCard';
+import FloatingBar from '@/components/navigation/FloatingBar';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -28,7 +29,7 @@ export default async function ProductPage({ params }: { params: { handle: string
     const product = await getHandleOfProduct(params.handle);
 
     return (
-        <div>
+        <div className='relative'>
             <div className="sticky top-0 w-full z-40">
                 <StickyBar />
                 <NavBar />
@@ -160,6 +161,13 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
                 <Footer />
             </section>
+            {product && (
+                <div className={cn("sticky bottom-10 px-4 max-w-screen-md mx-auto")}>
+                    <FloatingBar
+                        product={product}
+                    />
+                </div>
+            )}
         </div>
     );
 };

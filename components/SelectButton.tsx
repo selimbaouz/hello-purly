@@ -22,7 +22,7 @@ const SelectButton: FC<SelectButtonProps> = ({
         >
             <div className={cn("lg:flex  lg:items-center lg:gap-6")}>
                 <div className={cn("hidden", "lg:size-12 lg:flex lg:justify-center lg:items-center lg:border lg:border-foreground/50 lg:bg-gradient-to-b lg:from-[#171923]/50 lg:to-[#111219]/50 lg:rounded-xl")}>
-                    <Icon className={cn("text-3xl")} />
+                    <Icon className={cn("text-2xl")} />
                 </div>
                 <h6 className={cn("uppercase text-xs font-bold", "md:hidden")}>
                     {title === "Automatique" ? "Auto" : title}
