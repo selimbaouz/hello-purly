@@ -2,7 +2,6 @@
 import { checkProduct, detailsProduct } from "@/data";
 import GetRatings from "@/lib/getRating";
 import { cn } from "@/lib/utils";
-import { CheckIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Product } from "@/types/types";
 import { FC } from "react";
@@ -19,28 +18,37 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             <h3 className={cn("text-left uppercase text-5xl font-bold pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-transparent from-white to-foreground")}>
                 {product.title}
             </h3>
-            <div className={cn("flex items-start gap-4")}>
+            <div className={cn("flex items-center gap-4")}>
                 <GetRatings value={5} className={cn("text-xl", "md:text-lg", "xl:text-base")} />
                 <p className={cn("font-medium text-base")}>
                     4.8/5 basé sur 319 avis
                 </p>
             </div>
+            
             <div className={cn("space-y-14 py-4")}>
-                <div className={cn("flex items-end gap-6")}>
-                    <p className={cn("font-bold text-4xl")}>
-                        {product.priceRange.minVariantPrice.amount} €
-                    </p>
-                    <p className={cn("line-through text-base")}>
-                        79.99 €
-                    </p>
+                <div className={cn("space-y-4")}>
+                    <div className={cn("flex items-end gap-4")}>
+                        <p className={cn("font-bold text-4xl")}>
+                            {product.priceRange.minVariantPrice.amount} €
+                        </p>
+                        <p className={cn("line-through text-base")}>
+                            79.99 €
+                        </p>
+                        <div className="relative p-0.5 bg-gradient-to-r from-white to-foreground rounded-full w-max">
+                            <div className="bg-background py-1 px-4 rounded-full text-sm font-medium">
+                                Offre du moment
+                            </div>
+                        </div>
+                    </div>
+                 <p>En commandant aujourd{"'"}hui, vous économisez <span className="font-bold">20,00€ (25%)</span></p>
                 </div>
                 <ul className={cn("space-y-2")}>
                     {checkProduct.map((data, index) => (
                         <li 
                             key={index}
-                            className={cn("flex items-center gap-2")}>
-                                <CheckIcon />
-                                <p className={cn("text-regular text-base")}>
+                            className={cn("flex items-center gap-4")}>
+                                <data.icon className="text-2xl"/>
+                                <p className={cn("text-regular text-lg")}>
                                     {data.title}
                                 </p>
                         </li>

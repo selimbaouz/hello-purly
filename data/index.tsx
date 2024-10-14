@@ -12,8 +12,9 @@ import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
 import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
-import { HiOutlineHeart, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
+import { HiOutlineCash, HiOutlineCog, HiOutlineCreditCard, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles, HiOutlineTruck } from "react-icons/hi";
 import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
+import { HiOutlineHandThumbUp } from "react-icons/hi2";
 
 export const statsData = [
   {
@@ -204,19 +205,40 @@ export const reviewsData = [
 
 export const checkProduct = [
   {
-      title: "Réduction massive de papier"
+      title: "Réduction massive de papier",
+      icon: HiOutlinePaperAirplane,
   },
   {
-      title: "Zéro électricité, 100 % écolo"
+      title: "Zéro électricité, 100 % écolo",
+      icon: HiOutlineGlobe,
   },
   {
-      title: "Confort et propreté personnalisé"
+      title: "Confort et propreté personnalisé",
+      icon: HiOutlineHandThumbUp,
   },
   {
-      title: "Installation facile en un clin d'œil"
+      title: "Installation facile en un clin d'œil",
+      icon: HiOutlineCog,
   },
   {
-      title: "Économies garanties toute l’année"
+      title: "Économies garanties toute l’année",
+      icon: HiOutlineCash,
+  },
+  {
+      title: "Entreprise Française",
+      icon: GiFrance,
+  },
+  {
+      title: "Livraison domicile 48h",
+      icon: HiOutlineTruck,
+  },
+  {
+      title: "Garantie 3 ans",
+      icon: HiOutlineShieldCheck,
+  },
+  {
+      title: "Paiement 3x sans frais",
+      icon: HiOutlineCreditCard,
   },
 ]
 
