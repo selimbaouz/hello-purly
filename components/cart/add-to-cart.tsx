@@ -28,7 +28,7 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
             aria-label="Add to cart"
             className={cn(
               "py-[14px] rounded-full text-white text-base font-medium",
-              size === "fullWidth" ? "w-full px-[96px]" : "w-max px-10",
+              size === "fullWidth" ? "w-full px-[96px]" : "w-max px-12",
               color === "gradient" ? 
               "bg-gradient-to-b from-background via-background via-50% to-foreground hover:bg-gradient-to-b hover:from-foreground hover:via-background hover:via-50% hover:to-background" : 
               "p-2 lg:px-6 bg-foreground hover:bg-transparent hover:border-foreground border border-transparent hover:text-foreground text-white font-bold"

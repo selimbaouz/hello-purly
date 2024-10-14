@@ -162,11 +162,9 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <Footer />
             </section>
             {product && (
-                <div className={cn("sticky bottom-10 px-4 max-w-screen-md mx-auto")}>
-                    <FloatingBar
-                        product={product}
-                    />
-                </div>
+                <FloatingBar
+                    product={product}
+                />
             )}
         </div>
     );
