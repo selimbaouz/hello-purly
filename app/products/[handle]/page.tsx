@@ -9,7 +9,7 @@ import ProductImage from '@/components/ProductImage';
 import { Reviews } from '@/components/Reviews';
 import TitleContentPair from '@/components/TitleContentPair';
 import TrustFeatures from '@/components/TrustFeatures';
-import { trustsData } from '@/data';
+import { benefitsFeelingData, trustsData } from '@/data';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
 import VersusCard from '@/components/card/bentoGrid/VersusCard';
@@ -18,6 +18,7 @@ import { redirect } from 'next/navigation';
 import { getHandleOfProduct } from '@/data/shopify';
 import Image1 from "@/public/images/bidet/money.png";
 import Image2 from "@/public/images/bidet/eco.png";
+import BenefitCard from '@/components/card/BenefitCard';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -84,7 +85,26 @@ export default async function ProductPage({ params }: { params: { handle: string
                     </div>
                 </div>
             </section>
-            {/* Comparatif Papier toilette vs Bidet WC */}
+            <section className={cn(
+                "p-4 text-center pb-24 space-y-24", 
+                "lg:py-20 lg:space-y-36 lg:px-6", 
+                "xl:pt-0 xl:pb-36 xl:px-0"
+            )}>
+                <TitleContentPair 
+                    title="Des Avantages Qui Câlinent Vos Fesses" 
+                    content="Parce qu'elles méritent le meilleur."
+                />
+                <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:grid lg:grid-cols-3 lg:items-center lg:h-full")}>
+                {benefitsFeelingData.map((data, index) => (
+                    <BenefitCard
+                        key={index}
+                        icon={data.icon}
+                        title={data.title}
+                        content={data.content}
+                    />
+                ))}
+                </div>
+            </section>
             <section className={cn(
                 "text-center pb-24 space-y-24", 
                 "lg:py-20", 
@@ -93,7 +113,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <TitleContentPair 
                     title="ce que disent nos clients" 
                     content="Excellent, basé sur"
-                    contentBold="319 avis"
+                    contentBold="319 avis vérifiés"
                 />
                 <Reviews />
             </section>
@@ -113,7 +133,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 "lg:p-6", 
                 "xl:px-0"
             )}>
-                <CTACard title="Ajouter au panier" />
+                <CTACard product={product} />
             </section>
             <section className={cn(
                 "p-4 text-center pb-24 space-y-4 max-w-screen-xl mx-auto", 

@@ -46,7 +46,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                         </li>
                     ))}
                 </ul>
-                <AddToCart product={product} />
+                <AddToCart product={product} size="fullWidth" />
                 <Accordion type="single" collapsible className="w-full">
                     {detailsProduct.map((data, index) => (
                         <AccordionItem key={index} value={`item-${index}`} className={cn("border-white py-1 whitespace-pre-line")}>

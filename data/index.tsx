@@ -1,7 +1,7 @@
 import { BiWorld } from "react-icons/bi";
 import { PiMoneyWavy } from "react-icons/pi";
 import { IoCloseOutline, IoWaterOutline } from "react-icons/io5";
-import { MdAutorenew } from "react-icons/md";
+import { MdOutlineFlashOff } from "react-icons/md";
 import { IoManOutline, IoWomanOutline } from "react-icons/io5";
 import { FaCheck, FaTruck } from "react-icons/fa6";
 import { BsWater } from "react-icons/bs";
@@ -12,6 +12,8 @@ import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
 import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
+import { HiOutlineHeart, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
+import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 
 export const statsData = [
   {
@@ -40,6 +42,24 @@ export const benefitsData = [
     icon: BiWorld, 
     title: "Écologique", 
     content: "Faites un geste pour la planète en économisant 1500L d'eau chaque année et en réduisant votre consommation de papier. Moins de déforestation, plus de durabilité."
+  }
+]
+
+export const benefitsFeelingData = [
+  {
+    icon: HiOutlineShieldCheck, 
+    title: "Confiance", 
+    content: "Fini les doutes après chaque passage aux toilettes. Avec notre bidet, vous vous sentez toujours propre et sûr de vous, prêt à affronter la journée sans vous poser de questions."
+  },
+  {
+    icon: HiOutlineSparkles, 
+    title: "Confort", 
+    content: "Dites adieu au papier irritant ! Un jet doux et ajustable vous apporte le confort ultime, pour une expérience qui chouchoute votre peau à chaque utilisation."
+  },
+  {
+    icon: HiOutlineHeart, 
+    title: "Plaisir", 
+    content: "Qui aurait cru qu’aller aux toilettes pouvait être aussi agréable ? Notre bidet transforme une routine quotidienne en un moment de détente, tout en vous laissant une sensation de propreté impeccable."
   }
 ]
 
@@ -77,16 +97,16 @@ export const selectionModesData = [
 
 export const selectionWhyData = [
   {
-      title: "Jets d'eau précis", icon: MdAutorenew
+      title: "Jets d'eau précis", icon: FiTarget
   },
   {
-      title: "Zéro éléctricité", icon: IoManOutline
+      title: "Zéro éléctricité", icon: MdOutlineFlashOff
   },
   {
-      title: "Installation facile", icon: IoWomanOutline
+      title: "Installation facile", icon: FiTool
   },
   {
-      title: "100% compatible", icon: IoWomanOutline
+      title: "100% compatible", icon: FiCheckCircle
   }
 ]
 

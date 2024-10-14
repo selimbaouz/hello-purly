@@ -28,7 +28,7 @@ function SubmitButton({size = "initial"}: SubmitButtonProps) {
   );
 }
 
-export function AddToCart({ product }: { product: Product }) {
+export function AddToCart({ product, size }: { product: Product, size?: "fullWidth" | "initial" }) {
   const { addCartItem } = useCartStore();
   const { setIsOpen } = useOpenCartStore();
   const [message, formAction] = useFormState(addItem, null);
@@ -43,7 +43,7 @@ export function AddToCart({ product }: { product: Product }) {
       }}
       onClick={() => setIsOpen(true)}
     >
-      <SubmitButton size="fullWidth" />
+      <SubmitButton size={size} />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>

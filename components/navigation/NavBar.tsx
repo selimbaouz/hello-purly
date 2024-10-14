@@ -21,7 +21,7 @@ const NavBar = () => {
                 <div className="z-50">
                     <IoMenuOutline className="text-3xl hover:text-foreground" />
                 </div>
-                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
+                <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer z-50">
                     <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
                 </Link>
                 <div 
@@ -39,7 +39,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className={cn("hidden", "relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-6", "xl:px-0")}>
-                <Link href="/">
+                <Link href="/" className="cursor-pointer z-50">
                     <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
                 </Link>
                 <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
