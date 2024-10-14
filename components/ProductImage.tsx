@@ -26,21 +26,23 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             </div>
             
             <div className={cn("space-y-14 py-4")}>
-                <div className={cn("space-y-4")}>
-                    <div className={cn("flex items-end gap-4")}>
-                        <p className={cn("font-bold text-4xl")}>
-                            {product.priceRange.minVariantPrice.amount} €
-                        </p>
-                        <p className={cn("line-through text-base")}>
-                            79.99 €
-                        </p>
+                <div className={cn("space-y-8")}>
+                    <div className={cn("space-y-4")}>
                         <div className="relative p-0.5 bg-gradient-to-r from-white to-foreground rounded-full w-max">
                             <div className="bg-background py-1 px-4 rounded-full text-sm font-medium">
                                 Offre du moment
                             </div>
                         </div>
+                        <p>En commandant aujourd{"'"}hui, vous économisez <span className="font-bold">20,00€ (25%)</span></p>
                     </div>
-                 <p>En commandant aujourd{"'"}hui, vous économisez <span className="font-bold">20,00€ (25%)</span></p>
+                        <div className={cn("flex items-end gap-4")}>
+                            <p className={cn("font-bold text-5xl")}>
+                                {product.priceRange.minVariantPrice.amount} €
+                            </p>
+                            <p className={cn("line-through text-base")}>
+                                79.99 €
+                            </p>
+                        </div>
                 </div>
                 <ul className={cn("space-y-2")}>
                     {checkProduct.map((data, index) => (
