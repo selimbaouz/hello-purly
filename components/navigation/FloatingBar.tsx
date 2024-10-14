@@ -7,6 +7,8 @@ import { Product } from '@/types/types';
 import Image from 'next/image';
 import { FiPlus } from 'react-icons/fi';
 import { CgClose } from 'react-icons/cg';
+import { useVisibleFloatingCartStore } from '@/store/cart';
+import { motion } from 'framer-motion';
 
 interface FloatingBarProps {
     product: Product;
@@ -15,9 +17,16 @@ const FloatingBar: FC<FloatingBarProps> = ({
     product
 }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { isVisible } = useVisibleFloatingCartStore();
+
     return (
-        <div className='sticky bottom-10 px-4 max-w-screen-md mx-auto'>
-            <div className={cn('w-full flex justify-end pr-4 -mt-14', "lg:justify-center")}>
+        <motion.div className='sticky bottom-10 px-4 max-w-screen-md mx-auto'>
+            <motion.div 
+             initial={{ y: 100 }}
+             animate={isVisible ? { y: 100 } : { y: 0 }}
+             exit={{ y: 100 }}
+             transition={{ duration: 0.3 }}
+            className={cn('w-full flex justify-end pr-4 -mt-14', "lg:justify-center")}>
                 <button
                     className={cn(
                         "rounded-full text-base w-max px-10 p-2 hover:backdrop-blur-md hover:bg-background/75 bg-foreground hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
@@ -27,7 +36,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
                 >
                     <FiPlus className={cn("text-4xl font-bold")} />
                 </button>
-            </div>
+            </motion.div>
             {isOpen && (
                 <div className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
                     <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpen(false)}/>
@@ -63,7 +72,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
                     </div>
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 };
 

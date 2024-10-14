@@ -3,15 +3,42 @@
 import { Product } from '@/types/types';
 import { useFormState } from 'react-dom';
 import { addItem } from './actions';
-import { useCartStore, useOpenCartStore } from '@/store/cart';
+import { useCartStore, useOpenCartStore, useVisibleFloatingCartStore } from '@/store/cart';
 import { cn } from '@/lib/utils';
-import { FiPlus } from 'react-icons/fi';
+import { TbShoppingCartPlus } from 'react-icons/tb';
+import { useEffect, useRef } from 'react';
 
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
   color?: "gradient" | "foreground";
 }
 function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps) {
+  const buttonRef = useRef(null);
+  const { setIsVisible } = useVisibleFloatingCartStore();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    if (buttonRef.current) {
+      observer.observe(buttonRef.current);
+    }
+
+    return () => {
+      if (buttonRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(buttonRef.current);
+      }
+    };
+  }, [setIsVisible]);
+
   return (
     <div className={cn(
       "relative p-0.5 rounded-full mx-auto w-full", 
@@ -26,6 +53,7 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
         >
           <button
             aria-label="Add to cart"
+            ref={buttonRef}
             className={cn(
               "py-[14px] rounded-full text-white text-base font-medium",
               size === "fullWidth" ? "w-full px-[96px]" : "w-max px-12",
@@ -37,7 +65,7 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
             {color !== "foreground" ? 
               <p>Ajouter au panier</p> : 
               <div>
-                  <FiPlus className={cn("text-2xl font-bold lg:hidden")} />
+                  <TbShoppingCartPlus className={cn("text-2xl font-bold lg:hidden text-white")} />
                   <p className={cn("hidden", "lg:block")}>
                     Ajouter au panier
                   </p>
