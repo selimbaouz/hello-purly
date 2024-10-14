@@ -15,7 +15,7 @@ const FAQ = () => {
                         <AccordionTrigger className={cn("text-base", "xl:text-xl")}>
                             {data.title}
                         </AccordionTrigger>
-                        <AccordionContent className={cn("text-sm pt-2", "xl:text-base xl:py-10")}>
+                        <AccordionContent className={cn("text-sm pt-2 whitespace-pre-line", "xl:text-base xl:py-10")}>
                             {data.content}
                         </AccordionContent>
                     </AccordionItem>

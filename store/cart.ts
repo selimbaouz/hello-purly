@@ -11,8 +11,8 @@ interface CartState {
 }
 
 interface OpenCartState {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  isOpenCart: boolean;
+  setIsOpenCart: (isOpen: boolean) => void;
 }
 
 interface VisibleFloatingCartState {
@@ -116,8 +116,8 @@ export const useCheckoutUrlStore = create<CheckoutUrlState>((set) => ({
 }))
 
 export const useOpenCartStore = create<OpenCartState>((set) => ({
-  isOpen: false,
-  setIsOpen: (isOpen) => set({ isOpen }),
+  isOpenCart: false,
+  setIsOpenCart: (isOpenCart) => set({ isOpenCart }),
 }))
 
 export const useVisibleFloatingCartStore = create<VisibleFloatingCartState>((set) => ({

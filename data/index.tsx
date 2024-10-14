@@ -253,32 +253,73 @@ export const detailsProduct = [
   },
   {
       title: "Caractéristiques",
-      content: "Type : Bidet pression d'eau\n Installation : Sans besoin de compétences\n Compatibilité : Toilettes standards\n Entretien : Aucun frais\n Modes : 3 modes disponibles"
+      content: "Type : Bidet pression d'eau\n Installation : Sans besoin de compétences\n Compatibilité : Toilettes standards\n Entretien : Aucun frais\n Modes : 2 modes disponibles"
   },
 ]
 
 export const faqData = [
   {
-      title: "Comment ça fonctionne ?",
+      title: "Comment fonctionne le bidet ?",
       content: "Notre bidet utilise des jets d'eau ajustables pour nettoyer efficacement après chaque utilisation. Parfait pour vous assurer une propreté maximale et une sensation de fraîcheur à chacun de vos passages aux toilettes."
   },
   {
-      title: "Est-ce facile à installer ?",
+      title: "Installation est-elle facile ?",
       content: "Oui, l'installation du bidet est rapide et facile. Elle peut être réalisée en moins de 10 minutes sans nécessiter de compétences ni de travaux complexes. Un vrai jeu d’enfant vous allez voir ! "
   },
   {
-      title: "Nécessite-t-il une alimentation électrique ?",
+      title: "Besoin d'électricité pour fonctionner ?",
       content: "Non, il fonctionne sans électricité, ce qui permet des économies d'énergie et une installation plus simple et rapide. Votre porte monnaie va vous remercier ! "
   },
   {
-      title: "Est-ce compatible avec tous les toilettes ?",
+      title: "Compatible avec toutes les toilettes ?",
       content: "Oui, le bidet est conçu pour s'adapter à toutes les toilettes standards."
   },
   {
       title: "Vais-je faire des économies ?",
       content: "En utilisant des jets d'eau pour le nettoyage, notre bidet permet de réduire jusqu'à 80% votre consommation de papier toilette, ce qui représente des centaines d’économies chaque année. "
   },
-]
+  {
+    title: "Quels sont les délais de livraison ?",
+    content: "Nos délais moyens de livraison sont de 7 à 13 jours ouvrés.\nPour certains produits, nous livrons en moins d'une semaine.\nPour éviter les frais de stockage et de main d'oeuvre élevés, nous travaillons directement auprès de nos producteurs et n'avons donc aucun intermédiaire cela nous permet de vous proposer des tarifs vraiment avantageux par rapport à ce que vous pourriez avoir dans une boutique physique."
+  },
+  {
+    title: "Où livrons-nous ?",
+    content: "Nous livrons partout dans le monde, et nos frais de livraison sont OFFERTS."
+  },
+  {
+    title: "D'où expédions-nous les colis ?",
+    content: "Notre entreprise est française. Nous expédions nos colis directement depuis nos producteurs situés en France, Espagne, Italie, Suisse et Asie."
+  },
+  {
+    title: "Qui livre mes articles ?",
+    content: "Vos articles sont livrés par l'intermédiaire de votre service de poste local.\nLes articles sont livrés en fonction des modalités de votre bureau de poste local."
+  },
+  {
+    title: "Que faire si je ne suis pas là ?",
+    content: "Ne vous inquiétez pas, vos articles seront laissés dans votre boîte postale s'ils sont assez petits. Dans le cas contraire, votre colis sera laissé à votre bureau de poste où vous pourrez le retirer."
+  },
+  {
+    title: "Comment corriger une adresse erronée ?",
+    content: "Pas de panique, si votre commande n'a pas encore été envoyée, contactez-nous immédiatement et nous serons ravis de mettre vos informations à jour. Dans le cas contraire et conformément à nos conditions générales de vente, une fois qu'une commande a été envoyée depuis notre entrepôt, plus aucune modification ne peut être effectuée."
+  },
+  {
+    title: "Articles manquants dans ma commande ?",
+    content: "Nous travaillons avec plusieurs fournisseurs, lorsque vous passez commande, chaque fournisseur se charge d'un produit en particulier. Si vous commandez 5 articles différents, vous recevrez donc 5 colis différents et ceux-ci arriveront à des moments différents (certains seront plus rapides, d'autres plus lents). Par contre, si vous commandez 3 fois le même produit, alors ils seront tous envoyés dans 1 seul colis."
+  },
+  {
+    title: "Comment utiliser un code promo ?",
+    content: "Une fois cette action effectuée, validez votre sélection en cliquant sur « Paiement ». La page de paiement s’ouvrira et vous pourrez profiter pleinement de cette offre en renseignant son code, ce qui appliquera automatiquement la réduction.\nExemple : Une promotion est disponible sur le site « Produit A acheté, un Produit B offert » avec le code « PROMO ». Je sélectionne le Produit A souhaité ainsi que le Produit B qui correspond à une sélection d’articles prédéfinie. Les deux articles sont présents dans mon panier et je peux cliquer sur le bouton « Paiement » et rentrer mon code « PROMO » à la prochaine étape."
+  },
+  {
+    title: "Votre site est-il sécurisé ?",
+    content: "Ce site est 100% sécurisé. Et à dire vrai, on pourrait même affirmer qu'il l'est à 300%.\nVoici pourquoi :\nPremièrement, le site que vous visitez est sur un serveur en HTTPS (le petit cadenas vert qui se trouve du côté gauche de l'URL de cette page est là pour vous le rappeler).\nLa plupart des sites ne sécurisent que leur \"panier\" et tout ce qui touche au règlement des commandes. Sur ce site, TOUTES LES PAGES sont sécurisées et ne peuvent pas être piratées ou ne peuvent pas être la cible de logiciels malveillants.\nPour finir, concernant le règlement, nous utilisons Stripe qui est la référence en matière de sécurité des transactions sur Internet.\nEn résumé, vous commandez en toute sécurité."
+  },
+  {
+    title: "Quels modes de paiements sont acceptés ?",
+    content: "Actuellement, vous pouvez régler par Carte bancaire et Paypal sur notre site. Nous n'acceptons ni les chèques bancaires, ni les virements ou encore les paiements à la réception."
+  },
+];
+
 
 export const stacksData = [
   {

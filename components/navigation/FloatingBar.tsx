@@ -38,7 +38,12 @@ const FloatingBar: FC<FloatingBarProps> = ({
                 </button>
             </motion.div>
             {isOpen && (
-                <div className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
+                <motion.div 
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 100 }}
+                transition={{ duration: 0.3 }}
+                className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
                     <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpen(false)}/>
                     <div className={cn("rounded-3xl p-4 bg-gradient-to-b from-[#171923] to-[#11121A] text-white relative flex flex-col justify-center")}>
                         <div className={cn("flex items-center gap-6")}>
@@ -70,7 +75,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
                             <AddToCart product={product} color='foreground' />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             )}
         </motion.div>
     );

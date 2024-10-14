@@ -12,15 +12,14 @@ import { useEffect, useRef } from 'react';
 
 export default function Cart() {
   const { cart, updateCartItem } = useCartStore();
-  const {isOpen, setIsOpen} = useOpenCartStore();
+  const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
 
-  console.info(cart);
   useEffect(() => {
-    if (cart.lines.length > 0 && isOpen) {
+    if (cart.lines.length > 0 && isOpenCart) {
         createCartAndSetCookie();
     }
-  }, [cart, isOpen]);
+  }, [cart, isOpenCart]);
 
   useEffect(() => {
     if (
@@ -28,12 +27,12 @@ export default function Cart() {
       cart?.totalQuantity !== quantityRef.current &&
       cart?.totalQuantity > 0
     ) {
-      if (!isOpen) {
-        setIsOpen(true);
+      if (!isOpenCart) {
+        setIsOpenCart(true);
       }
       quantityRef.current = cart?.totalQuantity;
     }
-  }, [isOpen, cart?.totalQuantity, quantityRef, setIsOpen]);
+  }, [isOpenCart, cart?.totalQuantity, quantityRef, setIsOpenCart]);
 
   const handleRedirectToCheckout = async () => {
     try {
@@ -62,7 +61,7 @@ export default function Cart() {
                     .sort((a, b) =>
                         a.merchandise.product.title.localeCompare(b.merchandise.product.title)
                     ).map((item, i) => (
-                        <li key={i} className="flex w-full justify-between gap-2 items-center p-2">
+                        <li key={i} className="flex w-full justify-between gap-1 items-center p-2">
                             <div className='relative'>
                                 <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={20} height={20} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
                                 <div className="absolute z-40 -top-2 -left-2">

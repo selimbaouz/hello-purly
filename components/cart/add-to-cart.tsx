@@ -79,7 +79,7 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
 
 export function AddToCart({ product, size = "initial", color = "gradient" }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground" }) {
   const { addCartItem } = useCartStore();
-  const { setIsOpen } = useOpenCartStore();
+  const { setIsOpenCart } = useOpenCartStore();
   const [message, formAction] = useFormState(addItem, null);
   const variantId = product.variants.edges[0].node.id;
   const actionWithVariant = formAction.bind(null, variantId);
@@ -90,7 +90,7 @@ export function AddToCart({ product, size = "initial", color = "gradient" }: { p
         addCartItem(product.variants.edges[0], product);
         await actionWithVariant();
       }}
-      onClick={() => setIsOpen(true)}
+      onClick={() => setIsOpenCart(true)}
     >
       <SubmitButton size={size} color={color} />
       <p aria-live="polite" className="sr-only" role="status">

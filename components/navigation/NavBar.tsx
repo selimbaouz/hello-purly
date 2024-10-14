@@ -9,16 +9,21 @@ import { RiShoppingBag3Fill } from "react-icons/ri";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
 import { useCartStore, useOpenCartStore } from "@/store/cart";
 import Cart from "../cart/Cart";
+import { useOpenSidebarStore } from "@/store/sidebar";
 
 const NavBar = () => {
     const classLink = "font-light text-base text-white lg:text-sm xl:text-base";
-    const { isOpen, setIsOpen } = useOpenCartStore();
+    const { isOpenCart, setIsOpenCart } = useOpenCartStore();
+    const { isOpenSidebar, setIsOpenSidebar } = useOpenSidebarStore();
     const { cart } = useCartStore();
 
     return (
-        <nav className="backdrop-blur-md -mt-0.1 bg-background/75">
+        <nav className="backdrop-blur-md -mt-0.5 bg-background/75">
             <div className={cn("p-4 flex justify-between items-center max-w-screen-xl mx-auto", "lg:hidden")}>
-                <div className="z-50">
+                <div 
+                    className="z-50"
+                    onClick={() => setIsOpenSidebar(true)}
+                >
                     <IoMenuOutline className="text-3xl hover:text-foreground" />
                 </div>
                 <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer z-50">
@@ -26,7 +31,7 @@ const NavBar = () => {
                 </Link>
                 <div 
                     className="relative p-2 cursor-pointer z-50 group" 
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => setIsOpenCart(true)}
                 >
                     <RiShoppingBag3Fill 
                         className={cn("text-3xl text-white group-hover:text-foreground transition-all ease-in-out hover:scale-110", "lg:text-2xl", "xl:text-3xl")}  
@@ -50,9 +55,6 @@ const NavBar = () => {
                         <Link href="" className={cn(classLink)}>A propos</Link>
                     </li>
                     <li>
-                        <Link href="" className={cn(classLink)}>FAQ</Link>
-                    </li>
-                    <li>
                         <Link href="" className={cn(classLink)}>Contact</Link>
                     </li>
                     <li>
@@ -61,7 +63,7 @@ const NavBar = () => {
                 </ul>
                 <div 
                     className="relative p-2 cursor-pointer z-50 group" 
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => setIsOpenCart(true)}
                 >
                     <RiShoppingBag3Fill 
                         className={cn("text-3xl text-white group-hover:text-foreground transition-all ease-in-out hover:scale-110", "lg:text-2xl", "xl:text-3xl")}  
@@ -74,13 +76,42 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            {/* Panier */}
+            <Sheet open={isOpenCart} onOpenChange={setIsOpenCart}>
                 <SheetContent side="right" className="h-full w-full">
                     <SheetHeader>
                         <SheetTitle className="text-white text-xl font-bold">Mon Panier</SheetTitle>
                     </SheetHeader>
                     <SheetDescription></SheetDescription>
                     <Cart />
+                </SheetContent>
+            </Sheet>
+            {/* Liens */}
+            <Sheet open={isOpenSidebar} onOpenChange={setIsOpenSidebar}>
+                <SheetContent side="left" className="h-full min-w-full">
+                <SheetHeader>
+                    <SheetTitle>
+                        <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
+                    </SheetTitle>
+                </SheetHeader>
+                <SheetDescription></SheetDescription>
+                <ul className={cn("pt-14")}>
+                    <li className={cn("border-b border-[#2D3748] py-3 pl-4 bg-[#2D3748]")}>
+                        <Link href="/products/le-bidet-wc" className={cn(classLink)}>Bidet WC</Link>
+                    </li>
+                    <li className={cn("border-b border-[#2D3748] py-3 pl-4")}>
+                        <Link href="" className={cn(classLink)}>A propos</Link>
+                    </li>
+                    <li className={cn("border-b border-[#2D3748] py-3 pl-4")}>
+                        <Link href="" className={cn(classLink)}>FAQ</Link>
+                    </li>
+                    <li className={cn("border-b border-[#2D3748] py-3 pl-4")}>
+                        <Link href="" className={cn(classLink)}>Contact</Link>
+                    </li>
+                    <li className={cn("border-b border-[#2D3748] py-3 pl-4")}>
+                        <Link href="" className={cn(classLink)}>Suivre ma commande</Link>
+                    </li>
+                </ul>
                 </SheetContent>
             </Sheet>
         </nav>
