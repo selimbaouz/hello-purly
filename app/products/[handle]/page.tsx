@@ -20,7 +20,8 @@ import Image1 from "@/public/images/bidet/money.png";
 import Image2 from "@/public/images/bidet/eco.png";
 import BenefitCard from '@/components/card/BenefitCard';
 import FloatingBar from '@/components/navigation/FloatingBar';
-/* import Image from 'next/image'; */
+import Image from 'next/image';
+import SelectorCard from '@/components/card/SelectorCard';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -54,19 +55,26 @@ export default async function ProductPage({ params }: { params: { handle: string
             )}>
                 <WhyCard />
             </section>
-            {/* <section className={cn(
+            <section className={cn(
                 "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
                 "lg:p-6", 
                 "xl:space-y-32 xl:pb-32 xl:px-0"
             )}>
                 <TitleContentPair
-                    title="pour des fesses impeccable" 
-                    content={`Fini les résidus gênants et les irritations ! \nDoux, efficace, et ultra-hygiènique.`}
+                    title={`Le bidet qui fait du bien\n à la planète`} 
+                    content={`Économisez du papier, soyez plus propre et vert !`}
                 />
-                <div className='max-w-screen-xl mx-auto w-full flex flex-col justify-center items-center'>
-                    <Image src="/images/bidet/women.png" alt="Women sit on the wc and she use hellopurly" width={150} height={150} className='w-full rounded-3xl' />
+                <div className={cn("flex flex-col gap-4")}>
+                    <div className={cn('max-w-screen-xl mx-auto w-full flex flex-col gap-4', "lg:grid lg:grid-cols-2 lg:justify-between lg:items-center")}>
+                        <Image src="/images/bidet/women.png" alt="Women sit on the wc and she use hellopurly" width={500} height={500} className='w-full rounded-3xl max-h-[500px]' />
+                        <SelectorCard title='Frais, Économique et Écologique' content={`Le bidet, c'est l'hygiène ultime : plus doux que le papier et toujours frais. Économisez jusqu'à 150 € par an en réduisant votre consommation de papier toilette de 80 %. \n\n En prime, faites un geste pour la planète en préservant 1500L d'eau par an et en limitant la déforestation. Plus d'économies, plus de confort et un impact écologique positif !`} />
+                    </div>
+                    <div className={cn('max-w-screen-xl mx-auto w-full flex flex-col-reverse gap-4', "lg:grid lg:grid-cols-2 lg:justify-between lg:items-center")}>
+                        <SelectorCard title='Deux Modes, Deux Soins' content={`Messieurs, préparez-vous à un lavage précis et doux, comme un rasoir de barbier, là où ça compte. \n\nMesdames, profitez d'un nettoyage délicat et apaisant, adapté à vos besoins. Avec ces deux modes, chacun peut se sentir frais et au meilleur de sa forme !`} />
+                        <Image src="/images/bidet/mode.webp" alt="Women sit on the wc and she use hellopurly" width={500} height={500} className='w-full rounded-3xl max-h-[500px]' />
+                    </div>
                 </div>
-            </section> */}
+            </section>
             <section className={cn(
                 "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
                 "lg:p-6", 

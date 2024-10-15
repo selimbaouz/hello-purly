@@ -20,7 +20,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
     const { isVisible } = useVisibleFloatingCartStore();
 
     return (
-        <motion.div className='sticky bottom-10 px-4 max-w-screen-md mx-auto'>
+        <motion.div className='sticky bottom-10 px-4 max-w-screen-md mx-auto z-[100]'>
             <motion.div 
              initial={{ y: 100 }}
              animate={isVisible ? { y: 100 } : { y: 0 }}
