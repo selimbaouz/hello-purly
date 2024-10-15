@@ -22,6 +22,7 @@ const NavBar = () => {
             <div className={cn("p-4 flex justify-between items-center max-w-screen-xl mx-auto", "lg:hidden")}>
                 <div 
                     onClick={() => setIsOpenSidebar(true)}
+                    className="p-1"
                 >
                     <IoMenuOutline className="text-3xl hover:text-foreground" />
                 </div>
@@ -29,7 +30,7 @@ const NavBar = () => {
                     <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
                 </Link>
                 <div 
-                    className="relative p-2 cursor-pointer z-[100] group" 
+                    className="relative p-2 cursor-pointer group" 
                     onClick={() => setIsOpenCart(true)}
                 >
                     <RiShoppingBag3Fill 

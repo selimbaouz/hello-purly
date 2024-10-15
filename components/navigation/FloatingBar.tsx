@@ -7,7 +7,7 @@ import { Product } from '@/types/types';
 import Image from 'next/image';
 import { FiPlus } from 'react-icons/fi';
 import { CgClose } from 'react-icons/cg';
-import { useVisibleFloatingCartStore } from '@/store/cart';
+import { useOpenCartStore, useVisibleFloatingCartStore } from '@/store/cart';
 import { motion } from 'framer-motion';
 
 interface FloatingBarProps {
@@ -18,19 +18,21 @@ const FloatingBar: FC<FloatingBarProps> = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { isVisible } = useVisibleFloatingCartStore();
+    const { isOpenCart } = useOpenCartStore();
 
     return (
-        <motion.div className='sticky bottom-10 px-4 max-w-screen-md mx-auto z-[100]'>
+        <motion.div className={cn('z-[100] px-6', "md:px-0")}>
             <motion.div 
-             initial={{ y: 100 }}
-             animate={isVisible ? { y: 100 } : { y: 0 }}
-             exit={{ y: 100 }}
+             initial={{ y: 150 }}
+             animate={isVisible ? { y: 150 } : { y: 0 }}
+             exit={{ y: 150 }}
              transition={{ duration: 0.3 }}
-            className={cn('w-full flex justify-end pr-4 -mt-14', "lg:justify-center")}>
+            className={cn('flex justify-end -mt-20 pr-6', "lg:pr-0 lg:justify-center")}>
                 <button
                     className={cn(
-                        "rounded-full text-base w-max px-10 p-2 hover:backdrop-blur-md hover:bg-background/75 bg-foreground hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
-                        isOpen && "hidden"
+                        "rounded-full text-base p-2 hover:backdrop-blur-md hover:bg-background/75 bg-foreground hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
+                        isOpen && "hidden",
+                        isOpenCart && "hidden"
                     )}
                     onClick={() => setIsOpen(true)}
                 >
@@ -39,9 +41,9 @@ const FloatingBar: FC<FloatingBarProps> = ({
             </motion.div>
             {isOpen && (
                 <motion.div 
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 150 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 100 }}
+                exit={{ opacity: 0, y: 150 }}
                 transition={{ duration: 0.3 }}
                 className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
                     <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpen(false)}/>
