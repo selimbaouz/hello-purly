@@ -1,12 +1,16 @@
 import GetRatings from "@/lib/getRating";
 import { cn } from "@/lib/utils";
+import Image, { StaticImageData } from "next/image";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const ReviewCard = ({
     score,
+    image,
     name,
     content,
   }: {
     score?: number;
+    image: StaticImageData;
     name: string;
     content: string;
   }) => {
@@ -14,18 +18,27 @@ const ReviewCard = ({
         <div className="relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-[#111219] to-[#2D3748] rounded-3xl">
             <div
                 className={cn(
-                    "relative space-y-3 w-80 h-full cursor-pointer overflow-hidden text-left rounded-3xl p-8 bg-gradient-to-b from-[#171923] to-[#11121A]",
+                    "relative space-y-3 w-80 h-full cursor-pointer overflow-hidden text-left rounded-3xl bg-gradient-to-b from-[#171923] to-[#11121A]",
                     "md:w-96 md:space-y-6",
                     "xl:min-h-56"
                 )}
             >
-                <div className="flex flex-row items-center justify-between">
-                    <h6 className={cn("text-lg font-medium dark:text-white", "md:text-2xl", "xl:text-xl")}>
-                        {name}
-                    </h6>
-                    <GetRatings value={score ?? 0} className={cn("text-sm", "md:text-lg", "xl:text-base")} />
+                <Image src={image} alt="" width={200} height={200} className="w-full h-72 rounded-t-3xl object-fill" />
+                <div className="px-6 py-0 space-y-4">
+                    <div className={cn("space-y-2")}>
+                        <div className="flex flex-row items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <h6 className={cn("text-lg font-medium dark:text-white", "md:text-2xl", "xl:text-xl")}>
+                                    {name}
+                                </h6>
+                                    <AiOutlineCheckCircle className="text-foreground text-xl" />
+                            </div>
+                            <GetRatings value={score ?? 0} className={cn("text-sm", "md:text-lg", "xl:text-base")} />
+                        </div>
+                        
+                    </div>
+                    <p className={cn("text-sm font-light pb-6", "md:text-base", "xl:text-sm")}>{content}</p>
                 </div>
-                <p className={cn("text-sm font-light", "md:text-base", "xl:text-sm")}>{content}</p>
             </div>
         </div>
     );

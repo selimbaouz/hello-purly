@@ -7,7 +7,7 @@ import TitleContentPair from "@/components/TitleContentPair";
 import { benefitsData, essentialsData, trustsData } from "@/data";
 import { cn } from "@/lib/utils";
 import EssentialsCard from "@/components/card/bentoGrid/EssentialsCard";
-import BottomBar from "@/components/navigation/BottomBar";
+/* import BottomBar from "@/components/navigation/BottomBar"; */
 import Bento from "@/components/card/bentoGrid/Bento";
 import { Reviews } from "@/components/Reviews";
 import CTACard from "@/components/card/CTACard";
@@ -24,7 +24,7 @@ export default function Home() {
       <Header />
       <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-6", "xl:px-0")}>
         <TitleContentPair 
-          title="La nouvelle révolution pour vos toilettes" 
+          title={`La nouvelle révolution\npour vos toilettes`} 
           content="Profitez du luxe d’un jet d’eau qui vous fera dire sayonara au papier."
         />
         <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:grid lg:grid-cols-3 lg:items-center lg:h-full")}>
@@ -60,9 +60,9 @@ export default function Home() {
       </section>
       <section className={cn("text-center pb-24 space-y-24", "lg:py-20", "xl:pt-0 xl:pb-36 xl:space-y-28")}>
         <TitleContentPair 
-            title="ce que disent nos clients" 
-            content="Excellent, basé sur"
-            contentBold="319 avis"
+            title={`Fesses heureuses\nclients satisfaits`} 
+            content="Excellent, selon"
+            contentBold="319 fesses approuvées"
           />
           <Reviews />
       </section>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
         <Footer />
       </section>
-      <BottomBar />
+      {/* <BottomBar /> */}
     </div>
   );
 }

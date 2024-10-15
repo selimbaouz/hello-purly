@@ -15,6 +15,13 @@ import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
 import { HiOutlineCash, HiOutlineCog, HiOutlineCreditCard, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles, HiOutlineTruck } from "react-icons/hi";
 import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
+import SophieD from "@/public/images/avis/sophieD.png";
+import ClaudiaR from "@/public/images/avis/claudiaR.png";
+import JMT from "@/public/images/avis/jmt.png";
+import LauraM from "@/public/images/avis/lauraM.png";
+import MarcL from "@/public/images/avis/marcL.png";
+import MarieL from "@/public/images/avis/marieL.png";
+import PhillipeG from "@/public/images/avis/phillippeG.png";
 
 export const statsData = [
   {
@@ -172,34 +179,46 @@ export const whySelected = (selected: number) => {
 
 export const reviewsData = [
   {
-    name: "Marie L.",
-    score: 5,
-    content: "Je ne savais pas que j'avais besoin de ce bidet jusqu'à ce que je l'installe. Fini les rouleaux de papier toilette, et bonjour la sensation de fraîcheur à chaque utilisation.",
-  },
-  {
+    image: SophieD,
     name: "Sophie D.",
     score: 5,
-    content: "J'économise tellement de papier toilette et je me sens infiniment plus propre. C'est une petite révolution dans ma salle de bain. Installation rapide, confort garanti, que demander de plus ?",
+    content: "J’ai été agréablement surprise par la simplicité de l’installation. C’est un produit fantastique !",
   },
   {
+    image: ClaudiaR,
+    name: "Claudia R.",
+    score: 5,
+    content: "Ce bidet convient parfaitement à toute la famille. Les différents modes sont adaptés à chaque besoin, et son installation a été rapide.",
+  },
+  {
+    image: PhillipeG,
     name: "Philippe G.",
     score: 5,
-    content: "Un achat que je ne regrette absolument pas. Plus besoin de galérer avec le papier toilette. Le jet est doux, précis, et surtout très efficace. Mes fesses sont ravies et moi aussi !",
+    content: "Ce bidet offre un excellent rapport qualité-prix. Il est efficace, facile à utiliser, et l’installation ne nécessite aucune compétence particulière. Je suis très satisfait de mon achat.",
   },
   {
+    image: MarieL,
+    name: "Marie L.",
+    score: 5,
+    content: "Je suis ravie de mon achat ! L’installation était un jeu d’enfant et les différents modes de lavage sont super pratiques. Je recommande vivement !",
+  },
+  {
+    image: JMT,
+    name: "Jean-Marc T.",
+    score: 5,
+    content: "Ce bidet est parfait pour réduire notre consommation de papier toilette. C’est à la fois économique et écologique.",
+  },
+  {
+    image: LauraM,
     name: "Laura M.",
     score: 5,
-    content: "Facile à installer, zéro électricité, et des économies considérables en papier toilette. Franchement, c'est le petit luxe que tout le monde devrait s'offrir !",
+    content: "Ce bidet a complètement changé notre manière de voir l’hygiène. Les trois modes de lavage sont très appréciables et rendent chaque utilisation confortable. Je le recommande à tout le monde !",
   },
   {
+    image: MarcL,
     name: "Marc L.",
     score: 5,
-    content: "Je ne reviendrai jamais au papier toilette. Ce bidet a changé ma façon de voir l'hygiène. C’est plus propre, plus confortable et tellement plus agréable.",
-  },
-  {
-    name: "Cedric N.",
-    score: 5,
-    content: "Je ne m'attendais pas à une telle qualité pour ce prix. Le jet d'eau est parfait, la sensation de propreté est incomparable. Mes toilettes n’ont jamais été aussi chics !",
+    content: "Je suis impressionné par la qualité de ce bidet. Facile à installer et à utiliser, il est à la fois moderne et pratique.",
   },
 ];
 

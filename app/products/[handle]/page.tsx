@@ -20,6 +20,7 @@ import Image1 from "@/public/images/bidet/money.png";
 import Image2 from "@/public/images/bidet/eco.png";
 import BenefitCard from '@/components/card/BenefitCard';
 import FloatingBar from '@/components/navigation/FloatingBar';
+/* import Image from 'next/image'; */
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -53,6 +54,19 @@ export default async function ProductPage({ params }: { params: { handle: string
             )}>
                 <WhyCard />
             </section>
+            {/* <section className={cn(
+                "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
+                "lg:p-6", 
+                "xl:space-y-32 xl:pb-32 xl:px-0"
+            )}>
+                <TitleContentPair
+                    title="pour des fesses impeccable" 
+                    content={`Fini les résidus gênants et les irritations ! \nDoux, efficace, et ultra-hygiènique.`}
+                />
+                <div className='max-w-screen-xl mx-auto w-full flex flex-col justify-center items-center'>
+                    <Image src="/images/bidet/women.png" alt="Women sit on the wc and she use hellopurly" width={150} height={150} className='w-full rounded-3xl' />
+                </div>
+            </section> */}
             <section className={cn(
                 "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
                 "lg:p-6", 
@@ -60,7 +74,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             )}>
                 <TitleContentPair
                     title="pour des fesses impeccable" 
-                    content="Fini les résidus gênants et les irritations ! Doux, efficace, et ultra-hygiènique."
+                    content={`Fini les résidus gênants et les irritations ! \nDoux, efficace, et ultra-hygiènique.`}
                 />
                 <div className={cn('flex flex-col gap-4')}>
                     <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>
@@ -92,7 +106,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                 "xl:pt-0 xl:pb-36 xl:px-0"
             )}>
                 <TitleContentPair 
-                    title="Des Avantages Qui Câlinent Vos Fesses" 
+                    title={`Des Avantages Qui \nCâlinent Vos Fesses`} 
                     content="Parce qu'elles méritent le meilleur."
                 />
                 <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:grid lg:grid-cols-3 lg:items-center lg:h-full")}>
@@ -112,9 +126,9 @@ export default async function ProductPage({ params }: { params: { handle: string
                 "xl:pt-0 xl:pb-36 xl:space-y-28"
             )}>
                 <TitleContentPair 
-                    title="ce que disent nos clients" 
-                    content="Excellent, basé sur"
-                    contentBold="319 avis vérifiés"
+                    title={`Fesses heureuses\nclients satisfaits`} 
+                    content="Excellent, selon"
+                    contentBold="319 fesses approuvées"
                 />
                 <Reviews />
             </section>
@@ -124,8 +138,8 @@ export default async function ProductPage({ params }: { params: { handle: string
                 "xl:pt-0 xl:pb-36"
             )}>
                 <TitleContentPair 
-                    title="FAQ" 
-                    content="Foire aux questions"
+                    title="Foire aux Fesses" 
+                    content={`Parce qu'on sait que vous avez des questions... \net que vos fesses méritent les meilleures réponses !`}
                 />
                 <FAQ />
             </section>

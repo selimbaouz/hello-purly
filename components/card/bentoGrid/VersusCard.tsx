@@ -13,7 +13,7 @@ const VersusCard = () => {
             <div className={cn("w-full space-y-5 rounded-3xl py-14 bg-gradient-combined", "md:space-y-8", "xl:space-y-14")}>
                 <div className={cn("px-4 space-y-8", "md:px-20", "xl:px-24 xl:space-y-20")}>
                     <TitleContentPair
-                        title="papier toilette vs HelloPurly"
+                        title={`papier toilette vs \nHelloPurly`}
                         content="Le papier toilette, c'est comme laver une fenêtre avec un mouchoir : ça laisse toujours des traces."
                     />
                     <ReactBeforeSliderComponent
