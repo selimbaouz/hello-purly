@@ -60,7 +60,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div className={cn("py-6 border-t bg-gradient-to-t from-[#171923] to-background")}>
+            <div className={cn("py-6 border-t bg-gradient-to-t from-[#171923] to-background z-[100]")}>
                 <div className={cn("max-w-screen-xl mx-auto flex flex-col px-6 justify-center items-center", "lg:flex-row lg:justify-between")}>
                     <p className={cn("text-sm hidden", "lg:block")}>
                         © 2024 Tous droits réservés.
