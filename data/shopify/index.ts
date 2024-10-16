@@ -5,12 +5,17 @@ import { getProductByHandle } from "./queries/product";
 import { 
   Cart, 
   Connection, 
+  Menu, 
+  Page, 
   Product, 
   ShopifyAddToCartOperation, 
   ShopifyCart, 
   ShopifyCartOperation, 
   ShopifyChekoutUrl, 
   ShopifyCreateCartOperation, 
+  ShopifyMenuOperation, 
+  ShopifyPageOperation, 
+  ShopifyPagesOperation, 
   ShopifyProduct, 
   ShopifyRemoveFromCartOperation, 
   ShopifyUpdateCartOperation
@@ -20,6 +25,8 @@ import { getCartQuery, getCheckoutUrl } from "./queries/cart";
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { revalidateTag } from "next/cache";
+import { getMenuQuery } from "./queries/menu";
+import { getPageQuery, getPagesQuery } from "./queries/page";
 
 const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN, 'https://')
@@ -202,6 +209,42 @@ export async function shopifyFetch<T>({
     }
   
     return reshapeCart(res.body.data.cart);
+  }
+
+  export async function getMenu(handle: string): Promise<Menu[]> {
+    const res = await shopifyFetch<ShopifyMenuOperation>({
+      query: getMenuQuery,
+      tags: [TAGS.collections],
+      variables: {
+        handle
+      }
+    });
+  
+    return (
+      res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
+        title: item.title,
+        path: item.url.replace(domain, '').replace('/collections', '/search').replace('/pages', '')
+      })) || []
+    );
+  }
+  
+  export async function getPage(handle: string): Promise<Page> {
+    const res = await shopifyFetch<ShopifyPageOperation>({
+      query: getPageQuery,
+      cache: 'no-store',
+      variables: { handle }
+    });
+  
+    return res.body.data.pageByHandle;
+  }
+  
+  export async function getPages(): Promise<Page[]> {
+    const res = await shopifyFetch<ShopifyPagesOperation>({
+      query: getPagesQuery,
+      cache: 'no-store'
+    });
+  
+    return removeEdgesAndNodes(res.body.data.pages);
   }
 
   export async function revalidate(req: NextRequest): Promise<NextResponse> {

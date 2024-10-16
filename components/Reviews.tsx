@@ -5,9 +5,9 @@ import ReviewCard from "./card/ReviewCard";
 const firstRow = reviewsData.slice(0, reviewsData.length / 2);
 const secondRow = reviewsData.slice(reviewsData.length / 2);
 
-export function Reviews() {
+export function Reviews({id}: {id: string}) {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <div id={id} className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review, index) => (
           <ReviewCard key={index} {...review} />

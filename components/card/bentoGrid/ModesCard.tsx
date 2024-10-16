@@ -36,8 +36,8 @@ const ModesCard = () => {
                     <Image
                         src={ModeImage}
                         alt="Image of Product"
-                        width={337}
-                        height={283}
+                        width={1080}
+                        height={1080}
                         className={cn("rounded-3xl border bg-background", "lg:w-full lg:h-[650px]")}
                     />
                 </div>

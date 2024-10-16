@@ -15,7 +15,7 @@ import ImagesGallery from '@/components/ImagesGallery';
 import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 import { redirect } from 'next/navigation';
-import { getHandleOfProduct } from '@/data/shopify';
+import { getHandleOfProduct, getMenu } from '@/data/shopify';
 import Image1 from "@/public/images/bidet/money.png";
 import Image2 from "@/public/images/bidet/eco.png";
 import BenefitCard from '@/components/card/BenefitCard';
@@ -27,16 +27,18 @@ export default async function ProductPage({ params }: { params: { handle: string
     }
 
     const product = await getHandleOfProduct(params.handle);
+    const menu = await getMenu("main-menu");
+    const footerMenu = await getMenu("footer");
 
     return (
         <div className='relative'>
             <div className="sticky top-0 w-full z-40">
                 <StickyBar />
-                <NavBar />
+                <NavBar menu={menu} />
             </div>
             <section className={cn(
                 "w-full text-left space-y-10 max-w-screen-xl mx-auto", 
-                "lg:space-y-36 lg:py-14", 
+                "lg:p-6", 
                 "xl:grid xl:grid-cols-2 xl:items-start xl:space-y-0 xl:justify-start xl:gap-10"
             )}>
                 <ImagesGallery
@@ -128,7 +130,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                     content="Excellent, selon"
                     contentBold="319 fesses approuvées"
                 />
-                <Reviews />
+                <Reviews id="avis" />
             </section>
             <section className={cn(
                 "text-center pb-24 space-y-10 max-w-screen-lg mx-auto", 
@@ -139,7 +141,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                     title="Foire aux Fesses" 
                     content={`Parce qu'on sait que vous avez des questions... \net que vos fesses méritent les meilleures réponses !`}
                 />
-                <FAQ />
+                <FAQ id="faq" />
             </section>
             <section className={cn(
                 "p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", 
@@ -171,7 +173,10 @@ export default async function ProductPage({ params }: { params: { handle: string
             </section>
             <section className="relative pt-10">
                 <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
-                <Footer />
+                <Footer 
+                    menu={menu}
+                    footerMenu={footerMenu}
+                />
             </section>
             {product && (
                 <FloatingBar

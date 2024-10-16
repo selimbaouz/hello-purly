@@ -252,7 +252,7 @@ export const checkProduct = [
       icon: HiOutlineTruck,
   },
   {
-      title: "Garantie 3 ans",
+      title: "Garantie 2 ans",
       icon: HiOutlineShieldCheck,
   },
   {

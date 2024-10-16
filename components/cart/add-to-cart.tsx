@@ -59,7 +59,7 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
               size === "fullWidth" ? "w-full px-[96px]" : "w-max px-12",
               color === "gradient" ? 
               "bg-gradient-to-b from-background via-background via-50% to-foreground hover:bg-gradient-to-b hover:from-foreground hover:via-background hover:via-50% hover:to-background" : 
-              "p-2 lg:px-6 bg-foreground hover:bg-transparent hover:border-foreground border border-transparent hover:text-foreground text-white font-bold"
+              "p-2 lg:px-6 bg-foreground hover:bg-transparent hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
           )}
           >
             {color !== "foreground" ? 
@@ -80,15 +80,18 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
 export function AddToCart({ product, size = "initial", color = "gradient" }: { product: Product, size?: "fullWidth" | "initial", color?: "gradient" | "foreground" }) {
   const { addCartItem } = useCartStore();
   const { setIsOpenCart } = useOpenCartStore();
+  const { setIsOpenFloatingBar } = useVisibleFloatingCartStore();
   const [message, formAction] = useFormState(addItem, null);
   const variantId = product.variants.edges[0].node.id;
   const actionWithVariant = formAction.bind(null, variantId);
+
 
   return (
     <form
       action={async () => {
         addCartItem(product.variants.edges[0], product);
         await actionWithVariant();
+        setIsOpenFloatingBar(false);
       }}
       onClick={() => setIsOpenCart(true)}
     >

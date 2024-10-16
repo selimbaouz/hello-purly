@@ -15,7 +15,9 @@ interface OpenCartState {
   setIsOpenCart: (isOpen: boolean) => void;
 }
 
-interface VisibleFloatingCartState {
+interface FloatingBarState {
+  isOpenFloatingBar: boolean;
+  setIsOpenFloatingBar: (isOpenFloatingBar: boolean) => void;
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
 }
@@ -120,7 +122,9 @@ export const useOpenCartStore = create<OpenCartState>((set) => ({
   setIsOpenCart: (isOpenCart) => set({ isOpenCart }),
 }))
 
-export const useVisibleFloatingCartStore = create<VisibleFloatingCartState>((set) => ({
+export const useVisibleFloatingCartStore = create<FloatingBarState>((set) => ({
+  isOpenFloatingBar: false,
+  setIsOpenFloatingBar: (isOpenFloatingBar) => set({ isOpenFloatingBar }),
   isVisible: false,
   setIsVisible: (isVisible) => set({ isVisible }),
 }))

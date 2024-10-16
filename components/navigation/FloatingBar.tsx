@@ -1,7 +1,7 @@
 "use client";
 import GetRatings from '@/lib/getRating';
 import { cn } from '@/lib/utils';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { AddToCart } from '../cart/add-to-cart';
 import { Product } from '@/types/types';
 import Image from 'next/image';
@@ -16,12 +16,11 @@ interface FloatingBarProps {
 const FloatingBar: FC<FloatingBarProps> = ({
     product
 }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const { isVisible } = useVisibleFloatingCartStore();
+    const { isVisible, isOpenFloatingBar, setIsOpenFloatingBar } = useVisibleFloatingCartStore();
     const { isOpenCart } = useOpenCartStore();
 
     return (
-        <motion.div className={cn('sticky bottom-10 z-[100] mx-auto w-max', "lg:max-w-screen-md lg:w-auto lg:mx-auto", isOpen && "w-full px-4")}>
+        <motion.div className={cn('sticky bottom-10 z-[100] mx-auto w-max', "lg:max-w-screen-md lg:w-auto lg:mx-auto", isOpenFloatingBar && "w-full px-4")}>
             <motion.div 
              initial={{ y: 100 }}
              animate={isVisible ? { y: 100 } : { y: 0 }}
@@ -31,22 +30,22 @@ const FloatingBar: FC<FloatingBarProps> = ({
                 <button
                     className={cn(
                         "rounded-full text-base p-2 hover:backdrop-blur-md hover:bg-background/75 bg-foreground hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
-                        isOpen && "hidden",
+                        isOpenFloatingBar && "hidden",
                         isOpenCart && "hidden"
                     )}
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => setIsOpenFloatingBar(true)}
                 >
                     <FiPlus className={cn("text-4xl font-bold")} />
                 </button>
             </motion.div>
-            {isOpen && (
+            {isOpenFloatingBar && (
                 <motion.div 
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ duration: 0.3 }}
                 className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
-                    <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpen(false)}/>
+                    <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpenFloatingBar(false)}/>
                     <div className={cn("rounded-3xl p-4 bg-gradient-to-b from-[#171923] to-[#11121A] text-white relative flex flex-col justify-center")}>
                         <div className={cn("flex items-center gap-6")}>
                             <Image src={product.images.edges[0].node.originalSrc} alt="Image of Product" width={14} height={14} className="w-max size-14 rounded-full object-contain" />

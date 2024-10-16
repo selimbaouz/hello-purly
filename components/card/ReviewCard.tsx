@@ -23,11 +23,11 @@ const ReviewCard = ({
                     "xl:min-h-56"
                 )}
             >
-                <Image src={image} alt="" width={1080} height={1080} className={cn("w-full rounded-t-3xl object-fill", "md:h-[450px]")} />
+                <Image src={image} alt="" width={1080} height={1080} className={cn("w-full rounded-t-3xl object-fill", "md:h-[350px]")} />
                 <div className="p-6 space-y-4">
                     <div className={cn("space-y-2")}>
                         <div className="flex flex-row items-center justify-between">
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2">
                                 <h6 className={cn("text-lg font-medium dark:text-white", "md:text-2xl", "xl:text-xl")}>
                                     {name}
                                 </h6>

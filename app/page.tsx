@@ -13,13 +13,17 @@ import { Reviews } from "@/components/Reviews";
 import CTACard from "@/components/card/CTACard";
 import TrustFeatures from "@/components/TrustFeatures";
 import Footer from "@/components/Footer";
+import { getMenu } from "@/data/shopify";
 
-export default function Home() {
+export default async function Home() {
+  const menu = await getMenu("main-menu");
+  const footerMenu = await getMenu("footer");
+
   return (
     <div>
       <div className="sticky top-0 w-full z-50">
         <StickyBar />
-        <NavBar />
+        <NavBar menu={menu} />
       </div>
       <Header />
       <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-6", "xl:px-0")}>
@@ -64,7 +68,7 @@ export default function Home() {
             content="Excellent, selon"
             contentBold="319 fesses approuvées"
           />
-          <Reviews />
+          <Reviews id="avis" />
       </section>
       <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:p-6", "xl:px-0")}>
         <CTACard />
@@ -84,7 +88,10 @@ export default function Home() {
       </section>
       <section className="relative pt-10">
         <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
-        <Footer />
+        <Footer 
+          menu={menu}
+          footerMenu={footerMenu}
+        />
       </section>
       {/* <BottomBar /> */}
     </div>

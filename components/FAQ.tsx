@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { faqData } from "@/data";
 
-const FAQ = () => {
+const FAQ = ({id}: {id: string}) => {
     return (
-        <div className={cn(
+        <div id={id} className={cn(
             "p-4 text-left", 
             "lg:p-6", 
             "xl:px-10"
