@@ -8,7 +8,8 @@ import { FiPlus } from 'react-icons/fi';
 import { CgClose } from 'react-icons/cg';
 import { useOpenCartStore, useVisibleFloatingCartStore } from '@/store/cart';
 import { motion } from 'framer-motion';
-import ImageLoader from '../ImageLoader';
+import Image from 'next/image';
+import { useOpenSidebarStore } from '@/store/sidebar';
 
 interface FloatingBarProps {
     product: Product;
@@ -18,6 +19,7 @@ const FloatingBar: FC<FloatingBarProps> = ({
 }) => {
     const { isVisible, isOpenFloatingBar, setIsOpenFloatingBar } = useVisibleFloatingCartStore();
     const { isOpenCart } = useOpenCartStore();
+    const { isOpenSidebar } = useOpenSidebarStore();
 
     return (
         <motion.div className={cn('sticky bottom-10 z-[100] mx-auto w-max', "lg:max-w-screen-md lg:w-auto lg:mx-auto", isOpenFloatingBar && "w-full px-4")}>
@@ -31,7 +33,8 @@ const FloatingBar: FC<FloatingBarProps> = ({
                     className={cn(
                         "rounded-full text-base p-2 hover:backdrop-blur-md hover:bg-background/75 bg-foreground hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
                         isOpenFloatingBar && "hidden",
-                        isOpenCart && "hidden"
+                        isOpenCart && "hidden",
+                        isOpenSidebar && "hidden"
                     )}
                     onClick={() => setIsOpenFloatingBar(true)}
                 >
@@ -44,11 +47,15 @@ const FloatingBar: FC<FloatingBarProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ duration: 0.3 }}
-                className={cn("-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl")}>
+                className={cn(
+                    "-mt-32 z-50 relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-foreground to-[#2D3748] rounded-3xl", 
+                    isOpenCart && "hidden",
+                    isOpenSidebar && "hidden"
+                )}>
                     <CgClose className='absolute top-4 right-4 text-2xl z-50 text-white cursor-pointer' onClick={() => setIsOpenFloatingBar(false)}/>
                     <div className={cn("rounded-3xl p-4 bg-gradient-to-b from-[#171923] to-[#11121A] text-white relative flex flex-col justify-center")}>
                         <div className={cn("flex items-center gap-6")}>
-                            <ImageLoader src={product.images.edges[0].node.originalSrc} alt="Image of Product" width={14} height={14} className="w-max size-14 rounded-full object-contain" />
+                            <Image src={product.images.edges[0].node.originalSrc} alt="Image of Product" width={14} height={14} className="w-max size-14 rounded-full object-contain" />
                             <div className={cn("space-y-0.5")}>
                                 <h6 className={cn("uppercase font-bold text-2xl", "lg:text-3xl")}>
                                     {product.title}

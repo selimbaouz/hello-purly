@@ -25,7 +25,7 @@ export default async function LegalPage({ params }: { params: { page: string } }
                 "lg:flex lg:flex-col lg:items-center lg:py-20", 
             )}>
                 <div className={cn('px-6 space-y-14', "md:px-0")}>
-                    <h1 className="text-5xl font-bold">{page.title}</h1>
+                    <h1 className="text-3xl font-bold">{page.title}</h1>
                     <Prose html={page.body as string} />
                 </div>
             </section>

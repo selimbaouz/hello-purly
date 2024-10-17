@@ -7,7 +7,7 @@ import Logo from "@/public/images/logo.webp"
 import { Menu } from "@/types/types";
 import { FC } from "react";
 import { usePathname } from "next/navigation";
-import ImageLoader from "@/components/ImageLoader";
+import Image from "next/image";
 
 interface NavBarWebProps {
     menu: Menu[];
@@ -30,7 +30,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
     return (
         <div className={cn("hidden", "relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-6", "xl:px-0")}>
             <Link href="/" className="cursor-pointer z-50">
-                <ImageLoader src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
+                <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
             </Link>
             <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
                 {menu.map((data, i) => (

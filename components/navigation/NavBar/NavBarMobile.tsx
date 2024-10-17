@@ -6,16 +6,14 @@ import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import Logo from "@/public/images/logo.webp"
-import { Dispatch, FC, SetStateAction } from "react";
-import ImageLoader from "@/components/ImageLoader";
+import Image from "next/image";
+import { useOpenSidebarStore } from "@/store/sidebar";
 
-interface NavBarMobileProps {
-    setIsOpenSidebar: Dispatch<SetStateAction<boolean>>;
-}
-
-const NavBarMobile: FC<NavBarMobileProps> = ({setIsOpenSidebar}) => {
+const NavBarMobile = () => {
     const { cart } = useCartStore();
     const { setIsOpenCart } = useOpenCartStore();
+    const { setIsOpenSidebar } = useOpenSidebarStore();
+    
     return (
         <div className={cn("p-4 flex justify-between items-center max-w-screen-xl mx-auto", "lg:hidden")}>
             <div 
@@ -25,7 +23,7 @@ const NavBarMobile: FC<NavBarMobileProps> = ({setIsOpenSidebar}) => {
                 <IoMenuOutline className="text-3xl hover:text-foreground" />
             </div>
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer">
-                <ImageLoader src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
+                <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
             </Link>
             <div 
                 className="relative p-2 cursor-pointer group" 

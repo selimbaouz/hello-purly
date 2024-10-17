@@ -6,29 +6,33 @@ import Link from "next/link";
 import Logo from "@/public/images/logo.webp"
 import { Menu } from "@/types/types";
 import { usePathname } from "next/navigation";
-import { Dispatch, SetStateAction } from "react";
-import ImageLoader from "../ImageLoader";
+import Image from "next/image";
+import { useOpenSidebarStore } from "@/store/sidebar";
 
 interface SideBarProps {
     menu: Menu[];
-    isOpenSidebar: boolean;
-    setIsOpenSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function SideBar ({
     menu,
-    isOpenSidebar,
-    setIsOpenSidebar
 }: SideBarProps) {
     const classLink = "font-light text-base text-white lg:text-sm xl:text-base";
     const pathname = usePathname();
+    const { isOpenSidebar, setIsOpenSidebar } = useOpenSidebarStore();
+
+    const handlePath = (path: string) => {
+        if (pathname === "/#faq") {
+          return "/products/le-bidet-wc#faq";
+        }
+        return path;
+      };
 
   return (
     <Sheet open={isOpenSidebar} onOpenChange={setIsOpenSidebar}>
         <SheetContent side="left" className="h-full min-w-full">
         <SheetHeader>
             <SheetTitle>
-                <ImageLoader src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
+                <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
             </SheetTitle>
         </SheetHeader>
         <SheetDescription></SheetDescription>
@@ -36,10 +40,15 @@ export default function SideBar ({
             {menu?.map((data, i) => (
                 <li key={i} className={cn("border-b border-[#2D3748] py-3 pl-4 hover:bg-[#2D3748]", data.path === pathname && "bg-[#2D3748]")}>
                     <Link 
-                    href={data.path} 
+                    href={handlePath(data.path)} 
                     target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
                     rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
                     className={cn(classLink)}
+                    onClick={() => {
+                        if (!data.path.startsWith("/#")) {
+                            setIsOpenSidebar(false);
+                          }
+                    }}
                     >
                         {data.title}
                     </Link>

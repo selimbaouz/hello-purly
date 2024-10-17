@@ -17,6 +17,13 @@ const Footer = ({
     const classLink = "font-light text-base hover:underline";
     const pathname = usePathname();
 
+    const handlePath = (path: string) => {
+        if (pathname === "/#faq") {
+          return "/products/le-bidet-wc#faq";
+        }
+        return path;
+      };
+
     return (
         <>
             <footer className={cn('p-8 text-left py-10 space-y-20 bg-background z-10 h-full', "xl:px-0")}>
@@ -45,7 +52,7 @@ const Footer = ({
                                 {menu.map((data, i) => (
                                     <li key={i}>
                                         <Link 
-                                            href={data.path} 
+                                            href={handlePath(data.path)} 
                                             target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
                                             rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
                                             className={cn(classLink, data.path === pathname && "font-bold underline")}
