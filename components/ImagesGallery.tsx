@@ -51,15 +51,30 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
     };
 
     return (
-        <div className={cn("flex flex-col gap-3 w-full", "xl:sticky xl:top-0")}>
-            <ImageLoader
-                src={images[bigImageIndex].node.originalSrc ?? ""} // Utilisez l'index pour obtenir l'image
-                alt='Main Images of Bidet-Wc'
-                className={cn('bg-white h-[26rem] mx-auto w-full', "lg:h-auto", 'xl:rounded-3xl')}
-                width={387}
-                height={355}
-                onTouchStart={handleTouchStart} // Ajoutez l'événement touch
-            />
+        <div className={cn("flex flex-col gap-3 w-full", "lg:sticky lg:top-0")}>
+            <div className={cn("relative")}>
+                <ImageLoader
+                    src={images[bigImageIndex].node.originalSrc ?? ""} // Utilisez l'index pour obtenir l'image
+                    alt='Main Images of Bidet-Wc'
+                    className={cn('bg-white h-[26rem] mx-auto w-full', "md:h-[40rem]", 'xl:rounded-3xl')}
+                    width={387}
+                    height={355}
+                    onTouchStart={handleTouchStart} // Ajoutez l'événement touch
+                />
+                <div className="absolute flex justify-center w-full bottom-4 space-x-2 mt-2">
+                    {images.map((_, index) => (
+                        <div
+                            key={index}
+                            className={cn(
+                                'size-2 rounded-full cursor-pointer',
+                                "lg:size-3",
+                                bigImageIndex === index ? 'bg-foreground' : 'bg-background' // Change couleur selon l'état
+                            )}
+                            onClick={() => handleImageClick(index)} // Changer d'image lors du clic
+                        />
+                    ))}
+                </div>
+            </div>
             <div className={cn("flex gap-2 items-center px-4", "lg:px-0")}>
                 {images.map((image, index) => (
                     <div key={index} className={cn('w-full rounded-xl cursor-pointer')} onClick={() => handleImageClick(index)}>

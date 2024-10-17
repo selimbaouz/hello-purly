@@ -18,11 +18,11 @@ const Footer = ({
     const pathname = usePathname();
 
     const handlePath = (path: string) => {
-        if (pathname === "/#faq") {
-          return "/products/le-bidet-wc#faq";
+        if (typeof window !== "undefined" && window.location.hash === '#faq') {
+            return "/products/le-bidet-wc#faq";
         }
         return path;
-      };
+    };
 
     return (
         <>

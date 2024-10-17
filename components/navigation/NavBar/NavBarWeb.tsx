@@ -19,13 +19,11 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
     const pathname = usePathname();
 
     const handlePath = (path: string) => {
-        if (pathname === "/#faq") {
-          // Rediriger vers la page produit avec l'ancre #faq
-          return "/products/le-bidet-wc#faq";
+        if (typeof window !== "undefined" && window.location.hash === '#faq') {
+            return "/products/le-bidet-wc#faq";
         }
-        // Sinon, retourne le chemin original du menu
         return path;
-      };
+    };
 
     return (
         <div className={cn("hidden", "relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-6", "xl:px-0")}>

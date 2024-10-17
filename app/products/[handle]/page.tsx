@@ -38,8 +38,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             </div>
             <section className={cn(
                 "w-full text-left space-y-10 max-w-screen-xl mx-auto", 
-                "lg:p-6", 
-                "xl:grid xl:grid-cols-2 xl:items-start xl:space-y-0 xl:justify-start xl:gap-10"
+                "lg:p-6 lg:grid lg:grid-cols-2 lg:items-start lg:space-y-0 lg:justify-start lg:gap-10"
             )}>
                 <ImagesGallery
                     images={product?.images.edges ?? []}
