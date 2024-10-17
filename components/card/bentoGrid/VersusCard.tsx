@@ -2,8 +2,8 @@
 import TitleContentPair from "@/components/TitleContentPair";
 import { cn } from "@/lib/utils";
 import ContainerCard from "../ContainerCard";
-import Image1 from "@/public/images/bidet/after.png";
-import Image2 from "@/public/images/bidet/before.png";
+import Image1 from "@/public/images/bidet/after.webp";
+import Image2 from "@/public/images/bidet/before.webp";
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 

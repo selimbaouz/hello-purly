@@ -1,6 +1,6 @@
 "use client"
 import { cn } from "@/lib/utils";
-import Logo from "@/public/images/logo.png"
+import Logo from "@/public/images/logo.webp"
 import { Menu } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +67,7 @@ const Footer = ({
                     <Link href="https://sejiux.com" target="_blank" rel="noopener noreferrer" className={cn("border-b-2 w-max p-2 rounded-full border-white hover:border-t-2 hover:border-b-0")}>
                         <p className="text-sm text-white font-medium flex items-center gap-2">
                             <span>
-                                <Image src="/images/sejiux.png" alt="Logo of HelloPurly" width={36} height={36} />
+                                <Image src="/images/sejiux.webp" alt="Logo of HelloPurly" width={36} height={36} />
                             </span>
                         </p>
                     </Link>

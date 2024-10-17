@@ -41,7 +41,7 @@ const Header = () => {
                         className="block"
                         animationStyle="from-center"
                         videoSrc="https://www.youtube.com/embed/eg_taJ7b9rE"
-                        thumbnailSrc="/images/1.png"
+                        thumbnailSrc="/images/1.webp"
                         thumbnailAlt="Hero Video"
                     />
                 </div>

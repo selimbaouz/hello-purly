@@ -56,7 +56,7 @@ export default async function Home() {
             ))}
           </div>
           <Bento 
-            image="/images/bidet/men-back.png"
+            image="/images/bidet/men-back.webp"
             title="Précis, écolo, économique"
             content={`Vous n’aurez plus qu’une question :\n''Pourquoi je ne l’ai pas installé plus tôt ?''`}
           />

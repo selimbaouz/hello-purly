@@ -3,11 +3,11 @@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "@/public/images/logo.png"
+import Logo from "@/public/images/logo.webp"
 import { Menu } from "@/types/types";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
+import ImageLoader from "../ImageLoader";
 
 interface SideBarProps {
     menu: Menu[];
@@ -28,7 +28,7 @@ export default function SideBar ({
         <SheetContent side="left" className="h-full min-w-full">
         <SheetHeader>
             <SheetTitle>
-                <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
+                <ImageLoader src={Logo} alt="Logo of HelloPurly" width={170} height={36} className={cn("lg:w-32", "xl:w-44")} />
             </SheetTitle>
         </SheetHeader>
         <SheetDescription></SheetDescription>

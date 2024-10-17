@@ -3,10 +3,10 @@ import SelectButton from "@/components/SelectButton";
 import TitleContentPair from "@/components/TitleContentPair";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import Image from "next/image";
 import { modeSelected, selectionModesData } from "@/data";
 import ContainerCard from "../ContainerCard";
 import ModeImage from "@/public/images/bidet/mode.webp";
+import ImageLoader from "@/components/ImageLoader";
 
 
 const ModesCard = () => {
@@ -33,7 +33,7 @@ const ModesCard = () => {
                     </div>
                 </div>
                 <div className="w-full flex items-center justify-center py-2">
-                    <Image
+                    <ImageLoader
                         src={ModeImage}
                         alt="Image of Product"
                         width={1080}

@@ -1,5 +1,5 @@
+import ImageLoader from "@/components/ImageLoader";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { FC } from "react";
 
 interface BentoProps {
@@ -16,7 +16,7 @@ const Bento: FC<BentoProps> = ({
     return (
         <div className="relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-[#111219] to-[#2D3748] rounded-3xl">
             <div className={cn("w-auto h-full rounded-3xl bg-gradient-combined flex flex-col justify-between text-left")}>
-                <Image
+                <ImageLoader
                     src={image!}
                     alt="Image of Product"
                     width={1080}

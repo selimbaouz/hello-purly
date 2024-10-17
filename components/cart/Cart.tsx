@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image';
 import { useCartStore, useOpenCartStore } from '../../store/cart';
 import { ShoppingCartIcon } from 'lucide-react';
 import Price from '../Price';
@@ -9,6 +8,7 @@ import { useFormStatus } from 'react-dom';
 import { createCartAndSetCookie, redirectToCheckoutUrl } from './actions';
 import { PulseLoader } from 'react-spinners';
 import { useEffect, useRef } from 'react';
+import ImageLoader from '../ImageLoader';
 
 export default function Cart() {
   const { cart, updateCartItem } = useCartStore();
@@ -63,7 +63,7 @@ export default function Cart() {
                     ).map((item, i) => (
                         <li key={i} className="flex w-full justify-between gap-1 items-center p-2">
                             <div className='relative'>
-                                <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={20} height={20} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
+                                <ImageLoader src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={20} height={20} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
                                 <div className="absolute z-40 -top-2 -left-2">
                                     <DeleteItemButton item={item} optimisticUpdate={updateCartItem} />
                                 </div>

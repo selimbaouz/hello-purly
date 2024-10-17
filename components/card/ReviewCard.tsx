@@ -1,7 +1,8 @@
 import GetRatings from "@/lib/getRating";
 import { cn } from "@/lib/utils";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import ImageLoader from "../ImageLoader";
 
 const ReviewCard = ({
     score,
@@ -23,21 +24,23 @@ const ReviewCard = ({
                     "xl:min-h-56"
                 )}
             >
-                <Image src={image} alt="" width={1080} height={1080} className={cn("w-full rounded-t-3xl object-fill", "md:h-[350px]")} />
+                <div>
+                    <ImageLoader src={image} alt="" width={1080} height={1080} className={cn("w-full rounded-t-3xl object-fill", "md:h-[350px]")} />
+                </div>
                 <div className="p-6 space-y-4">
                     <div className={cn("space-y-2")}>
                         <div className="flex flex-row items-center justify-between">
                             <div className="flex items-center gap-2">
-                                <h6 className={cn("text-lg font-medium dark:text-white", "md:text-2xl", "xl:text-xl")}>
+                                <h6 className={cn("text-lg font-medium text-white", "md:text-2xl", "xl:text-xl")}>
                                     {name}
                                 </h6>
                                     <AiOutlineCheckCircle className="text-foreground text-xl" />
                             </div>
-                            <GetRatings value={score ?? 0} className={cn("text-sm", "md:text-lg", "xl:text-base")} />
+                            <GetRatings value={score ?? 0} className={cn("text-sm text-white", "md:text-lg", "xl:text-base")} />
                         </div>
                         
                     </div>
-                    <p className={cn("text-sm font-light", "md:text-base", "xl:text-sm")}>{content}</p>
+                    <p className={cn("text-sm font-light text-white", "md:text-base", "xl:text-sm")}>{content}</p>
                 </div>
             </div>
         </div>

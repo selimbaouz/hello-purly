@@ -2,8 +2,8 @@
 
 import { ImageProduct } from "@/types/types";
 import { cn } from "@/lib/utils";
-import Image from 'next/image';
 import React, { FC, useState } from 'react';
+import ImageLoader from "./ImageLoader";
 
 interface ImagesGalleryProps {
     images: ImageProduct[],
@@ -52,7 +52,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
 
     return (
         <div className={cn("flex flex-col gap-3 w-full", "xl:sticky xl:top-0")}>
-            <Image
+            <ImageLoader
                 src={images[bigImageIndex].node.originalSrc ?? ""} // Utilisez l'index pour obtenir l'image
                 alt='Main Images of Bidet-Wc'
                 className={cn('bg-white h-[26rem] mx-auto w-full', "lg:h-auto", 'xl:rounded-3xl')}
@@ -63,7 +63,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
             <div className={cn("flex gap-2 items-center px-4", "lg:px-0")}>
                 {images.map((image, index) => (
                     <div key={index} className={cn('w-full rounded-xl cursor-pointer')} onClick={() => handleImageClick(index)}>
-                        <Image
+                        <ImageLoader
                             src={image.node.originalSrc ?? ""}
                             alt='Images of Bidet-Wc'
                             className={cn(

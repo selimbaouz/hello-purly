@@ -2,12 +2,12 @@
 
 import { cn } from "@/lib/utils";
 import { useCartStore, useOpenCartStore } from "@/store/cart";
-import Image from "next/image";
 import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
 import { RiShoppingBag3Fill } from "react-icons/ri";
-import Logo from "@/public/images/logo.png"
+import Logo from "@/public/images/logo.webp"
 import { Dispatch, FC, SetStateAction } from "react";
+import ImageLoader from "@/components/ImageLoader";
 
 interface NavBarMobileProps {
     setIsOpenSidebar: Dispatch<SetStateAction<boolean>>;
@@ -25,7 +25,7 @@ const NavBarMobile: FC<NavBarMobileProps> = ({setIsOpenSidebar}) => {
                 <IoMenuOutline className="text-3xl hover:text-foreground" />
             </div>
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer">
-                <Image src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
+                <ImageLoader src={Logo} alt="Logo of HelloPurly" width={170} height={36} />
             </Link>
             <div 
                 className="relative p-2 cursor-pointer group" 

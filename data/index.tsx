@@ -15,13 +15,13 @@ import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
 import { HiOutlineCash, HiOutlineCog, HiOutlineCreditCard, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles, HiOutlineTruck } from "react-icons/hi";
 import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
-import SophieD from "@/public/images/avis/sophieD.png";
-import ClaudiaR from "@/public/images/avis/claudiaR.png";
-import JMT from "@/public/images/avis/jmt.png";
-import LauraM from "@/public/images/avis/lauraM.png";
-import MarcL from "@/public/images/avis/marcL.png";
-import MarieL from "@/public/images/avis/marieL.png";
-import PhillipeG from "@/public/images/avis/phillippeG.png";
+import SophieD from "@/public/images/avis/sophieD.webp";
+import ClaudiaR from "@/public/images/avis/claudiaR.webp";
+import JMT from "@/public/images/avis/jmt.webp";
+import LauraM from "@/public/images/avis/lauraM.webp";
+import MarcL from "@/public/images/avis/marcL.webp";
+import MarieL from "@/public/images/avis/marieL.webp";
+import PhillipeG from "@/public/images/avis/phillippeG.webp";
 
 export const statsData = [
   {

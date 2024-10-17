@@ -16,8 +16,8 @@ import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 import { redirect } from 'next/navigation';
 import { getHandleOfProduct, getMenu } from '@/data/shopify';
-import Image1 from "@/public/images/bidet/money.png";
-import Image2 from "@/public/images/bidet/eco.png";
+import Image1 from "@/public/images/bidet/money.webp";
+import Image2 from "@/public/images/bidet/eco.webp";
 import BenefitCard from '@/components/card/BenefitCard';
 import FloatingBar from '@/components/navigation/FloatingBar';
 
@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                             content={`Messieurs, un nettoyage précis ! Mesdames, douceur apaisante ! Tous frais et au top.`}
                         />
                         <Bento 
-                            image="/images/bidet/women.png"
+                            image="/images/bidet/women.webp"
                             title="Propreté : Le Nouveau Luxe"
                             content={`Découvrez une hygiène éclatante, où fraîcheur et douceur s’allient pour un confort optimal.`}
                         />
