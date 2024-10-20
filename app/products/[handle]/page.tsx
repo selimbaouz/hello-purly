@@ -71,9 +71,9 @@ export default async function ProductPage({ params }: { params: { handle: string
                             content={`Messieurs, un nettoyage précis ! Mesdames, douceur apaisante ! Tous frais et au top.`}
                         />
                         <Bento 
-                            image="/images/bidet/women.webp"
-                            title="Propreté : Le Nouveau Luxe"
-                            content={`Découvrez une hygiène éclatante, où fraîcheur et douceur s’allient pour un confort optimal.`}
+                            image="/images/bidet/compatibilite.webp"
+                            title="Compatibilité sans compromis"
+                            content={`Hellopurly s'adapte parfaitement à vos WC. Ultra-fin et discret, contrairement aux bidets plus épais.`}
                         />
                     </div>
                     <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>

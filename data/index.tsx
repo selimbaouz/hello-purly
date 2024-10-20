@@ -212,7 +212,7 @@ export const reviewsData = [
     image: LauraM,
     name: "Laura M.",
     score: 5,
-    content: "Ce bidet a complètement changé notre manière de voir l’hygiène. Les trois modes de lavage sont très appréciables et rendent chaque utilisation confortable. Je le recommande à tout le monde !",
+    content: "Ce bidet a complètement changé notre manière de voir l’hygiène. Les deux modes de lavage sont très appréciables et rendent chaque utilisation confortable. Je le recommande à tout le monde !",
   },
   {
     image: MarcL,

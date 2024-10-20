@@ -61,14 +61,13 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
                     height={355}
                     onTouchStart={handleTouchStart} // Ajoutez l'événement touch
                 />
-                <div className="absolute flex justify-center w-full bottom-4 space-x-2 mt-2">
+                <div className="absolute flex justify-center items-center w-full bottom-4 space-x-3 mt-2">
                     {images.map((_, index) => (
                         <div
                             key={index}
                             className={cn(
-                                'size-2 rounded-full cursor-pointer',
-                                "lg:size-3",
-                                bigImageIndex === index ? 'bg-foreground' : 'bg-background' // Change couleur selon l'état
+                                'rounded-full cursor-pointer',
+                                bigImageIndex === index ? 'bg-foreground size-3' : 'bg-background size-2' // Change couleur selon l'état
                             )}
                             onClick={() => handleImageClick(index)} // Changer d'image lors du clic
                         />
