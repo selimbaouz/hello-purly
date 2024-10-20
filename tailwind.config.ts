@@ -60,6 +60,25 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
+			"spin-around": {
+				"0%": {
+					transform: "translateZ(0) rotate(0)",
+				},
+				"15%, 35%": {
+					transform: "translateZ(0) rotate(90deg)",
+				},
+				"65%, 85%": {
+					transform: "translateZ(0) rotate(270deg)",
+				},
+				"100%": {
+					transform: "translateZ(0) rotate(360deg)",
+				},
+			},
+			slide: {
+				to: {
+					transform: "translate(calc(100cqw - 100%), 0)",
+				},
+			},
   			marquee: {
   				from: {
   					transform: 'translateX(0)'
@@ -97,8 +116,10 @@ const config: Config = {
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			"spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+			slide: "slide var(--speed) ease-in-out infinite alternate",
+  		},
   	},
   	screens: {
   		xs: '370px',

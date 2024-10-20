@@ -10,6 +10,7 @@ import StatsList from "../StatsList";
 import { FC } from "react";
 import { AddToCart } from "../cart/add-to-cart";
 import { Product } from "@/types/types";
+import ShimmerButton from "../ShimmerButton";
 
 interface CTACardProps {
     title?: string;
@@ -27,10 +28,13 @@ const CTACard: FC<CTACardProps> = ({title, product}) => {
                     {product ? (
                         <AddToCart product={product} size="initial" />
                     ) : (
-                        <GradientButton
-                            link="/products/le-bidet-wc"
-                            title={title}
-                        />
+                        <ShimmerButton
+                            shimmerColor='#319795'>
+                                <GradientButton
+                                    link="/products/le-bidet-wc"
+                                    title={title}
+                                />
+                        </ShimmerButton>
                     )}
                 </div>
                 <div className={cn("pt-14")}>

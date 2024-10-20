@@ -4,6 +4,7 @@ import GradientButton from './GradientButton';
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import StatsList from './StatsList';
 import { statsData } from '@/data';
+import ShimmerButton from './ShimmerButton';
 
 const Header = () => {
     return (
@@ -22,9 +23,12 @@ const Header = () => {
             <p className={cn("text-base font-regular")}>
                 Economisez jusqu{"'"}à 1500L par an tout en profitant d{"'"}une hygiène parfaite.
             </p>
-            <GradientButton
-                link="/products/le-bidet-wc"
-            />
+            <ShimmerButton
+            shimmerColor='#319795'>
+                <GradientButton
+                    link="/products/le-bidet-wc"
+                />
+            </ShimmerButton>
             <div className={cn("flex flex-col space-y-14 py-14 pb-20", "md:flex-row md:space-y-0 md:justify-center md:items-start md:gap-10", "lg:gap-14", "xl:gap-20")}>
                 {statsData.map((data, index) => (
                     <div key={index}>
