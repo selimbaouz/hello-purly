@@ -347,7 +347,7 @@ export const stacksData = [
   },
   {
     icon: IoIosPeople,
-    title: "+360 clients satisfaits",
+    title: "+319 clients satisfaits",
   },
   {
     icon: TbTruckReturn,

@@ -31,9 +31,9 @@ const Footer = ({
                     <Image src={Logo} alt="Logo of HelloPurly" width={250} height={36} />
                     <div className={cn("flex flex-col space-y-10", "lg:flex-row lg:items-start lg:justify-between lg:space-y-0 lg:max-w-6xl")}>
                         <div className={cn("space-y-4")}>
-                            <h6 className={cn("uppercase text-lg font-medium")}>À propos de Hello Curly</h6>
+                            <h6 className={cn("uppercase text-lg font-medium")}>À propos de Hello Purly</h6>
                             <p className={cn(classLink, "max-w-xs leading-relaxed", "lg:max-w-sm")}>
-                                {"Chez Hello Curly, nous avons lancé cette boutique pour révolutionner votre expérience de toilette. Notre mission est de promouvoir une hygiène supérieure tout en réduisant notre empreinte écologique. Ensemble, faisons un geste pour nos fesses et pour la planète !"}
+                                {"Chez Hello Purly, nous avons lancé cette boutique pour révolutionner votre expérience de toilette. Notre mission est de promouvoir une hygiène supérieure tout en réduisant notre empreinte écologique. Ensemble, faisons un geste pour nos fesses et pour la planète !"}
                             </p>
                         </div>
                         <div className={cn("space-y-4")}>
