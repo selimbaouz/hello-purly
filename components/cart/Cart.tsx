@@ -37,6 +37,7 @@ export default function Cart() {
   const handleRedirectToCheckout = async () => {
     try {
         const url = await redirectToCheckoutUrl();
+        console.log(url);
         if (url) {
           window.location.href = url;
           } else {
@@ -45,7 +46,7 @@ export default function Cart() {
       } catch (error) {
         console.error("Erreur lors de la redirection vers le checkout:", error); 
       }
-}
+  }
 
   return (
     <div className="bg-background text-white h-full py-10">

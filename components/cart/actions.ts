@@ -128,5 +128,13 @@ export async function redirectToCheckoutUrl() {
 
 export async function createCartAndSetCookie() {
   const cart = await createCart();
-  cookies().set('cartId', cart.id!);
+  /* cookies().set('cartId', cart.id!); */
+  if (cart && cart.id) {
+    cookies().set('cartId', cart.id!, {
+      path: '/',
+      sameSite: 'none',
+      secure: true,
+      domain: '.hellopurly.fr', // Mettez votre domaine ici
+    });
+  }
 }
