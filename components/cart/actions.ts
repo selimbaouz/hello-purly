@@ -6,21 +6,36 @@ import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function addItem(prevState: any, variantId: string | undefined) {
-  const cartId = cookies().get('cartId')?.value;
-
-  if (!cartId || !variantId) {
-    return 'Error adding item to cart';
+  export async function addItem(prevState: any, variantId: string | undefined) {
+    // Récupère ou crée un cartId
+    let cartId = cookies().get('cartId')?.value;
+  
+    // Si aucun cartId trouvé, crée un nouveau panier et récupère son ID
+    if (!cartId) {
+      try {
+        const cart = await createCart();
+        cartId = cart.id!;
+        cookies().set('cartId', cartId);  // Stocke le nouvel ID de panier dans les cookies
+      } catch (error) {
+        console.error("Erreur lors de la création du panier :", error);
+        return 'Erreur lors de la création du panier';
+      }
+    }
+  
+    // Vérifie si le variantId est fourni
+    if (!variantId) {
+      return 'Erreur : variantId est manquant';
+    }
+  
+    try {
+      // Ajoute le produit au panier
+      await addToCart(cartId, [{ merchandiseId: variantId, quantity: 1 }]);
+      revalidateTag(TAGS.cart);
+    } catch (e) {
+      console.error("Erreur lors de l'ajout au panier :", e);
+      return 'Erreur lors de l\'ajout au panier';
+    }
   }
-
-  try {
-    await addToCart(cartId, [{ merchandiseId: variantId, quantity: 1 }]);
-    revalidateTag(TAGS.cart);
-  } catch (e) {
-    console.error(e);
-    return 'Error adding item to cart';
-  }
-}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function removeItem(prevState: any, merchandiseId: string) {
@@ -101,24 +116,14 @@ export async function updateItemQuantity(
   }
 }
 
-export async function redirectToCheckoutUrl() {
-  const cookiesCartId = cookies().get('cartId')?.value;
-  /* getCheckoutUrl */
-  
-  if (!cookiesCartId) {
-    return 'Missing cart ID';
-  }
-  const cart = await getCart(cookiesCartId);
-
-  if (!cart || !cart.id) {
-    return 'Error fetching cart';
+export async function redirectToCheckoutUrl(variantId: string, totalQuantity: number) {
+  if(!totalQuantity) {
+    return "No Quantity"
   }
 
-  const checkoutUrl = await getCheckoutURL(cart.id);
-
-  const url = checkoutUrl ?? cart.checkoutUrl;
+  const checkoutUrl = await getCheckoutURL(variantId, totalQuantity);
   
-  return url;
+  return checkoutUrl;
 }
 
 export async function createCartAndSetCookie() {

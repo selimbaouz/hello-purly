@@ -10,7 +10,10 @@ import { PulseLoader } from 'react-spinners';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-export default function Cart() {
+interface CartProps {
+  variantId: string;
+}
+export default function Cart({variantId}: CartProps) {
   const { cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
@@ -36,9 +39,8 @@ export default function Cart() {
 
   const handleRedirectToCheckout = async () => {
     try {
-        const url = await redirectToCheckoutUrl();
+        const url = await redirectToCheckoutUrl(variantId, cart.totalQuantity);
         if (url) {
-          /* console.log(url); */
           window.location.href = url;
           } else {
             console.error("L'URL de redirection est indéfinie.");

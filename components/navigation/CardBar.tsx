@@ -3,8 +3,12 @@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
 import { useOpenCartStore } from "@/store/cart";
 import Cart from "../cart/Cart";
+import { FC } from "react";
 
-const CardBar = () => {
+interface CardBarProps {
+    variantId: string;
+}
+const CardBar:FC<CardBarProps> = ({variantId}) => {
     const { isOpenCart, setIsOpenCart } = useOpenCartStore();
 
     return (
@@ -14,7 +18,7 @@ const CardBar = () => {
                     <SheetTitle className="text-white text-xl font-bold">Mon Panier</SheetTitle>
                 </SheetHeader>
                 <SheetDescription></SheetDescription>
-                <Cart />
+                <Cart variantId={variantId} />
             </SheetContent>
         </Sheet>
     );

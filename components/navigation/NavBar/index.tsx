@@ -4,7 +4,15 @@ import NavBarWeb from "./NavBarWeb";
 import CardBar from "../CardBar";
 import { Menu } from "@/types/types";
 
-export default function NavBar({menu}: {menu: Menu[]}) {
+interface NavBarProps {
+    menu: Menu[];
+    variantId?: string
+}
+export default function NavBar(
+    {
+        menu, 
+        variantId
+    }: NavBarProps) {
 
     return (
         <nav className="backdrop-blur-md -mt-0.5 bg-background/75 z-[100]">
@@ -12,7 +20,7 @@ export default function NavBar({menu}: {menu: Menu[]}) {
             <NavBarWeb menu={menu} />
 
             {/* Panier */}
-            <CardBar />
+            <CardBar variantId={variantId ?? ""} />
             {/* Liens */}
             <SideBar menu={menu} />
         </nav>

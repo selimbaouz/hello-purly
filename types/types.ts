@@ -178,6 +178,20 @@ export type ShopifyCartOperation = {
       cartId: string;
     };
   };
+
+  export type ShopifyCheckoutCreateUrl = {
+    data: {
+        checkoutCreate: {
+            checkout: {
+                webUrl: string; // URL pour accéder au checkout
+            };
+        };
+    };
+    variables: {
+        variantId: string;
+        totalQuantity: number;
+    };
+};
   
   export type ShopifyRemoveFromCartOperation = {
     data: {

@@ -23,8 +23,8 @@ interface FloatingBarState {
 }
 
 interface CheckoutUrlState {
-  url: string;
-  setUrl: (url: string) => void;
+  checkoutUrl: string;
+  setCheckoutUrl: (url: string) => void;
 }
 
 function calculateItemCost(quantity: number, price: string): string {
@@ -113,8 +113,8 @@ function createEmptyCart(): Cart {
 }
 
 export const useCheckoutUrlStore = create<CheckoutUrlState>((set) => ({
-  url: "",
-  setUrl: (url) => set({ url }),
+  checkoutUrl: "",
+  setCheckoutUrl: (checkoutUrl) => set({ checkoutUrl }),
 }))
 
 export const useOpenCartStore = create<OpenCartState>((set) => ({

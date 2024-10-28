@@ -29,12 +29,13 @@ export default async function ProductPage({ params }: { params: { handle: string
     const product = await getHandleOfProduct(params.handle);
     const menu = await getMenu("main-menu");
     const footerMenu = await getMenu("footer");
+    const variantId = product?.variants.edges[0].node.id;
 
     return (
         <div className='relative'>
             <div className="sticky top-0 w-full z-40">
                 <StickyBar />
-                <NavBar menu={menu} />
+                <NavBar menu={menu} variantId={variantId ?? ""} />
             </div>
             <section className={cn(
                 "w-full text-left space-y-10 max-w-screen-xl mx-auto", 
