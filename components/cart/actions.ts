@@ -123,7 +123,16 @@ export async function redirectToCheckoutUrl(variantId: string, totalQuantity: nu
 
   const checkoutUrl = await getCheckoutURL(variantId, totalQuantity);
   
-  return checkoutUrl;
+  if(!checkoutUrl) {
+    return 'Error Url';
+  }
+
+  const customCheckoutUrl = checkoutUrl.replace(
+    /^https:\/\/hellopurly-sejiux\.myshopify\.com/,
+    "https://www.hellopurly.fr"
+  );
+
+  return customCheckoutUrl;
 }
 
 export async function createCartAndSetCookie() {

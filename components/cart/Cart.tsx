@@ -37,16 +37,14 @@ export default function Cart({variantId}: CartProps) {
     }
   }, [isOpenCart, cart?.totalQuantity, quantityRef, setIsOpenCart]);
 
-  const handleRedirectToCheckout = async () => {
+  const handleRedirectToCheckout = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     setIsLoading(true);
     try {
         const url = await redirectToCheckoutUrl(variantId, cart.totalQuantity);
-        const customCheckoutUrl = url.replace(
-          /^https:\/\/hellopurly-sejiux\.myshopify\.com/,
-          "https://www.hellopurly.fr"
-        );
         if (url) {
-          window.location.href = customCheckoutUrl;
+          window.location.href = url;
           } else {
             console.error("L'URL de redirection est indéfinie.");
             setIsLoading(false);
@@ -129,9 +127,9 @@ export default function Cart({variantId}: CartProps) {
                         />
                         </span>
                     </div>
-                    <div onClick={handleRedirectToCheckout}>
+                    <form onSubmit={handleRedirectToCheckout}>
                         <CheckoutButton isLoading={isLoading} />
-                    </div>
+                    </form>
                 </div>
             </div>
         )}
@@ -141,10 +139,10 @@ export default function Cart({variantId}: CartProps) {
 
 
 function CheckoutButton({isLoading}: {isLoading: boolean}) {
-  
     return (
       <button
         className="bg-foreground rounded-3xl text-white py-3 w-full mt-6"
+        type='submit'
         disabled={isLoading}
       >
         {isLoading ? <PulseLoader size={7} color="white" /> : 'Procéder au paiement'}
