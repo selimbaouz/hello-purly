@@ -103,38 +103,28 @@ export async function updateItemQuantity(
 
 export async function redirectToCheckoutUrl() {
   const cookiesCartId = cookies().get('cartId')?.value;
-  const cart = await getCart(cookiesCartId);
   /* getCheckoutUrl */
-
+  
   if (!cookiesCartId) {
     return 'Missing cart ID';
   }
+  const cart = await getCart(cookiesCartId);
 
-  if (!cart) {
+  if (!cart || !cart.id) {
     return 'Error fetching cart';
   }
 
-  const cartId = cookiesCartId ?? cart;
-
-  const checkoutUrl = await getCheckoutURL(cartId);
+  const checkoutUrl = await getCheckoutURL(cart.id);
 
   const url = checkoutUrl ?? cart.checkoutUrl;
-  if(url) {
-    return url;
-  } else {
-    return console.error("No Checkout URL Found");
-  }
+  
+  return url;
 }
 
 export async function createCartAndSetCookie() {
   const cart = await createCart();
-  /* cookies().set('cartId', cart.id!); */
-  if (cart && cart.id) {
-    cookies().set('cartId', cart.id!, {
-      path: '/',
-      sameSite: 'none',
-      secure: true,
-      domain: '.hellopurly.fr', // Mettez votre domaine ici
-    });
-  }
+  cookies().set('cartId', cart.id!);
 }
+
+
+/* await getCheckoutURL(cart.id!); */

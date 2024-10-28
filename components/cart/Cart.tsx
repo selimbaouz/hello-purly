@@ -9,6 +9,7 @@ import { createCartAndSetCookie, redirectToCheckoutUrl } from './actions';
 import { PulseLoader } from 'react-spinners';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
 export default function Cart() {
   const { cart, updateCartItem } = useCartStore();
@@ -37,9 +38,9 @@ export default function Cart() {
   const handleRedirectToCheckout = async () => {
     try {
         const url = await redirectToCheckoutUrl();
-        console.log(url);
         if (url) {
-          window.location.href = url;
+          /* console.log(url); */
+          redirect(url);
           } else {
             console.error("L'URL de redirection est indéfinie.");
           }

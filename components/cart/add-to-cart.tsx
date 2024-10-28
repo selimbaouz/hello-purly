@@ -85,7 +85,6 @@ export function AddToCart({ product, size = "initial", color = "gradient" }: { p
   const variantId = product.variants.edges[0].node.id;
   const actionWithVariant = formAction.bind(null, variantId);
 
-
   return (
     <form
       action={async () => {
