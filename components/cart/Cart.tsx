@@ -41,7 +41,11 @@ export default function Cart({variantId}: CartProps) {
     try {
         const url = await redirectToCheckoutUrl(variantId, cart.totalQuantity);
         if (url) {
-          window.location.href = url;
+          const customCheckoutUrl = url.replace(
+            /^https:\/\/hellopurly-sejiux\.myshopify\.com/,
+            "https://www.hellopurly.fr"
+          );
+          window.location.href = customCheckoutUrl;
           } else {
             console.error("L'URL de redirection est indéfinie.");
           }
