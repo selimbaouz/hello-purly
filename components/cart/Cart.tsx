@@ -9,10 +9,7 @@ import { PulseLoader } from 'react-spinners';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-interface CartProps {
-  variantId: string;
-}
-export default function Cart({variantId}: CartProps) {
+export default function Cart() {
   const { cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
@@ -42,7 +39,7 @@ export default function Cart({variantId}: CartProps) {
 
     setIsLoading(true);
     try {
-        const url = await redirectToCheckoutUrl(variantId, cart.totalQuantity);
+        const url = await redirectToCheckoutUrl(cart.lines[0].merchandise.id, cart.totalQuantity);
         if (url) {
           window.location.href = url;
           } else {
