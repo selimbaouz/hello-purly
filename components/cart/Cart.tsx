@@ -4,10 +4,9 @@ import { ShoppingCartIcon } from 'lucide-react';
 import Price from '../Price';
 import { DeleteItemButton } from '@/components/cart/delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
-import { useFormStatus } from 'react-dom';
 import { createCartAndSetCookie, redirectToCheckoutUrl } from './actions';
 import { PulseLoader } from 'react-spinners';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 interface CartProps {
@@ -17,6 +16,7 @@ export default function Cart({variantId}: CartProps) {
   const { cart, updateCartItem } = useCartStore();
   const {isOpenCart, setIsOpenCart} = useOpenCartStore();
   const quantityRef = useRef(cart?.totalQuantity);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (cart.lines.length > 0 && isOpenCart) {
@@ -38,6 +38,7 @@ export default function Cart({variantId}: CartProps) {
   }, [isOpenCart, cart?.totalQuantity, quantityRef, setIsOpenCart]);
 
   const handleRedirectToCheckout = async () => {
+    setIsLoading(true);
     try {
         const url = await redirectToCheckoutUrl(variantId, cart.totalQuantity);
         const customCheckoutUrl = url.replace(
@@ -48,10 +49,13 @@ export default function Cart({variantId}: CartProps) {
           window.location.href = customCheckoutUrl;
           } else {
             console.error("L'URL de redirection est indéfinie.");
+            setIsLoading(false);
           }
       } catch (error) {
         console.error("Erreur lors de la redirection vers le checkout:", error); 
+        setIsLoading(false);
       }
+      setIsLoading(false);
   }
 
   return (
@@ -125,9 +129,9 @@ export default function Cart({variantId}: CartProps) {
                         />
                         </span>
                     </div>
-                    <form action={handleRedirectToCheckout}>
-                        <CheckoutButton />
-                    </form>
+                    <div onClick={handleRedirectToCheckout}>
+                        <CheckoutButton isLoading={isLoading} />
+                    </div>
                 </div>
             </div>
         )}
@@ -136,16 +140,14 @@ export default function Cart({variantId}: CartProps) {
 }
 
 
-function CheckoutButton() {
-    const { pending } = useFormStatus();
+function CheckoutButton({isLoading}: {isLoading: boolean}) {
   
     return (
       <button
         className="bg-foreground rounded-3xl text-white py-3 w-full mt-6"
-        type='submit'
-        disabled={pending}
+        disabled={isLoading}
       >
-        {pending ? <PulseLoader size={7} color="white" /> : 'Procéder au paiement'}
+        {isLoading ? <PulseLoader size={7} color="white" /> : 'Procéder au paiement'}
       </button>
     );
   }
