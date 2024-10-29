@@ -29,7 +29,7 @@ const EssentialsCard: FC<EssentialsCardProps> = ({
                 "bg-gradient-essential-four": index === 3,
             })}>
                 <div className={cn("border border-foreground rounded-full p-4 bg-gradient-to-b from-[#2D3748] to-[#171923]", "md:p-6")}>
-                    <Icon className={cn("text-xl", "xl:text-4xl",)} />
+                    <Icon className={cn("text-xl", "xl:text-2xl",)} />
                 </div>
                 <p className={cn("text-base text-center font-medium", "md:text-xl")}>
                     {title}

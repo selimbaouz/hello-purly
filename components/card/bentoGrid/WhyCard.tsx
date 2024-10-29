@@ -3,10 +3,9 @@ import SelectButton from "@/components/SelectButton";
 import TitleContentPair from "@/components/TitleContentPair";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { selectionWhyData, statsData, whySelected } from "@/data";
+import { selectionWhyData, whySelected } from "@/data";
 import ContainerCard from "../ContainerCard";
-import { Separator } from "@/components/ui/separator";
-import StatsList from "@/components/StatsList";
+import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 
 /* interface WhyCardProps {
@@ -27,10 +26,10 @@ const WhyCard = () => {
 
     return (
         <ContainerCard>
-            <div className={cn("w-full space-y-5 rounded-3xl py-14 bg-gradient-combined", "md:space-y-8", "xl:space-y-14")}>
+            <div className={cn("w-full space-y-10 rounded-3xl py-14 bg-gradient-combined", "md:space-y-10", "xl:space-y-20 xl:pb-20")}>
                 <div className={cn("px-4 space-y-8", "md:px-20", "xl:px-24")}>
                     <TitleContentPair
-                        title="Pourquoi HelloPurly ?"
+                        title="Découvrez HelloPurly"
                         content={whySelected(selected).content}
                     />
                     <div className={cn("grid grid-cols-2 items-center justify-center gap-2 py-4", "xl:grid-cols-4 xl:gap-3")}>
@@ -45,18 +44,14 @@ const WhyCard = () => {
                         ))}
                     </div>
                 </div>
-                <div className={cn("pt-14")}>
-                    <Separator className="text-[#262D3C] " />
-                </div>
-                <div className={cn("flex flex-col space-y-14 py-8", "md:flex-row md:space-y-0 md:justify-center md:items-start md:gap-10", "lg:gap-14", "xl:gap-20")}>
-                {statsData.map((data, index) => (
-                    <div key={index}>
-                        <StatsList 
-                            title={data.title}
-                            content={data.content}
-                        />   
-                    </div>
-                ))}
+                <div className={cn("relative z-10 px-8", "md:h-[433px] md:w-[661px] md:mx-auto", "xl:h-[533px] xl:w-[961px]")}>
+                    <HeroVideoDialog
+                        className="block"
+                        animationStyle="from-center"
+                        videoSrc="https://www.youtube.com/embed/eg_taJ7b9rE"
+                        thumbnailSrc="/images/bidet/wc.webp"
+                        thumbnailAlt="Hero Video"
+                    />
                 </div>
             </div>
         </ContainerCard>

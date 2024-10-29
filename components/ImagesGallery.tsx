@@ -51,7 +51,7 @@ const ImagesGallery: FC<ImagesGalleryProps> = ({images}) => {
     };
 
     return (
-        <div className={cn("flex flex-col gap-3 w-full", "lg:sticky lg:top-0")}>
+        <div className={cn("flex flex-col gap-3 w-full", "lg:sticky lg:top-36")}>
             <div className={cn("relative")}>
                 <ImageLoader
                     src={images[bigImageIndex].node.originalSrc ?? ""} // Utilisez l'index pour obtenir l'image

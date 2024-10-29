@@ -9,7 +9,7 @@ import ProductImage from '@/components/ProductImage';
 import { Reviews } from '@/components/Reviews';
 import TitleContentPair from '@/components/TitleContentPair';
 import TrustFeatures from '@/components/TrustFeatures';
-import { benefitsFeelingData, trustsData } from '@/data';
+import { benefitsFeelingData, statsData, trustsData } from '@/data';
 import { cn } from '@/lib/utils';
 import ImagesGallery from '@/components/ImagesGallery';
 import VersusCard from '@/components/card/bentoGrid/VersusCard';
@@ -20,6 +20,7 @@ import Image1 from "@/public/images/bidet/money.webp";
 import Image2 from "@/public/images/bidet/eco.webp";
 import BenefitCard from '@/components/card/BenefitCard';
 import FloatingBar from '@/components/navigation/FloatingBar';
+import StatsList from '@/components/StatsList';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
     if(params.handle !== "le-bidet-wc") {
@@ -49,15 +50,33 @@ export default async function ProductPage({ params }: { params: { handle: string
             </section>
             <section className={cn(
                 "p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", 
+                "lg:p-6 lg:space-y-0 lg:py-36 lg:grid lg:grid-cols-3 lg:items-center lg:gap-4", 
+                "xl:py-24 xl:px-0"
+            )}>
+                {statsData.map((data, index) => (
+                    <div key={index} className={cn("relative shadow-md shadow-black p-[1px] bg-gradient-to-b from-[#111219] to-[#2D3748] rounded-3xl max-w-screen-xl mx-auto", "lg:size-full")}>
+                        <div className={cn("w-full text-center rounded-3xl px-8 py-20 bg-gradient-to-b from-[#171923] to-[#11121A]", "md:p-10", "md:h-[304px]", "lg:h-full lg:py-20 lg:px-8")}>
+                            <StatsList 
+                                title={data.title}
+                                content={data.content}
+                                titleClassname='text-4xl xl:text-5xl'
+                                contentClassname='xl:text-lg'
+                            />   
+                        </div>
+                    </div>
+                ))}
+            </section>
+            <section className={cn(
+                "p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", 
                 "lg:p-6", 
-                "xl:space-y-3 xl:py-32 xl:px-0"
+                "xl:space-y-3 xl:pb-32 xl:px-0"
             )}>
                 <WhyCard />
             </section>
             <section className={cn(
-                "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
-                "lg:p-6", 
-                "xl:space-y-32 xl:pb-32 xl:px-0"
+                "p-4 text-center py-24 space-y-24 max-w-screen-xl mx-auto", 
+                "lg:p-6 lg:py-24 lg:max-w-screen-lg", 
+                "xl:max-w-[1200px] xl:space-y-32 xl:pb-32 xl:px-0 xl:py-0"
             )}>
                 <TitleContentPair
                     title="pour des fesses impeccable" 
@@ -102,7 +121,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             <section className={cn(
                 "p-4 text-center pb-24 space-y-24", 
                 "lg:py-20 lg:space-y-36 lg:px-6", 
-                "xl:pt-0 xl:pb-36 xl:px-0"
+                "xl:pt-0 xl:py-36 xl:px-0"
             )}>
                 <TitleContentPair 
                     title={`Des Avantages Qui \nCâlinent Vos Fesses`} 
@@ -122,7 +141,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             <section className={cn(
                 "text-center pb-24 space-y-24", 
                 "lg:py-20", 
-                "xl:pt-0 xl:pb-36 xl:space-y-28"
+                "xl:pt-0 xl:pb-36 xl:space-y-36"
             )}>
                 <TitleContentPair 
                     title={`Fesses heureuses\nclients satisfaits`} 
@@ -134,7 +153,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             <section className={cn(
                 "text-center pb-24 space-y-10 max-w-screen-lg mx-auto", 
                 "lg:py-20", 
-                "xl:pt-0 xl:pb-36"
+                "xl:pt-0 xl:pb-36 xl:space-y-36"
             )}>
                 <TitleContentPair 
                     title="Foire aux Fesses" 

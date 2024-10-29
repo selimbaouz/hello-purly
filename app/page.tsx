@@ -42,7 +42,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:p-6", "xl:space-y-3 xl:py-32 xl:px-0")}>
+      <section className={cn("p-4 text-center py-24 space-y-4 max-w-screen-xl mx-auto", "lg:p-6 lg:max-w-screen-lg", "xl:max-w-[1200px] xl:space-y-3 xl:py-32 xl:px-0")}>
         <ModesCard />
         <div className={cn("flex flex-col gap-5", "md:gap-3", "lg:grid lg:grid-cols-2 lg:items-start lg:h-full")}>
           <div className={cn("grid grid-cols-2 gap-2", "md:h-full md:gap-3")}>

@@ -12,7 +12,7 @@ import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
 import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
-import { HiOutlineCash, HiOutlineCog, HiOutlineCreditCard, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles, HiOutlineTruck } from "react-icons/hi";
+import { HiOutlineCash, HiOutlineCog, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
 import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import SophieD from "@/public/images/avis/sophieD.webp";
@@ -159,20 +159,23 @@ export const whySelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      content: "Pour une propreté et une hygiène 2x fois plus efficace"
+      content: "Pour une propreté et une hygiène 2x fois plus efficace."
     };
   case 1:
     return {
-      content: "Fonctionne sans électricité (pour toujours plus d’économies)"
+      content: "Fonctionne sans électricité (pour toujours plus d’économies)."
     };
   case 2:
     return {
       content: "Installation facile en 10 minutes, sans travaux nécessaires."
     };
-  case 0:
-  default:
+  case 3:
     return {
       content: "Notre kit est compatible avec toutes les toilettes standards."
+    };
+  default:
+    return {
+      content: "Pour une propreté et une hygiène 2x fois plus efficace."
     };
   }
 };
@@ -224,55 +227,51 @@ export const reviewsData = [
 
 export const checkProduct = [
   {
-      title: "Réduction massive de papier",
+      title: "Adieu le papier, bonjour l'économie",
       icon: HiOutlinePaperAirplane,
   },
   {
-      title: "Zéro électricité, 100 % écolo",
+      title: "100 % écolo, 0 % électricité",
       icon: HiOutlineGlobe,
   },
   {
-      title: "Confort et propreté personnalisé",
+      title: "Confort sur mesure, propre comme jamais",
       icon: HiOutlineHandThumbUp,
   },
   {
-      title: "Installation facile en un clin d'œil",
+      title: "Installation ultra simple, promis !",
       icon: HiOutlineCog,
   },
   {
-      title: "Économies garanties toute l’année",
+      title: "Des économies en boucle toute l’année",
       icon: HiOutlineCash,
-  },
-  {
-      title: "Entreprise Française",
-      icon: GiFrance,
-  },
-  {
-      title: "Expédition en 24h",
-      icon: HiOutlineTruck,
-  },
-  {
-      title: "Garantie 2 ans",
-      icon: HiOutlineShieldCheck,
-  },
-  {
-      title: "Paiement 3x sans frais",
-      icon: HiOutlineCreditCard,
   },
 ]
 
 export const detailsProduct = [
   {
-      title: "Description",
-      content: "Avec le bidet Hello Curly, vos fesses vont découvrir une nouvelle ère de douceur et d’hygiène, tout en contribuant à un monde plus vert. Oubliez les tonnes de papier toilette et adoptez un nettoyage qui vous rendra accro !"
+    title: "Entreprise Française",
+    content: "Supportez l’artisanat national ! Et en plus, on est sympas et on parle votre langue (sauf quand on a un peu trop bu de café)."
   },
   {
-      title: "Utilisation",
-      content: "Fixez le bidet sur le siège des toilettes et raccordez-le au robinet. Installation rapide et facile en moins de 15 minutes. Ajustez le jet d'eau selon vos préférences. Choisissez parmi les modes auto-lavage, lavage masculin ou lavage féminin."
+      title: "Livraison OFFERTE",
+      content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de regretter l'achat."
+  },
+  {
+    title: "Garantie de 2 ans",
+    content: "Vous avez deux ans pour tester, adorer, et si besoin, revenir vers nous. Bref, un achat sans pression (enfin, presque)."
+  },
+  {
+    title: "Paiement en 3x sans frais",
+    content: "Besoin de temps pour réfléchir... et payer ? Aucun souci ! Klarna vous offre le luxe de régler en 3 fois, sans frais, histoire de garder un peu d’argent pour vos petites folies."
+  },
+  {
+      title: "Utilisation & Installation",
+      content: "Vous êtes à deux pas du grand confort ! Fixez simplement le bidet sur le siège des toilettes, raccordez-le au robinet, et voilà ! Installation rapide et facile en moins de 10 minutes, promis ! Pour les plus intrépides, ajustez le jet d'eau selon vos préférences. Choisissez parmi les modes lavage masculin ou lavage féminin. Rien de plus simple, même pas besoin d'un diplôme de plombier !"
   },
   {
       title: "Caractéristiques",
-      content: "Type : Bidet pression d'eau\n Installation : Sans besoin de compétences\n Compatibilité : Toilettes standards\n Entretien : Aucun frais\n Modes : 2 modes disponibles"
+      content: "Type : Bidet à pression d'eau – Aucun branchement électrique requis, juste de l’eau et un peu de style !\nInstallation : Sans prise de tête, même pas besoin de compétences – si vous savez changer une ampoule, vous savez installer ce bidet.\nCompatibilité : Conçu pour les toilettes standards – pas de discrimination ici !\nEntretien : Zéro frais – on aime quand c'est simple.\nModes : Deux modes au choix pour des moments tout en finesse et en confort."
   },
 ]
 

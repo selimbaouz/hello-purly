@@ -14,7 +14,7 @@ const ModesCard = () => {
 
     return (
         <ContainerCard>
-            <div className={cn("w-full space-y-5 rounded-3xl px-4 py-14 bg-gradient-combined", "md:px-20 md:space-y-8", "xl:px-64 xl:space-y-14")}>
+            <div className={cn("w-full space-y-5 rounded-3xl px-4 py-14 bg-gradient-combined", "md:px-20 md:space-y-8", "xl:px-10 xl:space-y-14")}>
                 <div className={cn("px-4 space-y-8", "md:px-20", "xl:px-24")}>
                     <TitleContentPair
                         title="2 Modes Disponibles"
@@ -38,7 +38,7 @@ const ModesCard = () => {
                         alt="Image of Product"
                         width={1080}
                         height={1080}
-                        className={cn("rounded-3xl border bg-background", "lg:w-full lg:h-[650px]")}
+                        className={cn("rounded-3xl border bg-background", "lg:mx-auto lg:size-[572px]")}
                     />
                 </div>
             </div>
