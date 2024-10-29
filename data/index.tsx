@@ -255,7 +255,7 @@ export const detailsProduct = [
   },
   {
       title: "Livraison OFFERTE",
-      content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de regretter l'achat."
+      content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de vous réjouir de votre choix !"
   },
   {
     title: "Garantie de 2 ans",
