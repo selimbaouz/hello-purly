@@ -66,7 +66,9 @@ export default function Cart() {
                     {cart.lines
                     .sort((a, b) =>
                         a.merchandise.product.title.localeCompare(b.merchandise.product.title)
-                    ).map((item, i) => (
+                    ).map((item, i) => {
+                      const amount = Number(item.cost.totalAmount.amount) + 20;
+                      return (
                         <li key={i} className="flex w-full justify-between gap-1 items-center p-2">
                             <div className='relative'>
                                 <Image src={item.merchandise.product.featuredImage.node.originalSrc} alt="Image of Product" width={20} height={20} className="h-14 w-14 max-w-14 rounded-xl object-fill" />
@@ -78,7 +80,7 @@ export default function Cart() {
                                     <p className="text-lg">{item.merchandise.product.title}</p>
                                     <Price
                                         className="text-sm text-gray-500 font-montserrat"
-                                        amount="79.99"
+                                        amount={String(amount)}
                                         currencyCode={item.cost.totalAmount.currencyCode}
                                     />
                             </div>
@@ -96,7 +98,8 @@ export default function Cart() {
                             />
                             </div>
                         </li>
-                    ))}
+                    )} 
+                    )}
                 </ul>
 
                 <div className="mt-6">
