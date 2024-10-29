@@ -125,7 +125,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             )}>
                 <TitleContentPair 
                     title={`Des Avantages Qui \nCâlinent Vos Fesses`} 
-                    content="Parce qu'elles méritent le meilleur."
+                    content="Parce qu'elles méritent le meilleur confort et une attention toute particulière."
                 />
                 <div className={cn("flex flex-col gap-4 max-w-screen-xl mx-auto", "lg:grid lg:grid-cols-3 lg:items-center lg:h-full")}>
                 {benefitsFeelingData.map((data, index) => (
