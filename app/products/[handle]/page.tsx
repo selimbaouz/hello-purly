@@ -74,20 +74,20 @@ export default async function ProductPage({ params }: { params: { handle: string
                 <WhyCard />
             </section>
             <section className={cn(
-                "p-4 text-center py-24 space-y-24 max-w-screen-xl mx-auto", 
+                "p-4 text-center pb-24 space-y-24 max-w-screen-xl mx-auto", 
                 "lg:p-6 lg:py-24 lg:max-w-screen-lg", 
                 "xl:max-w-[1200px] xl:space-y-32 xl:pb-32 xl:px-0 xl:py-0"
             )}>
                 <TitleContentPair
                     title="pour des fesses impeccable" 
-                    content={`Fini les résidus gênants et les irritations ! \nDoux, efficace, et ultra-hygiènique.`}
+                    content={`Fini les résidus gênants et les irritations ! \nDoux, efficace, et ultra-hygiènique, comme un spa pour votre derrière.`}
                 />
                 <div className={cn('flex flex-col gap-4')}>
                     <div className={cn('flex flex-col gap-4', 'lg:grid lg:grid-cols-2')}>
                         <Bento
                             image="/images/bidet/mode.webp"
                             title="Deux Modes, Deux Soins"
-                            content={`Messieurs, un nettoyage précis ! Mesdames, douceur apaisante ! Tous frais et au top.`}
+                            content={`Messieurs, un nettoyage précis ! Mesdames, douceur apaisante ! Tout le monde est frais et prêt à conquérir le monde.`}
                         />
                         <Bento 
                             image="/images/bidet/compatibilite.webp"

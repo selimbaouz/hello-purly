@@ -39,17 +39,17 @@ export const benefitsData = [
   {
     icon: IoWaterOutline, 
     title: "Hygiénique", 
-    content: "Plus efficace et plus doux qu'un simple papier, il vous garantit une sensation de fraîcheur et un nettoyage en profondeur, chaque jour."
+    content: "Plus doux qu'un papier, il vous offre une fraîcheur quotidienne, comme une brise matinale pour votre derrière."
   },
   {
     icon: PiMoneyWavy, 
     title: "Économique", 
-    content: "Économisez jusqu'à 150 € par an en réduisant votre consommation de papier toilette de 80%. Moins de dépenses, plus de confort, tout en prenant soin de votre portefeuille."
+    content: "Économisez jusqu'à 150 € par an en utilisant 80 % de papier toilette en moins. Moins de dépenses, plus de confort, et un portefeuille qui sourit."
   },
   {
     icon: BiWorld, 
     title: "Écologique", 
-    content: "Faites un geste pour la planète en économisant 1500L d'eau chaque année et en réduisant votre consommation de papier. Moins de déforestation, plus de durabilité."
+    content: "Sauvez la planète en économisant 1500L d'eau chaque année ! Moins de papier, moins de déforestation, et un monde plus doux."
   }
 ]
 
@@ -57,17 +57,17 @@ export const benefitsFeelingData = [
   {
     icon: HiOutlineShieldCheck, 
     title: "Confiance", 
-    content: "Fini les doutes après chaque passage aux toilettes. Avec notre bidet, vous vous sentez toujours propre et sûr de vous, prêt à affronter la journée sans vous poser de questions."
+    content: "Dites adieu aux doutes après chaque passage aux toilettes ! Avec notre bidet, vous êtes frais comme un gardon et prêt à affronter la journée, sans un regard en arrière."
   },
   {
     icon: HiOutlineSparkles, 
     title: "Confort", 
-    content: "Dites adieu au papier irritant ! Un jet doux et ajustable vous apporte le confort ultime, pour une expérience qui chouchoute votre peau à chaque utilisation."
+    content: "Oubliez le papier irritant ! Avec un jet doux et ajustable, profitez du confort ultime, pour un traitement royal de votre peau à chaque passage."
   },
   {
     icon: HiOutlineHeart, 
     title: "Plaisir", 
-    content: "Qui aurait cru qu’aller aux toilettes pouvait être aussi agréable ? Notre bidet transforme une routine quotidienne en un moment de détente, tout en vous laissant une sensation de propreté impeccable."
+    content: "Qui aurait imaginé que le trône pouvait être un endroit agréable ? Notre bidet transforme chaque visite aux toilettes en un moment de détente, tout en vous laissant impeccable."
   }
 ]
 
@@ -142,15 +142,15 @@ export const modeSelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      content: " Offrez-vous un soin personnalisé, alliant la précision d'un rasoir de barbier à un nettoyage doux."
+      content: "Offrez-vous un soin personnalisé, comme un rasoir de barbier qui a un faible pour la douceur."
     };
   case 1:
     return {
-      content: "Une hygiène délicate et adaptée à vos besoins, pour une sensation de propreté apaisante."
+      content: "Une hygiène douce et adaptée pendant vos règles, pour une propreté apaisante qui vous fait sourire."
     };
   default:
     return {
-      content: " Offrez-vous un soin personnalisé, alliant la précision d'un rasoir de barbier à un nettoyage doux."
+      content: "Offrez-vous un soin personnalisé, comme un rasoir de barbier qui a un faible pour la douceur."
     };
   }
 };
@@ -159,23 +159,23 @@ export const whySelected = (selected: number) => {
   switch (selected) {
   case 0:
     return {
-      content: "Pour une propreté et une hygiène 2x fois plus efficace."
+      content: "Pour une propreté si efficace, que même votre derrière en redemandera !"
     };
   case 1:
     return {
-      content: "Fonctionne sans électricité (pour toujours plus d’économies)."
+      content: "Fonctionne sans électricité, parce que les économies, c'est mieux quand ça coule à flots."
     };
   case 2:
     return {
-      content: "Installation facile en 10 minutes, sans travaux nécessaires."
+      content: "Installation rapide en 10 minutes, sans travaux, même votre voisin bricoleur sera jaloux."
     };
   case 3:
     return {
-      content: "Notre kit est compatible avec toutes les toilettes standards."
+      content: "Compatible avec toutes les toilettes standards, pour que tout le monde en profite."
     };
   default:
     return {
-      content: "Pour une propreté et une hygiène 2x fois plus efficace."
+      content: "Pour une propreté si efficace, que même votre derrière en redemandera !"
     };
   }
 };
@@ -235,7 +235,7 @@ export const checkProduct = [
       icon: HiOutlineGlobe,
   },
   {
-      title: "Confort sur mesure, propre comme jamais",
+      title: "Propre comme jamais",
       icon: HiOutlineHandThumbUp,
   },
   {
@@ -369,15 +369,15 @@ export const comparaisonVariantSelected = (variant: string) => {
           icon: IoCloseOutline,
         },
         {
-          content: "Des rouleaux par milliers",
+          content: "Des rouleaux à la pelle",
           icon: IoCloseOutline,
         },
         {
-          content: "Du papier rêche",
+          content: "Du papier rêche comme du sable",
           icon: IoCloseOutline,
         },
         {
-          content: "Des arbres sacrifiés",
+          content: "Des arbres en deuil",
           icon: IoCloseOutline,
         }
       ]
@@ -391,11 +391,11 @@ export const comparaisonVariantSelected = (variant: string) => {
           icon: IoMdCheckmark, 
         },
         {
-          content: "80% de papier en moins",
+          content: "80 % de papier en moins",
           icon: IoMdCheckmark, 
         },
         {
-          content: "Un jet doux et ajustable",
+          content: "Un jet doux, comme un câlin",
           icon: IoMdCheckmark, 
         },
         {
@@ -413,15 +413,15 @@ export const comparaisonVariantSelected = (variant: string) => {
           icon: IoCloseOutline,
         },
         {
-          content: "Des rouleaux par milliers",
+          content: "Des rouleaux à la pelle",
           icon: IoCloseOutline,
         },
         {
-          content: "Du papier rêche",
+          content: "Du papier rêche comme du sable",
           icon: IoCloseOutline,
         },
         {
-          content: "Des arbres sacrifiés",
+          content: "Des arbres en deuil",
           icon: IoCloseOutline,
         }
       ]

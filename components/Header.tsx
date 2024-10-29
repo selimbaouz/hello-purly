@@ -21,7 +21,7 @@ const Header = () => {
                 et <br className={cn("hidden", "xl:block")} />des fesses toujours propre
             </h1>
             <p className={cn("text-base font-regular")}>
-                Economisez jusqu{"'"}à 1500L par an tout en profitant d{"'"}une hygiène parfaite.
+                Economisez jusqu{"'"}à 1500L par an tout en profitant d{"'"}une hygiène parfaite, <br />parce que votre derrière mérite aussi un traitement VIP !
             </p>
             <ShimmerButton
             shimmerColor='#319795'>

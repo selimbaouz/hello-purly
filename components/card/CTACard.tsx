@@ -23,7 +23,7 @@ const CTACard: FC<CTACardProps> = ({title, product}) => {
                 <div className={cn("px-4 space-y-8")}>
                     <TitleContentPair
                         title="fini les traces sur vos fesses"
-                        content="Pourquoi continuer à frotter quand HelloPurly fait tout le travail ?"
+                        content="Laissez HelloPurly faire tout le travail pendant que vous vous détendez ;)"
                     />
                     {product ? (
                         <AddToCart product={product} size="initial" />

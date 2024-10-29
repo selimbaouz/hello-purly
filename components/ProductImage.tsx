@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import { Product } from "@/types/types";
 import { FC } from "react";
 import { AddToCart } from "./cart/add-to-cart";
+import Link from "next/link";
 
 interface ProductImageProps {
     product: Product;
@@ -17,11 +18,11 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
             <h3 className={cn("text-left uppercase text-5xl font-bold pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-transparent from-white to-foreground")}>
                 {product.title}
             </h3>
-            <div className={cn("flex items-center gap-4")}>
+            <div className={cn("flex items-center gap-3")}>
                 <GetRatings value={5} className={cn("text-xl text-yellow-400", "md:text-lg", "xl:text-base")} />
-                <p className={cn("font-medium text-lg")}>
+                <Link href="#avis" className={cn("font-medium text-lg underline")}>
                     4.8/5 basé sur 319 avis
-                </p>
+                </Link>
             </div>
             
             <div className={cn("space-y-10 py-4")}>
@@ -42,7 +43,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                 {product.priceRange.minVariantPrice.amount} €
                             </p>
                         </div>
-                            <p>Vous économisez <span className="font-medium">20,00€ (25%)</span></p>
+                            <p>Vous économisez <span className="font-medium">20,00€ (25%)</span>, assez pour vous offrir un bon repas… ou une soirée cinéma avec pop-corn à gogo !</p>
                     </div>
                 </div>
                 <ul className={cn("space-y-2")}>
