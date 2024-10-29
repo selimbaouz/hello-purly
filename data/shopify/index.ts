@@ -233,6 +233,7 @@ export async function shopifyFetch<T>({
       }
     });
   
+    
     return (
       res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
         title: item.title,
