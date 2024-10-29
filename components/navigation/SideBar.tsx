@@ -39,23 +39,19 @@ export default function SideBar ({
         <ul className={cn("pt-14")}>
             {menu?.map((data, i) => (
                 <li key={i} className={cn("border-b border-[#2D3748] py-3 pl-4 hover:bg-[#2D3748]", data.path === pathname && "bg-[#2D3748]")}>
-                    {data.path === "/contact" ? (
-                        <a href="mailto:hellopurly7@gmail.com" target="_blank" rel="noopener noreferrer" className={cn(classLink)}>Contact</a>
-                    ) : (
-                        <Link 
-                        href={handlePath(data.path)} 
-                        target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
-                        rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
-                        className={cn(classLink)}
-                        onClick={() => {
-                            if (!data.path.startsWith("/#")) {
-                                setIsOpenSidebar(false);
-                            }
-                        }}
-                        >
-                            {data.title}
-                        </Link>
-                    )}
+                    <Link 
+                    href={handlePath(data.path)} 
+                    target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
+                    rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
+                    className={cn(classLink)}
+                    onClick={() => {
+                        if (!data.path.startsWith("/#")) {
+                            setIsOpenSidebar(false);
+                        }
+                    }}
+                    >
+                        {data.title}
+                    </Link>
                 </li>
             ))}
         </ul>

@@ -41,11 +41,7 @@ const Footer = ({
                             <ul className="leading-relaxed">
                                 {footerMenu.map((data, i) => (
                                     <li key={i}>
-                                        {data.path === "/contact" ? (
-                                            <a href="mailto:hellopurly7@gmail.com" target="_blank" rel="noopener noreferrer" className={cn(classLink, data.path === pathname && "font-bold")}>Contact</a>
-                                        ) : (
-                                            <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold")}>{data.title}</Link>
-                                        )}
+                                        <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold")}>{data.title}</Link>
                                     </li>
                                 ))}
                             </ul>
