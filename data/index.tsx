@@ -278,64 +278,64 @@ export const detailsProduct = [
 export const faqData = [
   {
       title: "Comment fonctionne le bidet ?",
-      content: "Notre bidet utilise des jets d'eau ajustables pour nettoyer efficacement après chaque utilisation. Parfait pour vous assurer une propreté maximale et une sensation de fraîcheur à chacun de vos passages aux toilettes."
+      content: "Notre bidet utilise des jets d'eau ajustables pour un nettoyage efficace. Vous allez vous sentir aussi frais qu'après une douche, mais sans le déplacement."
   },
   {
       title: "Installation est-elle facile ?",
-      content: "Oui, l'installation du bidet est rapide et facile. Elle peut être réalisée en moins de 10 minutes sans nécessiter de compétences ni de travaux complexes. Un vrai jeu d’enfant vous allez voir ! "
+      content: "Oh que oui ! L'installation du bidet se fait en moins de 10 minutes, un vrai jeu d’enfant, même pour les plus bricoleurs du dimanche ! "
   },
   {
-      title: "Besoin d'électricité pour fonctionner ?",
-      content: "Non, il fonctionne sans électricité, ce qui permet des économies d'énergie et une installation plus simple et rapide. Votre porte monnaie va vous remercier ! "
+      title: "Est-ce que ça fonctionne sans électricité ?",
+      content: "Absolument ! Pas besoin de vous transformer en électricien. Votre porte-monnaie et notre planète vous diront merci ! "
   },
   {
-      title: "Compatible avec toutes les toilettes ?",
-      content: "Oui, le bidet est conçu pour s'adapter à toutes les toilettes standards."
+    title: "Compatible avec toutes les toilettes ?",
+    content: "Bien sûr ! Notre bidet s’adapte à toutes les toilettes standards, comme un caméléon sur un pot de fleurs !"
   },
   {
       title: "Vais-je faire des économies ?",
-      content: "En utilisant des jets d'eau pour le nettoyage, notre bidet permet de réduire jusqu'à 80% votre consommation de papier toilette, ce qui représente des centaines d’économies chaque année. "
+      content: "Économisez jusqu'à 80% de papier toilette. Ça veut dire plus d’argent pour le café, les gâteaux, ou même cette plante que vous oubliez toujours d’arroser !"
   },
   {
-    title: "Quels sont les délais de livraison ?",
-    content: "Nos délais moyens de livraison sont de 7 à 13 jours ouvrés.\nPour certains produits, nous livrons en moins d'une semaine.\nPour éviter les frais de stockage et de main d'oeuvre élevés, nous travaillons directement auprès de nos producteurs et n'avons donc aucun intermédiaire cela nous permet de vous proposer des tarifs vraiment avantageux par rapport à ce que vous pourriez avoir dans une boutique physique."
+      title: "Quels sont les délais de livraison ?",
+      content: "Nos délais de livraison sont de 7 à 13 jours ouvrés. Mais si vous êtes chanceux, vous pourriez recevoir votre bidet en moins d'une semaine ! Pas de frais cachés, juste de la bonne humeur !"
   },
   {
-    title: "Où livrons-nous ?",
-    content: "Nous livrons partout dans le monde, et nos frais de livraison sont OFFERTS."
+      title: "Où livrons-nous ?",
+      content: "Partout dans le monde ! Que vous soyez à Paris ou au pôle Nord, nous vous livrons gratuitement ! (Mais n'attendez pas trop de pingouins pour vos commandes.)"
   },
   {
-    title: "D'où expédions-nous les colis ?",
-    content: "Notre entreprise est française. Nous expédions nos colis directement depuis nos producteurs situés en France, Espagne, Italie, Suisse et Asie."
+      title: "D'où expédions-nous les colis ?",
+      content: "Nous expédions directement depuis notre base en France. On vous a dit que c'était une entreprise 100% française !"
   },
   {
-    title: "Qui livre mes articles ?",
-    content: "Vos articles sont livrés par l'intermédiaire de votre service de poste local.\nLes articles sont livrés en fonction des modalités de votre bureau de poste local."
+      title: "Qui livre mes articles ?",
+      content: "Vos articles sont livrés par votre service postal local. C'est un peu comme un rendez-vous surprise avec le facteur !"
   },
   {
-    title: "Que faire si je ne suis pas là ?",
-    content: "Ne vous inquiétez pas, vos articles seront laissés dans votre boîte postale s'ils sont assez petits. Dans le cas contraire, votre colis sera laissé à votre bureau de poste où vous pourrez le retirer."
+      title: "Que faire si je ne suis pas là ?",
+      content: "Pas de panique ! Si votre colis est trop gros pour la boîte aux lettres, il sera déposé à votre bureau de poste. Comme ça, pas besoin de jouer à cache-cache avec le facteur !"
   },
   {
-    title: "Comment corriger une adresse erronée ?",
-    content: "Pas de panique, si votre commande n'a pas encore été envoyée, contactez-nous immédiatement et nous serons ravis de mettre vos informations à jour. Dans le cas contraire et conformément à nos conditions générales de vente, une fois qu'une commande a été envoyée depuis notre entrepôt, plus aucune modification ne peut être effectuée."
+      title: "Comment corriger une adresse erronée ?",
+      content: "Si votre commande n'est pas encore partie, contactez-nous tout de suite ! Sinon, une fois expédiée, c'est comme essayer de changer le cours d'une rivière… pas facile !"
   },
   {
-    title: "Articles manquants dans ma commande ?",
-    content: "Nous travaillons avec plusieurs fournisseurs, lorsque vous passez commande, chaque fournisseur se charge d'un produit en particulier. Si vous commandez 5 articles différents, vous recevrez donc 5 colis différents et ceux-ci arriveront à des moments différents (certains seront plus rapides, d'autres plus lents). Par contre, si vous commandez 3 fois le même produit, alors ils seront tous envoyés dans 1 seul colis."
+      title: "Articles manquants dans ma commande ?",
+      content: "Chaque fournisseur s'occupe d'un produit. Donc si vous commandez 5 articles, vous aurez peut-être 5 colis différents. Une petite surprise par la poste, mais chacun est spécial à sa manière !"
   },
   {
-    title: "Comment utiliser un code promo ?",
-    content: "Une fois cette action effectuée, validez votre sélection en cliquant sur « Paiement ». La page de paiement s’ouvrira et vous pourrez profiter pleinement de cette offre en renseignant son code, ce qui appliquera automatiquement la réduction.\nExemple : Une promotion est disponible sur le site « Produit A acheté, un Produit B offert » avec le code « PROMO ». Je sélectionne le Produit A souhaité ainsi que le Produit B qui correspond à une sélection d’articles prédéfinie. Les deux articles sont présents dans mon panier et je peux cliquer sur le bouton « Paiement » et rentrer mon code « PROMO » à la prochaine étape."
+      title: "Comment utiliser un code promo ?",
+      content: "Pour utiliser un code promo, entrez-le lors du paiement. C'est comme une magie, et hop ! Réduction instantanée. Pensez à votre code comme à un super-héros du shopping !"
   },
   {
-    title: "Votre site est-il sécurisé ?",
-    content: "Ce site est 100% sécurisé. Et à dire vrai, on pourrait même affirmer qu'il l'est à 300%.\nVoici pourquoi :\nPremièrement, le site que vous visitez est sur un serveur en HTTPS (le petit cadenas vert qui se trouve du côté gauche de l'URL de cette page est là pour vous le rappeler).\nLa plupart des sites ne sécurisent que leur \"panier\" et tout ce qui touche au règlement des commandes. Sur ce site, TOUTES LES PAGES sont sécurisées et ne peuvent pas être piratées ou ne peuvent pas être la cible de logiciels malveillants.\nPour finir, concernant le règlement, nous utilisons Stripe qui est la référence en matière de sécurité des transactions sur Internet.\nEn résumé, vous commandez en toute sécurité."
+      title: "Votre site est-il sécurisé ?",
+      content: "Oui, 100% sécurisé (voire même 300% !). Chaque page est protégée comme un château fort. Vous pouvez acheter sans stress, comme si vous étiez en vacances !"
   },
   {
-    title: "Quels modes de paiements sont acceptés ?",
-    content: "Actuellement, vous pouvez régler par Carte bancaire et Paypal sur notre site. Nous n'acceptons ni les chèques bancaires, ni les virements ou encore les paiements à la réception."
-  },
+      title: "Quels modes de paiement sont acceptés ?",
+      content: "Vous pouvez régler par Carte bancaire. Pas de chèques ni de virements, parce que nous n'avons pas encore découvert la machine à remonter le temps !"
+  }
 ];
 
 
@@ -377,7 +377,7 @@ export const comparaisonVariantSelected = (variant: string) => {
           icon: IoCloseOutline,
         },
         {
-          content: "Des arbres en deuil",
+          content: "Des arbres en larmes",
           icon: IoCloseOutline,
         }
       ]

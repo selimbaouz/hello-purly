@@ -43,7 +43,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                 {product.priceRange.minVariantPrice.amount} €
                             </p>
                         </div>
-                            <p>Vous économisez <span className="font-medium">20,00€ (25%)</span>, assez pour vous offrir un bon repas… ou une soirée cinéma avec pop-corn à gogo !</p>
+                            <p>Offre spéciale fêtes : économisez 20,00 € (25 %), assez pour vous offrir un bon repas… ou un extra de chocolats à gogo !</p>
                     </div>
                 </div>
                 <ul className={cn("space-y-2")}>
