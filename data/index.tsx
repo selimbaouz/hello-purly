@@ -255,11 +255,11 @@ export const detailsProduct = [
   },
   {
       title: "Livraison OFFERTE",
-      content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de vous réjouir de votre choix !"
+      content: "Oui, vous avez bien lu ! Livraison gratuite et expédiée en 24h, pour que votre produit arrive presque avant même que vous n'ayez eu le temps de vous réjouir de votre achat !"
   },
   {
     title: "Garantie de 2 ans",
-    content: "Vous avez deux ans pour tester, adorer, et si besoin, revenir vers nous. Bref, un achat sans pression (enfin, presque)."
+    content: "Vous avez deux ans pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !."
   },
   {
     title: "Paiement en 3x sans frais",
