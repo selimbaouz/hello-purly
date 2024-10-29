@@ -4,7 +4,7 @@ import StickyBar from '@/components/navigation/StickyBar';
 import Prose from '@/components/prose';
 import { getMenu, getPage } from '@/data/shopify';
 import { cn } from '@/lib/utils';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 export default async function LegalPage({ params }: { params: { page: string } }) {
@@ -12,7 +12,7 @@ export default async function LegalPage({ params }: { params: { page: string } }
     const menu = await getMenu("main-menu");
     const footerMenu = await getMenu("footer");
 
-    if (!page) return notFound();
+    if (!page || "/contact") redirect("/");
 
     return (
         <div className='relative'>

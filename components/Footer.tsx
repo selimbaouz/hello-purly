@@ -20,6 +20,8 @@ const Footer = ({
     const handlePath = (path: string) => {
         if (typeof window !== "undefined" && window.location.hash === '#faq') {
             return "/products/le-bidet-wc#faq";
+        } else if(path === "/contact") {
+            return "mailto:hellopurly7@gmail.com"
         }
         return path;
     };
