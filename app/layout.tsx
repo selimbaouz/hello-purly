@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+import LayoutClient from "@/components/LayoutClient";
 
 const montserrat = Montserrat({
   weight: [
@@ -36,9 +37,9 @@ export default function RootLayout({
         className={`${montserrat.variable} font-montserrat relative`}
       >
         <Providers>
-          <main>
+          <LayoutClient>
             {children}
-          </main>
+          </LayoutClient>
         </Providers>
       </body>
     </html>

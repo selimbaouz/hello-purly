@@ -27,7 +27,7 @@ const Bento: FC<BentoProps> = ({
                     <h6 className={cn("font-bold text-lg", "md:text-2xl")}>
                         {title}
                     </h6>
-                    <p className={cn("text-sm font-light whitespace-pre-line", "md:text-base")}>
+                    <p className={cn("text-base font-light whitespace-pre-line")}>
                         {content}
                     </p>
                 </div>

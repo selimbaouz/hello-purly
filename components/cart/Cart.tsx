@@ -78,7 +78,7 @@ export default function Cart() {
                                     <p className="text-lg">{item.merchandise.product.title}</p>
                                     <Price
                                         className="text-sm text-gray-500 font-montserrat"
-                                        amount={item.cost.totalAmount.amount}
+                                        amount="79.99"
                                         currencyCode={item.cost.totalAmount.currencyCode}
                                     />
                             </div>
@@ -115,13 +115,17 @@ export default function Cart() {
                         <p className="text-right text-sm text-white/40">Livraison Offerte</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
+                        <p>Offre spéciale fêtes</p>
+                        <p className="text-right text-sm text-white">- 20,00 €</p>
+                    </div>
+                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                         <p>Total</p>
                         <span className='ml-1 inline'>
-                        <Price
-                            className="flex justify-end space-y-2 text-right text-sm"
-                            amount={cart.cost.totalAmount.amount}
-                            currencyCode={cart.cost.totalAmount.currencyCode}
-                        />
+                            <Price
+                                className="flex justify-end space-y-2 text-right text-sm"
+                                amount={cart.cost.totalAmount.amount}
+                                currencyCode={cart.cost.totalAmount.currencyCode}
+                            />
                         </span>
                     </div>
                     <form onSubmit={handleRedirectToCheckout}>

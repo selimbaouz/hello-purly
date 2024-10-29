@@ -40,7 +40,7 @@ const ReviewCard = ({
                         </div>
                         
                     </div>
-                    <p className={cn("text-sm font-light text-white", "md:text-base", "xl:text-sm")}>{content}</p>
+                    <p className={cn("text-base font-light text-white")}>{content}</p>
                 </div>
             </div>
         </div>

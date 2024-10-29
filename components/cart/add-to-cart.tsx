@@ -7,6 +7,7 @@ import { useCartStore, useOpenCartStore, useVisibleFloatingCartStore } from '@/s
 import { cn } from '@/lib/utils';
 import { TbShoppingCartPlus } from 'react-icons/tb';
 import { useEffect, useRef } from 'react';
+import ShimmerButton from '../ShimmerButton';
 
 interface SubmitButtonProps {
   size?: "fullWidth" | "initial";
@@ -40,40 +41,27 @@ function SubmitButton({size = "initial", color = "gradient"}: SubmitButtonProps)
   }, [setIsVisible]);
 
   return (
-    <div className={cn(
-      "relative p-0.5 rounded-full mx-auto w-full", 
-      size === "fullWidth" ? "w-full xl:w-max xl:mx-0" : "w-max xl:w-max",
-      color === "gradient" && "bg-gradient-to-l from-foreground to-[#899CAA]/30"
+      <button
+        aria-label="Add to cart"
+        ref={buttonRef}
+        className={cn(
+          "py-[14px] rounded-full text-white text-base font-medium",
+          size === "fullWidth" ? "w-full px-[96px]" : "w-max px-12",
+          color === "gradient" ? 
+          "bg-gradient-to-b from-background via-background via-50% to-foreground hover:bg-gradient-to-b hover:from-foreground hover:via-background hover:via-50% hover:to-background" : 
+          "p-2 lg:px-6 bg-foreground hover:bg-transparent hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
       )}
-    >
-        <div className={cn(
-          "p-[3px] rounded-full text-sm font-bold",
-          color === "gradient" && "bg-background"
-          )}
-        >
-          <button
-            aria-label="Add to cart"
-            ref={buttonRef}
-            className={cn(
-              "py-[14px] rounded-full text-white text-base font-medium",
-              size === "fullWidth" ? "w-full px-[96px]" : "w-max px-12",
-              color === "gradient" ? 
-              "bg-gradient-to-b from-background via-background via-50% to-foreground hover:bg-gradient-to-b hover:from-foreground hover:via-background hover:via-50% hover:to-background" : 
-              "p-2 lg:px-6 bg-foreground hover:bg-transparent hover:border-foreground border border-transparent hover:text-foreground text-white font-bold",
-          )}
-          >
-            {color !== "foreground" ? 
-              <p>Ajouter au panier</p> : 
-              <div>
-                  <TbShoppingCartPlus className={cn("text-2xl font-bold lg:hidden text-white")} />
-                  <p className={cn("hidden", "lg:block")}>
-                    Ajouter au panier
-                  </p>
-              </div>
-            }
-          </button>
-        </div>
-    </div>
+      >
+        {color !== "foreground" ? 
+          <p>Ajouter au panier</p> : 
+          <div>
+              <TbShoppingCartPlus className={cn("text-2xl font-bold lg:hidden text-white")} />
+              <p className={cn("hidden", "lg:block")}>
+                Ajouter au panier
+              </p>
+          </div>
+        }
+      </button>
   );
 }
 
@@ -94,7 +82,15 @@ export function AddToCart({ product, size = "initial", color = "gradient" }: { p
       }}
       onClick={() => setIsOpenCart(true)}
     >
-      <SubmitButton size={size} color={color} />
+      {color === "foreground" ? (
+        <SubmitButton size={size} color={color} />
+      )
+       : (
+        <ShimmerButton shimmerColor='#319795'>
+          <SubmitButton size={size} color={color} />
+        </ShimmerButton>
+       )
+      }
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>

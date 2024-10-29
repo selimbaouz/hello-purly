@@ -22,7 +22,7 @@ const BenefitCard: FC<BenefitCardProps> = ({
                 <h4 className={cn("font-bold text-3xl", "md:text-4xl", "lg:text-[26px]", "xl:text-3xl")}>
                     {title}
                 </h4>
-                <p className={cn("font-light text-sm", "md:text-base", "lg:text-sm")}>
+                <p className={cn("font-light text-base")}>
                     {content}
                 </p>
             </div>

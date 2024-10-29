@@ -43,7 +43,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                                 {product.priceRange.minVariantPrice.amount} €
                             </p>
                         </div>
-                            <p>Offre spéciale fêtes : économisez 20,00 € (25 %), assez pour vous offrir un bon repas… ou un extra de chocolats à gogo !</p>
+                            <p><span className="font-bold">Offre spéciale fêtes : - 20,00 € (25 %)</span>, <br className={cn("hidden", "xl:block")}/>assez pour vous offrir un bon repas… ou un extra de chocolats à gogo !</p>
                     </div>
                 </div>
                 <ul className={cn("space-y-2")}>
@@ -65,7 +65,7 @@ const ProductImage: FC<ProductImageProps> = ({product}) => {
                             <AccordionTrigger className={cn("text-lg")}>
                                 {data.title}
                             </AccordionTrigger>
-                            <AccordionContent className={cn("text-sm pt-2")}>
+                            <AccordionContent className={cn("text-base py-6")}>
                                 {data.content}
                             </AccordionContent>
                         </AccordionItem>

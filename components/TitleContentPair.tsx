@@ -15,7 +15,7 @@ const TitleContentPair: FC<TitleContentPairProps> = ({title, content, contentBol
               {title}
             </h2>
           )}
-          <p className={cn("font-regular text-base", "md:text-xl md:whitespace-pre-line", "lg:mx-auto lg:text-base", "xl:text-2xl")}>
+          <p className={cn("font-regular text-base", "md:text-xl md:whitespace-pre-line", "lg:mx-auto lg:text-base", "xl:text-xl")}>
             {content}{" "}
             <span className="font-bold">{contentBold}</span>
           </p>
