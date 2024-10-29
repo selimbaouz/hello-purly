@@ -142,7 +142,7 @@ function CheckoutButton({isLoading}: {isLoading: boolean}) {
         type='submit'
         disabled={isLoading}
       >
-        {isLoading ? <PulseLoader size={7} color="white" /> : 'Procéder au paiement'}
+        {isLoading ? <PulseLoader size={7} color="white" /> : 'Hop, au paiement !'}
       </button>
     );
   }

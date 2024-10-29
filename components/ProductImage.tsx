@@ -12,7 +12,6 @@ interface ProductImageProps {
 }
 
 const ProductImage: FC<ProductImageProps> = ({product}) => {
-
     return (
         <div className={cn("space-y-4")}>
             <h3 className={cn("text-left uppercase text-5xl font-bold pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-transparent from-white to-foreground")}>
