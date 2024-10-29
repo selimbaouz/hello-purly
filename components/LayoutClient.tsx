@@ -8,7 +8,7 @@ interface LayoutClientProps {
 const LayoutClient: FC<LayoutClientProps> = ({children}) => {
     return (
         <main>
-            <Snowfall color="white"/>
+            <Snowfall color="white" radius={[0.5, 1.5]} wind={[-0.5, 0.5]} style={{zIndex: 70}}/>
             {children}
         </main>
     );
