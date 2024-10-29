@@ -2,9 +2,6 @@ import Bento from '@/components/card/bentoGrid/Bento';
 import WhyCard from '@/components/card/bentoGrid/WhyCard';
 import CTACard from '@/components/card/CTACard';
 import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
-import NavBar from '@/components/navigation/NavBar';
-import StickyBar from '@/components/navigation/StickyBar';
 import ProductImage from '@/components/ProductImage';
 import { Reviews } from '@/components/Reviews';
 import TitleContentPair from '@/components/TitleContentPair';
@@ -15,7 +12,7 @@ import ImagesGallery from '@/components/ImagesGallery';
 import VersusCard from '@/components/card/bentoGrid/VersusCard';
 import ComparaisonCard from '@/components/card/bentoGrid/ComparaisonCard';
 import { redirect } from 'next/navigation';
-import { getHandleOfProduct, getMenu } from '@/data/shopify';
+import { getHandleOfProduct } from '@/data/shopify';
 import Image1 from "@/public/images/bidet/money.webp";
 import Image2 from "@/public/images/bidet/eco.webp";
 import BenefitCard from '@/components/card/BenefitCard';
@@ -28,15 +25,9 @@ export default async function ProductPage({ params }: { params: { handle: string
     }
 
     const product = await getHandleOfProduct(params.handle);
-    const menu = await getMenu("main-menu");
-    const footerMenu = await getMenu("footer");
 
     return (
         <div className='relative'>
-            <div className="sticky top-0 w-full z-40">
-                <StickyBar />
-                <NavBar menu={menu} />
-            </div>
             <section className={cn(
                 "w-full text-left space-y-10 max-w-screen-xl mx-auto", 
                 "lg:p-6 lg:grid lg:grid-cols-2 lg:items-start lg:space-y-0 lg:justify-start lg:gap-10"
@@ -188,13 +179,6 @@ export default async function ProductPage({ params }: { params: { handle: string
                     />
                 ))}
                 </div>
-            </section>
-            <section className="relative pt-10">
-                <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
-                <Footer 
-                    menu={menu}
-                    footerMenu={footerMenu}
-                />
             </section>
             {product && (
                 <FloatingBar

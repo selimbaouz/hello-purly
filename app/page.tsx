@@ -1,8 +1,6 @@
 import BenefitCard from "@/components/card/BenefitCard";
 import ModesCard from "@/components/card/bentoGrid/ModesCard";
 import Header from "@/components/Header";
-import NavBar from "@/components/navigation/NavBar";
-import StickyBar from "@/components/navigation/StickyBar"
 import TitleContentPair from "@/components/TitleContentPair";
 import { benefitsData, essentialsData, trustsData } from "@/data";
 import { cn } from "@/lib/utils";
@@ -12,19 +10,11 @@ import Bento from "@/components/card/bentoGrid/Bento";
 import { Reviews } from "@/components/Reviews";
 import CTACard from "@/components/card/CTACard";
 import TrustFeatures from "@/components/TrustFeatures";
-import Footer from "@/components/Footer";
-import { getMenu } from "@/data/shopify";
 
 export default async function Home() {
-  const menu = await getMenu("main-menu");
-  const footerMenu = await getMenu("footer");
 
   return (
     <div>
-      <div className="sticky top-0 w-full z-50">
-        <StickyBar />
-        <NavBar menu={menu} />
-      </div>
       <Header />
       <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-6", "xl:px-0")}>
         <TitleContentPair 
@@ -85,13 +75,6 @@ export default async function Home() {
             />
           ))}
         </div>
-      </section>
-      <section className="relative pt-10">
-        <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
-        <Footer 
-          menu={menu}
-          footerMenu={footerMenu}
-        />
       </section>
       {/* <BottomBar /> */}
     </div>
