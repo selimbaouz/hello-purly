@@ -23,8 +23,6 @@ export default function SideBar ({
     const handlePath = (path: string) => {
         if (typeof window !== "undefined" && window.location.hash === '#faq') {
             return "/products/le-bidet-wc#faq";
-        } else if(path === "/contact") {
-            return "mailto:hellopurly7@gmail.com"
         }
         return path;
     };
@@ -41,8 +39,8 @@ export default function SideBar ({
         <ul className={cn("pt-14")}>
             {menu?.map((data, i) => (
                 <li key={i} className={cn("border-b border-[#2D3748] py-3 pl-4 hover:bg-[#2D3748]", data.path === pathname && "bg-[#2D3748]")}>
-                    {handlePath(data.path).startsWith("mailto:") ? (
-                        <a href={handlePath(data.path)} target="_blank" rel="noopener noreferrer" className={cn(classLink)}>Contact</a>
+                    {data.path === "/contact" ? (
+                        <a href="mailto:hellopurly7@gmail.com" target="_blank" rel="noopener noreferrer" className={cn(classLink)}>Contact</a>
                     ) : (
                         <Link 
                         href={handlePath(data.path)} 

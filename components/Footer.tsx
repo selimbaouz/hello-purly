@@ -20,8 +20,6 @@ const Footer = ({
     const handlePath = (path: string) => {
         if (typeof window !== "undefined" && window.location.hash === '#faq') {
             return "/products/le-bidet-wc#faq";
-        } else if(path === "/contact") {
-            return "mailto:hellopurly7@gmail.com"
         }
         return path;
     };
@@ -43,8 +41,8 @@ const Footer = ({
                             <ul className="leading-relaxed">
                                 {footerMenu.map((data, i) => (
                                     <li key={i}>
-                                        {handlePath(data.path).startsWith("mailto:") ? (
-                                            <a href={handlePath(data.path)} target="_blank" rel="noopener noreferrer" className={cn(classLink, data.path === pathname && "font-bold")}>Contact</a>
+                                        {data.path === "/contact" ? (
+                                            <a href="mailto:hellopurly7@gmail.com" target="_blank" rel="noopener noreferrer" className={cn(classLink, data.path === pathname && "font-bold")}>Contact</a>
                                         ) : (
                                             <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold")}>{data.title}</Link>
                                         )}
