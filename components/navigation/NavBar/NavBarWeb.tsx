@@ -26,7 +26,16 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
             <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
                 {menu.map((data, i) => (
                     <li key={i}>
-                        <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold underline")}>{data.title}</Link>
+                        {data.path.includes("contact") ? (
+                            <Link 
+                                href="mailto:hellopurly7@gmail.com"
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={cn(classLink, data.path === pathname && "font-bold underline")}
+                            >Contact</Link>
+                        ) : (
+                            <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold underline")}>{data.title}</Link>
+                        )}
                     </li>
                 ))}
             </ul>

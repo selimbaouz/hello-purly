@@ -44,14 +44,23 @@ const Footer = ({
                             <ul className="leading-relaxed">
                                 {menu.map((data, i) => (
                                     <li key={i}>
-                                        <Link 
-                                            href={data.path} 
-                                            target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
-                                            rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
-                                            className={cn(classLink, data.path === pathname && "font-bold underline")}
-                                            >
-                                                {data.title}
-                                        </Link>
+                                        {data.path.includes("contact") ? (
+                                            <Link 
+                                                href="mailto:hellopurly7@gmail.com"
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className={cn(classLink, data.path === pathname && "font-bold underline")}
+                                            >Contact</Link>
+                                        ) : (
+                                            <Link 
+                                                href={data.path} 
+                                                target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
+                                                rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
+                                                className={cn(classLink, data.path === pathname && "font-bold underline")}
+                                                >
+                                                    {data.title}
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

@@ -10,11 +10,21 @@ import Bento from "@/components/card/bentoGrid/Bento";
 import { Reviews } from "@/components/Reviews";
 import CTACard from "@/components/card/CTACard";
 import TrustFeatures from "@/components/TrustFeatures";
+import Footer from "@/components/Footer";
+import StickyBar from "@/components/navigation/StickyBar";
+import NavBar from "@/components/navigation/NavBar";
+import { getMenu } from "@/data/shopify";
 
 export default async function Home() {
+  const menu = await getMenu("main-menu");
+  const footerMenu = await getMenu("footer");
 
   return (
     <div>
+      <div className="sticky top-0 w-full z-50">
+        <StickyBar />
+        <NavBar menu={menu} />
+      </div>
       <Header />
       <section className={cn("p-4 text-center space-y-24", "lg:space-y-36 lg:py-14 lg:px-6", "xl:px-0")}>
         <TitleContentPair 
@@ -75,6 +85,13 @@ export default async function Home() {
             />
           ))}
         </div>
+      </section>
+      <section className="relative pt-10">
+        <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
+        <Footer
+          menu={menu}
+          footerMenu={footerMenu}
+        />
       </section>
       {/* <BottomBar /> */}
     </div>

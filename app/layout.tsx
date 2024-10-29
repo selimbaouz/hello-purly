@@ -3,10 +3,6 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import LayoutClient from "@/components/LayoutClient";
-import { getMenu } from "@/data/shopify";
-import StickyBar from "@/components/navigation/StickyBar";
-import NavBar from "@/components/navigation/NavBar";
-import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   weight: [
@@ -34,9 +30,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const menu = await getMenu("main-menu");
-  const footerMenu = await getMenu("footer");
-
   return (
     <html lang="en">
       <body
@@ -44,18 +37,7 @@ export default async function RootLayout({
       >
         <Providers>
           <LayoutClient>
-          <div className="sticky top-0 w-full z-50">
-            <StickyBar />
-            <NavBar menu={menu} />
-          </div>
             {children}
-            <section className="relative pt-10">
-              <div className='w-full h-[313px] bg-foreground/80 blur-3xl absolute top-4 -z-10' />
-              <Footer 
-                menu={menu}
-                footerMenu={footerMenu}
-              />
-            </section>
           </LayoutClient>
         </Providers>
       </body>
