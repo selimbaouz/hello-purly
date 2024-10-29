@@ -20,13 +20,6 @@ export default function SideBar ({
     const pathname = usePathname();
     const { isOpenSidebar, setIsOpenSidebar } = useOpenSidebarStore();
 
-    const handlePath = (path: string) => {
-        if (typeof window !== "undefined" && window.location.hash === '#faq') {
-            return "/products/le-bidet-wc#faq";
-        }
-        return path;
-    };
-
   return (
     <Sheet open={isOpenSidebar} onOpenChange={setIsOpenSidebar}>
         <SheetContent side="left" className="h-full min-w-full">
@@ -40,7 +33,7 @@ export default function SideBar ({
             {menu?.map((data, i) => (
                 <li key={i} className={cn("border-b border-[#2D3748] py-3 pl-4 hover:bg-[#2D3748]", data.path === pathname && "bg-[#2D3748]")}>
                     <Link 
-                    href={handlePath(data.path)} 
+                    href={data.path} 
                     target={data.title === "Suivre ma commande" ? "_blank" : undefined} 
                     rel={data.title === "Suivre ma commande" ? "noopener noreferrer" : undefined} 
                     className={cn(classLink)}

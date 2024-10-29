@@ -18,13 +18,6 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
     const { setIsOpenCart } = useOpenCartStore();
     const pathname = usePathname();
 
-    const handlePath = (path: string) => {
-        if (typeof window !== "undefined" && window.location.hash === '#faq') {
-            return "/products/le-bidet-wc#faq";
-        }
-        return path;
-    };
-
     return (
         <div className={cn("hidden", "relative max-w-screen-xl lg:p-6 lg:flex lg:justify-between lg:items-center lg:mx-auto lg:py-6", "xl:px-0")}>
             <Link href="/" className="cursor-pointer z-50">
@@ -33,7 +26,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
             <ul className={cn("absolute inset-0 m-auto flex justify-center items-center gap-5", "xl:gap-6")}>
                 {menu.map((data, i) => (
                     <li key={i}>
-                        <Link href={handlePath(data.path)} className={cn(classLink, data.path === pathname && "font-bold underline")}>{data.title}</Link>
+                        <Link href={data.path} className={cn(classLink, data.path === pathname && "font-bold underline")}>{data.title}</Link>
                     </li>
                 ))}
             </ul>
