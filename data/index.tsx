@@ -12,7 +12,7 @@ import { TbPlaneTilt, TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { GiFrance } from "react-icons/gi";
 import { IoIosPeople, IoMdCheckmark } from "react-icons/io";
-import { HiOutlineCash, HiOutlineCog, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
+import { HiOutlineCog, HiOutlineGlobe, HiOutlineHeart, HiOutlinePaperAirplane, HiOutlineShieldCheck, HiOutlineSparkles } from "react-icons/hi";
 import { FiCheckCircle, FiTarget, FiTool } from "react-icons/fi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import SophieD from "@/public/images/avis/sophieD.webp";
@@ -80,8 +80,8 @@ export const trustsData = [
   },
   {
     icon: FaCheck, 
-    title: "Satisfait ou remboursé", 
-    content: "Toute commande passé avant 14h est expédié le jour même."
+    title: "Garantie de 2 ans", 
+    content: "2 ans pour apprécier pleinement votre achat."
   },
   {
     icon: TbPlaneTilt, 
