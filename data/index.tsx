@@ -244,10 +244,6 @@ export const checkProduct = [
       icon: HiOutlineGlobe,
   },
   {
-      title: "Des économies en boucle toute l’année",
-      icon: HiOutlineCash,
-  },
-  {
       title: "Installation ultra simple, promis !",
       icon: HiOutlineCog,
   },
