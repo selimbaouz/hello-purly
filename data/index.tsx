@@ -22,6 +22,7 @@ import LauraM from "@/public/images/avis/lauraM.webp";
 import MarcL from "@/public/images/avis/marcL.webp";
 import MarieL from "@/public/images/avis/marieL.webp";
 import PhillipeG from "@/public/images/avis/phillippeG.webp";
+import { FaBurn } from "react-icons/fa";
 
 export const statsData = [
   {
@@ -227,6 +228,14 @@ export const reviewsData = [
 
 export const checkProduct = [
   {
+    title: "Irritations ? C’est du passé !",
+    icon: FaBurn,
+  },
+  {
+      title: "Propre comme jamais",
+      icon: HiOutlineHandThumbUp,
+  },
+  {
       title: "Adieu le papier, bonjour l'économie",
       icon: HiOutlinePaperAirplane,
   },
@@ -235,16 +244,12 @@ export const checkProduct = [
       icon: HiOutlineGlobe,
   },
   {
-      title: "Propre comme jamais",
-      icon: HiOutlineHandThumbUp,
+      title: "Des économies en boucle toute l’année",
+      icon: HiOutlineCash,
   },
   {
       title: "Installation ultra simple, promis !",
       icon: HiOutlineCog,
-  },
-  {
-      title: "Des économies en boucle toute l’année",
-      icon: HiOutlineCash,
   },
 ]
 

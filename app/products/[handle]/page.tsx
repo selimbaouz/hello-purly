@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: { params: { handle: string
                         <Bento
                             image="/images/bidet/mode.webp"
                             title="Deux Modes, Deux Soins"
-                            content={`Messieurs, précision assurée ! Mesdames, une touche de douceur ! C’est l’hygiène parfaite pour tous.`}
+                            content={`Hygiène douce et adaptée, même pendant vos règles, pour une confiance quotidienne en toute sérénité.`}
                         />
                         <Bento 
                             image="/images/bidet/compatibilite.webp"
