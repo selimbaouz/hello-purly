@@ -260,7 +260,7 @@ export const detailsProduct = [
   },
   {
     title: "Garantie de 2 ans",
-    content: "Vous avez deux ans pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !."
+    content: "Vous avez deux ans pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
   },
   {
     title: "Paiement en 3x sans frais",

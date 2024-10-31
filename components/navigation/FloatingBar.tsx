@@ -74,11 +74,11 @@ const FloatingBar: FC<FloatingBarProps> = ({
                         </div>
                         <div className={cn("flex items-center justify-between")}>
                             <div className={cn("flex items-end gap-2", "lg:gap-3")}>
+                                <p className={cn("line-through text-2xl")}>
+                                    79.99 €
+                                </p>
                                 <p className={cn("font-semibold text-2xl")}>
                                     {product.priceRange.minVariantPrice.amount} €
-                                </p>
-                                <p className={cn("line-through text-base")}>
-                                    79.99 €
                                 </p>
                             </div>
                             <AddToCart product={product} color='foreground' />
