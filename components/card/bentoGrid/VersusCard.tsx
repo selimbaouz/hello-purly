@@ -14,7 +14,7 @@ const VersusCard = () => {
                 <div className={cn("px-4 space-y-8", "md:px-20", "xl:px-24 xl:space-y-20")}>
                     <TitleContentPair
                         title={`papier toilette vs \nHelloPurly`}
-                        content="Le papier toilette, c'est comme laver une fenêtre avec un mouchoir : ça laisse toujours des traces."
+                        content="Le papier toilette, c'est comme laver une assiette avec un mouchoir : ça laisse toujours des traces."
                     />
                     <ReactBeforeSliderComponent
                         firstImage={{
