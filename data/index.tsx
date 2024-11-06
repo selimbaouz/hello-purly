@@ -263,10 +263,6 @@ export const detailsProduct = [
     content: "Vous avez deux ans pour tester, adorer, et même revenir vers nous si besoin. Un achat en toute confiance !"
   },
   {
-    title: "Paiement en 3x sans frais",
-    content: "Besoin de temps pour réfléchir... et payer ? Aucun souci ! Klarna vous offre le luxe de régler en 3 fois, sans frais, histoire de garder un peu d’argent pour vos petites folies."
-  },
-  {
       title: "Utilisation & Installation",
       content: "Vous êtes à deux pas du grand confort ! Fixez simplement le bidet sur le siège des toilettes, raccordez-le au robinet, et voilà ! Installation rapide et facile en moins de 10 minutes, promis ! Pour les plus intrépides, ajustez le jet d'eau selon vos préférences. Choisissez parmi les modes lavage masculin ou lavage féminin. Rien de plus simple, même pas besoin d'un diplôme de plombier !"
   },
