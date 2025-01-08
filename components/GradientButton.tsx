@@ -18,7 +18,7 @@ const GradientButton: FC<GradientButtonProps> = ({
 }) => {
     return (
         <Button className={cn(
-            "border-2 border-[#2D3748] bg-gradient-to-b from-background via-background via-50% to-foreground px-[60px] py-[24px] rounded-full text-white text-base font-medium",
+            "border-2 border-[#2D3748] bg-gradient-to-b from-background via-background via-50% to-foreground px-[60px] py-[24px] rounded-full text-primary text-base font-medium",
             "hover:bg-gradient-to-b hover:from-foreground hover:via-background hover:via-50% hover:to-background",
             size === "fullWidth" ? "w-full" : "w-max"
         )}
