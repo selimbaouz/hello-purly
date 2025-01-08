@@ -28,7 +28,7 @@ const NavBarWeb: FC<NavBarWebProps> = ({ menu }) => {
                     <li key={i}>
                         {data.path.includes("contact") ? (
                             <Link 
-                                href="mailto:hellopurly7@gmail.com"
+                                href="mailto:im.sejiux@gmail.com"
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className={cn(classLink, data.path === pathname && "font-bold underline")}

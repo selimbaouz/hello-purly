@@ -46,7 +46,7 @@ const Footer = ({
                                     <li key={i}>
                                         {data.path.includes("contact") ? (
                                             <Link 
-                                                href="mailto:hellopurly7@gmail.com"
+                                                href="mailto:im.sejiux@gmail.com"
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className={cn(classLink, data.path === pathname && "font-bold underline")}
@@ -73,12 +73,8 @@ const Footer = ({
                     <p className={cn("text-sm hidden", "lg:block")}>
                         © 2024 Tous droits réservés.
                     </p>
-                    <Link href="https://sejiux.com" target="_blank" rel="noopener noreferrer" className={cn("border-b-2 w-max p-2 rounded-full border-white hover:border-t-2 hover:border-b-0")}>
-                        <p className="text-sm text-white font-medium flex items-center gap-2">
-                            <span>
-                                <Image src="/images/sejiux.webp" alt="Logo of HelloPurly" width={36} height={36} />
-                            </span>
-                        </p>
+                    <Link href="https://sejiux.com" target="_blank" rel="noopener noreferrer" className={cn("border-b-2 w-max p-4 rounded-full border-[#A1EF01] hover:border-t-2 hover:border-b-0")}>
+                        <Image src="/images/sejiux.webp" alt="Logo of HelloPurly" width={36} height={36} />
                     </Link>
                 </div>
             </div>

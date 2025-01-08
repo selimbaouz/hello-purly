@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useOpenSidebarStore } from '@/store/sidebar';
 import Link from 'next/link';
+import { useIsHydrated } from '@/hook/useIsHydrated';
 
 interface FloatingBarProps {
     product: Product;
@@ -21,6 +22,11 @@ const FloatingBar: FC<FloatingBarProps> = ({
     const { isVisible, isOpenFloatingBar, setIsOpenFloatingBar } = useVisibleFloatingCartStore();
     const { isOpenCart } = useOpenCartStore();
     const { isOpenSidebar } = useOpenSidebarStore();
+    const isHydrated = useIsHydrated();
+    
+    if (!isHydrated) {
+        return null;
+      }
 
     return (
         <motion.div className={cn('sticky bottom-10 z-[100] mx-auto w-max', "lg:max-w-screen-md lg:w-auto lg:mx-auto", isOpenFloatingBar && "w-full px-4")}>

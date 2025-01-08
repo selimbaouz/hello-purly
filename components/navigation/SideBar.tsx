@@ -34,7 +34,7 @@ export default function SideBar ({
                 <li key={i} className={cn("border-b border-[#2D3748] py-3 pl-4 hover:bg-[#2D3748]", data.path === pathname && "bg-[#2D3748]")}>
                     {data.path.includes("contact") ? (
                         <Link 
-                            href="mailto:hellopurly7@gmail.com"
+                            href="mailto:im.sejiux@gmail.com"
                             target="_blank" 
                             rel="noopener noreferrer"
                             className={cn(classLink)}
